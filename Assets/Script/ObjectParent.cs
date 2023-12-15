@@ -14,7 +14,6 @@ public class ObjectParent : MonoBehaviour
     void Start()
     {
         isFirstCollider=false;
-        ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);
         check=false;
     }
 
@@ -38,50 +37,48 @@ public class ObjectParent : MonoBehaviour
     //用來重製這個物件的所有值，會在手柄放開時自動執行
     public void removeParent(){                                                    
         Debug.Log("重製物件");
-        this.gameObject.transform.parent = null;                        //設定這個物件的子物件為null(會預設在根目錄下)
+        this.gameObject.transform.SetParent(null);                       //設定這個物件的子物件為null(會預設在根目錄下)
         firstColliderObject=null;                                       //第一次碰撞值=null
         isFirstCollider=false;                                          //第一次碰撞=false
-
-        if(ObjectsTransform!=null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+        if(check==true)
         {
-            if(check==true)                                             
+            if(ObjectsTransform!=null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
             {
                 foreach(GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
                 {
 
-                    if(this.gameObject.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                    if(obj.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
                     {
-                         obj.GetComponent<Outline>().enabled=false;
+                        obj.GetComponent<Outline>().enabled=false;
                     }
                 }
-                check=false;
             }
-
+            check=false;
         }
-
+        
     }
 
     //跟上面的差不多，只是這個是把她打開
     public void showOutline(){
-       
-        if(ObjectsTransform!=null)                                                 
+        if(check==false)
         {
-            if(check==false)
+            if(ObjectsTransform!=null)                                                 
             {
-                check=true;
+                
+                ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
                 foreach(GameObject obj in ObjectsTransform)
                 {
-                    if(this.gameObject.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                    if(obj.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
                     {
                         obj.GetComponent<Outline>().enabled=true;
                     }
                     
-                }
+                }                                          
+            
             }
-
-
-
+            check=true;
         }
+
       
     }
 }

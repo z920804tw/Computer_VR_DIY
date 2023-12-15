@@ -6,7 +6,6 @@ public class Object_Transform : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject colliderObject;
-    bool hasPlace;
     
     //Transform objectRotation;
    // bool isParent;
@@ -14,7 +13,6 @@ public class Object_Transform : MonoBehaviour
     void Start()
     {
         //isParent=false;
-        hasPlace=false;
     }
 
     // Update is called once per frame

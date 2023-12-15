@@ -18,7 +18,6 @@ public class CPU_Parent : MonoBehaviour
     void Start()
     {
         isFirstCollider=false;
-        ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);
         check=false;
     }
 
@@ -40,50 +39,51 @@ public class CPU_Parent : MonoBehaviour
         }
     }
 
+    //重製這個物件所有的參數
     public void removeParent(){
         Debug.Log("重製物件");
-        this.gameObject.transform.parent = null;
+        this.gameObject.transform.SetParent(null);
         firstColliderObject=null;
         isFirstCollider=false;
-        if(ObjectsTransform!=null)                                    
+        if(check==true)
         {
-            if(check==true)                                             
+
+            if(ObjectsTransform!=null)                                    
             {
+           
                 foreach(GameObject obj in ObjectsTransform)             
                 {
-
-                    if(this.gameObject.GetComponent<Outline>()!=null)               
+                    if(obj.GetComponent<Outline>()!=null)               
                     {
-                         obj.GetComponent<Outline>().enabled=false;
+                    obj.GetComponent<Outline>().enabled=false;
                     }
                 }
-                check=false;
             }
-
+            check=false;
         }
+        
 
     }
 
+    //顯示相關物件的Outline
     public void showOutline(){
-       
-        if(ObjectsTransform!=null)                                                 
-        {
-            if(check==false)
+
+        if(check==false)
+        {                                                  
+            ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+            if(ObjectsTransform!=null)                                                 
             {
-                check=true;
                 foreach(GameObject obj in ObjectsTransform)
                 {
-                    if(this.gameObject.GetComponent<Outline>()!=null)              
+                    if(obj.GetComponent<Outline>()!=null)              
                     {
                         obj.GetComponent<Outline>().enabled=true;
-                    }
-                    
+                    }   
                 }
             }
-
-
+            check=true;
 
         }
-      
+       
     }
 }
