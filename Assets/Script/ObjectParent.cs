@@ -9,12 +9,20 @@ public class ObjectParent : MonoBehaviour
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;                                   //紀錄要該物件要放置的位置
 
+    [Header("CPU腳位設定")]
+    public int c_LGA;                                                       //CPU的腳位設定，如果不是cpu的物件不用去設定
+
+    Rigidbody rb;                                                           //rb
+
     bool check;
+
+
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     void Start()
     {
         isFirstCollider=false;
         check=false;
+        rb=this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -38,8 +46,16 @@ public class ObjectParent : MonoBehaviour
     public void removeParent(){                                                    
         Debug.Log("重製物件");
         this.gameObject.transform.SetParent(null);                       //設定這個物件的子物件為null(會預設在根目錄下)
-        firstColliderObject=null;                                       //第一次碰撞值=null
+        rb.isKinematic=false;                                            //對應Object_Transform，這邊是關閉。
+
+        if(firstColliderObject!=null)                                    //這個if判斷是要先判斷firstColliderObject是不是有東西
+        {
+            firstColliderObject.GetComponent<Object_Transform>().hasPlace=false;            //這個是要有東西才會去抓它裡面的Object_transform，並且把裡面的已經放置給他設成false。
+            firstColliderObject=null;                                       
+        }
+
         isFirstCollider=false;                                          //第一次碰撞=false
+
         if(check==true)
         {
             if(ObjectsTransform!=null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
@@ -53,6 +69,8 @@ public class ObjectParent : MonoBehaviour
                     }
                 }
             }
+
+
             check=false;
         }
         
@@ -62,10 +80,11 @@ public class ObjectParent : MonoBehaviour
     public void showOutline(){
         if(check==false)
         {
+            ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
             if(ObjectsTransform!=null)                                                 
             {
                 
-                ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+
                 foreach(GameObject obj in ObjectsTransform)
                 {
                     if(obj.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
