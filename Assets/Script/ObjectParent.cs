@@ -80,6 +80,62 @@ public class ObjectParent : MonoBehaviour
     public void showOutline(){
         if(check==false)
         {
+
+            switch(this.gameObject.tag)
+            {
+                case "Cpu":
+                showCpuOutline();
+                break;
+                
+
+                default:
+                showObjectOutline();
+                break;
+            }
+
+            
+        }
+      
+      
+    }
+
+    void showCpuOutline(){
+
+            ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+            if(ObjectsTransform!=null)                                                 
+            {
+                
+
+                foreach(GameObject obj in ObjectsTransform)
+                {
+                    if(obj.GetComponent<Outline>()!=null&& obj.GetComponent<Object_Transform>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                    {
+                      
+                        if(obj.GetComponent<Object_Transform>().m_LGA==c_LGA)
+                        {
+                                
+                            obj.GetComponent<Outline>().OutlineColor=new Color(255f,208f,0f ,255f);
+                        }
+                        else
+                        {
+                            obj.GetComponent<Outline>().OutlineColor=Color.red;
+                            
+                        }
+
+                        
+                        
+
+                    }
+                    obj.GetComponent<Outline>().enabled=true;
+                    
+                }                                          
+            
+            }
+            check=true;
+
+    }
+    void showObjectOutline(){
+
             ObjectsTransform=GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
             if(ObjectsTransform!=null)                                                 
             {
@@ -89,6 +145,8 @@ public class ObjectParent : MonoBehaviour
                 {
                     if(obj.GetComponent<Outline>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
                     {
+
+                        
                         obj.GetComponent<Outline>().enabled=true;
                     }
                     
@@ -96,8 +154,6 @@ public class ObjectParent : MonoBehaviour
             
             }
             check=true;
-        }
 
-      
     }
 }

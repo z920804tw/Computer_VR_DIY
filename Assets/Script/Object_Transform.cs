@@ -9,6 +9,7 @@ public class Object_Transform : MonoBehaviour
     public GameObject colliderObject;
     [Header ("主機板腳位設定")]
     public int m_LGA;
+    
     //Transform objectRotation;
     public bool hasPlace;
     
