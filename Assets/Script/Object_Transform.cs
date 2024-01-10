@@ -10,6 +10,7 @@ public class Object_Transform : MonoBehaviour
     [Header ("主機板腳位設定")]
     public int m_LGA;
     
+    
     //Transform objectRotation;
     public bool hasPlace;
     
@@ -25,7 +26,7 @@ public class Object_Transform : MonoBehaviour
 
     }
 
-
+    
 
     //判斷碰撞偵測的物件，並把物件變成子物件
     private void OnTriggerStay(Collider other) {

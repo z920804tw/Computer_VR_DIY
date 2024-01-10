@@ -114,7 +114,7 @@ public class ObjectParent : MonoBehaviour
                         if(obj.GetComponent<Object_Transform>().m_LGA==c_LGA)
                         {
                                 
-                            obj.GetComponent<Outline>().OutlineColor=new Color(255f,208f,0f ,255f);
+                            obj.GetComponent<Outline>().OutlineColor=new Color(255f/255,208f/255,0f ,255f/255);
                         }
                         else
                         {
