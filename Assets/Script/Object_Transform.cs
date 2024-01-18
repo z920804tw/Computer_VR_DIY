@@ -14,6 +14,7 @@ public class Object_Transform : MonoBehaviour
     //Transform objectRotation;
     public bool hasPlace;
     
+    
 
     void Start()
     {

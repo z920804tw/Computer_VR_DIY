@@ -13,14 +13,17 @@ public class ObjectParent : MonoBehaviour
     public int c_LGA;                                                       //CPU的腳位設定，如果不是cpu的物件不用去設定
 
     Rigidbody rb;                                                           //rb
+    
 
     bool check;
+    public bool isHolding;
 
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     void Start()
     {
         isFirstCollider=false;
+        isHolding=false;
         check=false;
         rb=this.gameObject.GetComponent<Rigidbody>();
     }
@@ -45,6 +48,7 @@ public class ObjectParent : MonoBehaviour
     //用來重製這個物件的所有值，會在手柄放開時自動執行
     public void removeParent(){                                                    
         Debug.Log("重製物件");
+        isHolding=false;
         this.gameObject.transform.SetParent(null);                       //設定這個物件的子物件為null(會預設在根目錄下)
         rb.isKinematic=false;                                            //對應Object_Transform，這邊是關閉。
 
@@ -85,6 +89,7 @@ public class ObjectParent : MonoBehaviour
             {
                 case "Cpu":
                 showCpuOutline();
+                isHolding=true;
                 break;
                 
 
