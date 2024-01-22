@@ -9,11 +9,12 @@ public class Level_Stauts : MonoBehaviour
     public int status = 0;
     public GameObject[] MenuPanels;
 
-    public GameObject CPU_GameObject;
+    public GameObject[] CPU_GameObject;
     public GameObject Mother_GameObject;
+
+
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -23,7 +24,11 @@ public class Level_Stauts : MonoBehaviour
         switch (status)
         {
             case 0:
+
                 MenuPanels[0].SetActive(true);
+
+
+
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
@@ -32,15 +37,19 @@ public class Level_Stauts : MonoBehaviour
             case 2:
                 //CPU的安裝頁面，會去偵測CPU有沒有被玩家拿起，如果有就切換到下一個劇情。
                 MenuPanels[2].SetActive(true);
-                if (CPU_GameObject.GetComponent<ObjectParent>().isHolding == true)
+                foreach (GameObject i in CPU_GameObject)
                 {
-                    NextStatus();
+                    if (i.GetComponent<ObjectParent>().isHolding == true)
+                    {
+                        NextStatus();
+                    }
                 }
 
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
-                if(Mother_GameObject.GetComponent<Object_Transform>().hasPlace==true){
+                if (Mother_GameObject.GetComponent<Object_Transform>().hasPlace == true)
+                {
                     NextStatus();
                 }
                 break;
@@ -66,4 +75,6 @@ public class Level_Stauts : MonoBehaviour
         status++;
 
     }
+
+
 }

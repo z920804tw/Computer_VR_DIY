@@ -115,7 +115,6 @@ public class ObjectParent : MonoBehaviour
                 {
                     if(obj.GetComponent<Outline>()!=null&& obj.GetComponent<Object_Transform>()!=null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
                     {
-                      
                         if(obj.GetComponent<Object_Transform>().m_LGA==c_LGA)
                         {
                                 
@@ -125,11 +124,7 @@ public class ObjectParent : MonoBehaviour
                         {
                             obj.GetComponent<Outline>().OutlineColor=Color.red;
                             
-                        }
-
-                        
-                        
-
+                        }    
                     }
                     obj.GetComponent<Outline>().enabled=true;
                     
