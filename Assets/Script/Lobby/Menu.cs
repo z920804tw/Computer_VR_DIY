@@ -38,10 +38,7 @@ public class Menu : MonoBehaviour
         if (button != null)
         {
             //先把MenuPanel的所有會用到的UI全部關閉
-            foreach (GameObject i in MenuPanel)
-            {
-                i.SetActive(false);
-            }
+            closeAllUI();
             //去switch剛剛取得的互動按鈕裡的文字，根據零件名稱去開啟MenuPanel陣列裡對應的零件選擇關卡。
             switch (button)
             {
@@ -80,10 +77,7 @@ public class Menu : MonoBehaviour
 
         if (current_click != null)
         {
-            foreach (GameObject i in MenuPanel)
-            {
-                i.SetActive(false);
-            }
+            closeAllUI();
             switch (current_click)
             {
                 case "返回主選單":
@@ -98,6 +92,14 @@ public class Menu : MonoBehaviour
         }
 
 
+    }
+
+    public void closeAllUI()
+    {
+        foreach (GameObject i in MenuPanel)
+        {
+            i.SetActive(false);
+        }
     }
 
 }

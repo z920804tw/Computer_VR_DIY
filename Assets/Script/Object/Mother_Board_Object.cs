@@ -8,8 +8,6 @@ public class Mother_Board_Object : MonoBehaviour
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
 
-    [Header("CPU腳位設定")]
-    public int c_LGA;                                                       //CPU的腳位設定
 
     public bool isHolding;
 

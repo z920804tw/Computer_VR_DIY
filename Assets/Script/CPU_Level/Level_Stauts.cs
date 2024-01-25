@@ -24,15 +24,10 @@ public class Level_Stauts : MonoBehaviour
         switch (status)
         {
             case 0:
-
                 MenuPanels[0].SetActive(true);
-
-
-
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
-
                 break;
             case 2:
                 //CPU的安裝頁面，會去偵測CPU有沒有被玩家拿起，如果有就切換到下一個劇情。
@@ -66,14 +61,17 @@ public class Level_Stauts : MonoBehaviour
     //切換下一個劇情進度的功能
     public void NextStatus()
     {
+        closeAllUI();
+        status++;
+
+    }
+    //關閉所有UI
+    public void closeAllUI()
+    {
         foreach (GameObject i in MenuPanels)
         {
             i.SetActive(false);
-
-
         }
-        status++;
-
     }
 
 

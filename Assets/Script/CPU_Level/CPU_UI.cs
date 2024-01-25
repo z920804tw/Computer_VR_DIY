@@ -49,12 +49,12 @@ public class CPU_UI : MonoBehaviour
                 timer=0;
                 currentTextPos++;
                 Text.text=words.Substring(0,currentTextPos);
-                //如果當前文字>=words的長度，就是文字全部顯示完成，就會停止。
+                
                 if(audioIsActive==false){
                     audioSource.PlayOneShot(audioClip);
                     audioIsActive=true;
                 }
-
+                //如果當前文字>=words的長度，就是文字全部顯示完成，就會停止。
                 if(currentTextPos>=words.Length){
                     currentTextPos=0;
                     isActive=false;
