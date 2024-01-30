@@ -1,37 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
-public class CPU_Object : MonoBehaviour
+public class CPU_Fan_Object : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
 
-    [Header("CPU腳位設定")]
-    public int c_LGA;                                                       //CPU的腳位設定
-
-    public bool isHolding;
-
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
     bool check;
-
+    public bool isHolding;
+    public bool cpuHasPlace;
     void Start()
     {
         check = false;
+        cpuHasPlace = false;
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
 
-    }
     private void OnTriggerStay(Collider other)
     {
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
@@ -47,10 +41,10 @@ public class CPU_Object : MonoBehaviour
         }
     }
 
-
-    public void Remove_CPU_setting()
+    public void Remove_Fans_Setting()
     {
-        Debug.Log("重製cpu設定");
+
+        Debug.Log("重製風扇設定");
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
@@ -76,36 +70,38 @@ public class CPU_Object : MonoBehaviour
             }
             check = false;
         }
-
     }
-
-    public void showCpuOutline()
+    public void showCpuFansOutline()
     {
-    
         if (check == false)
         {
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+            GameObject cpuTransform = GameObject.Find("Cpu Transform");
+
             if (ObjectsTransform != null)
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
-                    if (obj.GetComponent<Outline>() != null && obj.GetComponent<Object_Transform>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                    if (obj.GetComponent<Outline>()!=null&&obj.GetComponent<Object_Transform>()!=null&&cpuTransform!=null)
                     {
-                        if (obj.GetComponent<Object_Transform>().m_LGA == c_LGA)
-                        {
-
-                            obj.GetComponent<Outline>().OutlineColor = new Color(255f / 255, 208f / 255, 0f, 255f / 255);
-                        }
-                        else
+                        if (cpuTransform.GetComponent<Object_Transform>().hasPlace == false)
                         {
                             obj.GetComponent<Outline>().OutlineColor = Color.red;
+                            cpuHasPlace=false;
 
                         }
+                        else{
+                            obj.GetComponent<Outline>().OutlineColor = new Color(255f / 255, 208f / 255, 0f, 255f / 255);
+                            cpuHasPlace=true;
+                        }
                     }
-                    obj.GetComponent<Outline>().enabled = true;
+                    obj.GetComponent<Outline>().enabled=true;
+
                 }
+
+
             }
-            isHolding=true;
+            isHolding = true;
             check = true;
         }
     }

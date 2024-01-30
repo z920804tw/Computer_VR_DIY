@@ -12,6 +12,7 @@ TagManager:
   - SSD
   - Computer
   - SidePanels
+  - Fans
   layers:
   - Default
   - TransparentFX

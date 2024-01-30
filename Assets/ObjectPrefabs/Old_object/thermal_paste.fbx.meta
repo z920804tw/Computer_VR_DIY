@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "\u6750\u8CEA"
-    second: {fileID: 2100000, guid: bebfdfc7fdf451d469e89dd96d2c083f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u6750\u8CEA.001"
-    second: {fileID: 2100000, guid: 0bd60df5712519242bbf525b1dfb2a50, type: 2}
+      name: Thermal_texture
+    second: {fileID: 2100000, guid: a2739762bc07d88409ecc50a5ae553df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -44,7 +44,9 @@ public class Object_Transform : MonoBehaviour
                     case "Cpu":
                         CPU_ObjectTransform();
                         break;
-
+                    case "Fans":
+                        Cpu_Fan_ObjectTransform();
+                        break;
                     case "MotherBoard":
                         MotherBoard_ObjectTransform();
                         break;
@@ -92,7 +94,21 @@ public class Object_Transform : MonoBehaviour
             }
         }
     }
+    void Cpu_Fan_ObjectTransform()
+    {
+        if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject != null)
+        {
+            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name && colliderObject.GetComponent<CPU_Fan_Object>().cpuHasPlace == true)  
+            {
+                colliderObject.transform.SetParent(this.gameObject.transform);
+                colliderObject.transform.position = this.gameObject.transform.position;
+                colliderObject.transform.rotation = this.gameObject.transform.rotation;
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+                hasPlace = true;
+            }
+        }
 
+    }
     void MotherBoard_ObjectTransform()
     {
         if (colliderObject.GetComponent<Mother_Board_Object>().firstColliderObject != null)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
@@ -158,7 +174,7 @@ public class Object_Transform : MonoBehaviour
         {
             if (colliderObject.GetComponent<SSD_Object>().firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
             {
-                
+
                 colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
