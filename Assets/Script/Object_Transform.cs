@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Object_Transform : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject colliderObject;
+    Color currentOutlineColor;
     [Header("主機板腳位設定")]
     public int m_LGA;
 
@@ -19,13 +21,10 @@ public class Object_Transform : MonoBehaviour
     void Start()
     {
         hasPlace = false;
+        currentOutlineColor = Color.red;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 
 
@@ -91,6 +90,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 hasPlace = true;                                                                               //確定物件都用好後，這格放置座標就設定有放置物件了。
+
+
             }
         }
     }
@@ -98,13 +99,15 @@ public class Object_Transform : MonoBehaviour
     {
         if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject != null)
         {
-            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name && colliderObject.GetComponent<CPU_Fan_Object>().cpuHasPlace == true)  
+            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name)
             {
+
                 colliderObject.transform.SetParent(this.gameObject.transform);
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 hasPlace = true;
+
             }
         }
 

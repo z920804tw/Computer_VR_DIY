@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class CPU_Fan_Object : MonoBehaviour
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
-
+    public GameObject[] cpuTransform;
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
@@ -36,6 +37,8 @@ public class CPU_Fan_Object : MonoBehaviour
             {
                 isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
                 firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+
+
             }
 
         }
@@ -76,31 +79,26 @@ public class CPU_Fan_Object : MonoBehaviour
         if (check == false)
         {
             ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-            GameObject cpuTransform = GameObject.Find("Cpu Transform");
+            cpuTransform = GameObject.FindGameObjectsWithTag("Cpu");
 
-            if (ObjectsTransform != null)
+
+            if (ObjectsTransform != null && cpuTransform != null)
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
-                    if (obj.GetComponent<Outline>()!=null&&obj.GetComponent<Object_Transform>()!=null&&cpuTransform!=null)
+                    Outline outline = obj.GetComponent<Outline>();
+                    Object_Transform objTransform = obj.GetComponent<Object_Transform>();
+
+                    if (outline != null && objTransform != null)
                     {
-                        if (cpuTransform.GetComponent<Object_Transform>().hasPlace == false)
-                        {
-                            obj.GetComponent<Outline>().OutlineColor = Color.red;
-                            cpuHasPlace=false;
-
-                        }
-                        else{
-                            obj.GetComponent<Outline>().OutlineColor = new Color(255f / 255, 208f / 255, 0f, 255f / 255);
-                            cpuHasPlace=true;
-                        }
+                       
                     }
-                    obj.GetComponent<Outline>().enabled=true;
-
+                    outline.enabled = true;
                 }
 
-
             }
+
+
             isHolding = true;
             check = true;
         }

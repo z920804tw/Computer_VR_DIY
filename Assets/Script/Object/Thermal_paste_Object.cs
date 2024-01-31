@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.Mathematics;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Thermal_paste_Object : MonoBehaviour
@@ -9,13 +11,13 @@ public class Thermal_paste_Object : MonoBehaviour
     Rigidbody rb;
     public bool isHolding;
     public Transform SpawnPos;
+    public GameObject firstColliderObject;
     bool check;
-
-    public GameObject ThermalPastePrefab;
+    bool canSpawn;
     void Start()
     {
         isHolding = false;
-        check=false;
+        check = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
@@ -24,15 +26,41 @@ public class Thermal_paste_Object : MonoBehaviour
     {
 
     }
-    public void SpawnThermalPaste()
+
+    private void OnTriggerStay(Collider other)
     {
-        Instantiate(ThermalPastePrefab,SpawnPos.position,Quaternion.identity);
+        if (isHolding == true)
+        {
+            if (other.gameObject.tag == "Cpu")
+            {
+                Debug.Log("456");
+                canSpawn = true;
+                firstColliderObject = other.gameObject;
+            }
+        }
 
     }
 
-    public void Remove_ThermalPaste_Setting(){
-        if(check==true){
-            this.gameObject.GetComponent<Outline>().enabled=false;
+    public void SpawnThermalPaste()
+    {
+        if (canSpawn == true && firstColliderObject != null)
+        {
+            if(firstColliderObject.GetComponent<CPU_Object>()!=null){
+                firstColliderObject.GetComponent<CPU_Object>().CpuThermal.SetActive(true);
+            }
+        }
+
+
+    }
+
+    public void Remove_ThermalPaste_Setting()
+    {
+        if (check == true)
+        {
+            this.gameObject.GetComponent<Outline>().enabled = false;
+            firstColliderObject = null;
+            canSpawn = false;
+            isHolding=false;
 
         }
     }
@@ -40,8 +68,9 @@ public class Thermal_paste_Object : MonoBehaviour
     {
         if (check == false)
         {
-            this.gameObject.GetComponent<Outline>().enabled=true;
+            this.gameObject.GetComponent<Outline>().enabled = true;
             check = true;
+            isHolding = true;
         }
     }
 }
