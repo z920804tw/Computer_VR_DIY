@@ -9,9 +9,8 @@ public class CPU_Fan_Object : MonoBehaviour
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
-    public GameObject[] cpuTransform;
-
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
+
     Rigidbody rb;
     bool check;
     public bool isHolding;
@@ -37,11 +36,16 @@ public class CPU_Fan_Object : MonoBehaviour
             {
                 isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
                 firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
-
-
+            }
+        }
+        if(other.gameObject.tag=="Cpu"){
+            Object_Transform cpu=other.gameObject.GetComponent<Object_Transform>();
+            if(cpu!=null&&cpu.hasPlace==true){
+                cpuHasPlace=true;
             }
 
         }
+
     }
 
     public void Remove_Fans_Setting()
@@ -51,6 +55,7 @@ public class CPU_Fan_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
+        cpuHasPlace=false;
         if (firstColliderObject != null)
         {
 
@@ -79,10 +84,8 @@ public class CPU_Fan_Object : MonoBehaviour
         if (check == false)
         {
             ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-            cpuTransform = GameObject.FindGameObjectsWithTag("Cpu");
 
-
-            if (ObjectsTransform != null && cpuTransform != null)
+            if (ObjectsTransform != null)
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
@@ -91,9 +94,10 @@ public class CPU_Fan_Object : MonoBehaviour
 
                     if (outline != null && objTransform != null)
                     {
-                       
+
                     }
                     outline.enabled = true;
+
                 }
 
             }
@@ -103,4 +107,6 @@ public class CPU_Fan_Object : MonoBehaviour
             check = true;
         }
     }
+
+
 }

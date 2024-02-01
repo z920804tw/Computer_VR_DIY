@@ -72,10 +72,8 @@ public class Object_Transform : MonoBehaviour
 
 
         }
-
-
-
     }
+
 
     //CPU用的，主要多了CPU跟主機板的LGA腳位判斷
     void CPU_ObjectTransform()
@@ -98,8 +96,8 @@ public class Object_Transform : MonoBehaviour
     void Cpu_Fan_ObjectTransform()
     {
         if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject != null)
-        {
-            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name)
+        {            
+            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name&&colliderObject.GetComponent<CPU_Fan_Object>().cpuHasPlace)
             {
 
                 colliderObject.transform.SetParent(this.gameObject.transform);

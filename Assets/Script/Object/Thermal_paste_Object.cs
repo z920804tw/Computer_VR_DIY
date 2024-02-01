@@ -33,9 +33,12 @@ public class Thermal_paste_Object : MonoBehaviour
         {
             if (other.gameObject.tag == "Cpu")
             {
-                Debug.Log("456");
-                canSpawn = true;
-                firstColliderObject = other.gameObject;
+                if (other.gameObject.GetComponent<CPU_Object>() != null)
+                {
+                    canSpawn = true;
+                    firstColliderObject = other.gameObject;
+                }
+
             }
         }
 
@@ -45,7 +48,8 @@ public class Thermal_paste_Object : MonoBehaviour
     {
         if (canSpawn == true && firstColliderObject != null)
         {
-            if(firstColliderObject.GetComponent<CPU_Object>()!=null){
+            if (firstColliderObject.GetComponent<CPU_Object>() != null)
+            {
                 firstColliderObject.GetComponent<CPU_Object>().CpuThermal.SetActive(true);
             }
         }
@@ -57,17 +61,20 @@ public class Thermal_paste_Object : MonoBehaviour
     {
         if (check == true)
         {
+            Debug.Log("放開散熱高");
             this.gameObject.GetComponent<Outline>().enabled = false;
             firstColliderObject = null;
+            check = false;
             canSpawn = false;
-            isHolding=false;
+            isHolding = false;
 
         }
     }
-    public void showCpuFansOutline()
+    public void showThermalOutline()
     {
         if (check == false)
         {
+            Debug.Log("拿起散熱高");
             this.gameObject.GetComponent<Outline>().enabled = true;
             check = true;
             isHolding = true;
