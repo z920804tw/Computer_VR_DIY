@@ -9,6 +9,10 @@ public class RopeTest : MonoBehaviour
     public LineRenderer lineRenderer;
     public Transform[] hingePoints; // 保存 Hinge Joint 的連接點
 
+    public GameObject StartObject, EndObject;
+    [SerializeField] float distance;
+
+
 
 
     void Start()
@@ -21,7 +25,7 @@ public class RopeTest : MonoBehaviour
         // 設置 Line Renderer 的點數
         lineRenderer.positionCount = hingePoints.Length;
 
-        
+
 
 
 
@@ -29,10 +33,15 @@ public class RopeTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // 添加 Hinge Joint 連接點到 Line Renderer 的頂點位置列表
         for (int i = 0; i < hingePoints.Length; i++)
         {
             lineRenderer.SetPosition(i, hingePoints[i].position);
         }
+
+
     }
+
+
 }
