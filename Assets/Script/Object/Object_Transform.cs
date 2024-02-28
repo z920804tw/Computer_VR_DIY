@@ -11,13 +11,13 @@ public class Object_Transform : MonoBehaviour
     Color currentOutlineColor;
     [Header("主機板腳位設定")]
     public int m_LGA;
+    [Header("電纜設定")]
+    [SerializeField] string CableType;
+    [SerializeField] string CableDirection;
 
 
-    //Transform objectRotation;
+    [Header("Debug")]
     public bool hasPlace;
-
-
-
     void Start()
     {
         hasPlace = false;
@@ -31,8 +31,6 @@ public class Object_Transform : MonoBehaviour
     //判斷碰撞偵測的物件，並把物件變成子物件
     private void OnTriggerStay(Collider other)
     {
-
-
         if (other.gameObject.tag == this.gameObject.tag)                                                   //判斷是否碰撞物件的tag是否與自己的tag一致
         {
             if (hasPlace == false)                                                                         //判斷這個放置座標物件是不是已經有被放置東西了
@@ -60,6 +58,10 @@ public class Object_Transform : MonoBehaviour
                         break;
                     case "SSD":
                         SSD_ObjectTransform();
+                        break;
+
+                    case "Cable":
+                        Cable_ObjectTransform();
                         break;
                     default:
                         ObjectTransform();
@@ -96,8 +98,8 @@ public class Object_Transform : MonoBehaviour
     void Cpu_Fan_ObjectTransform()
     {
         if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject != null)
-        {            
-            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name&&colliderObject.GetComponent<CPU_Fan_Object>().cpuHasPlace)
+        {
+            if (colliderObject.GetComponent<CPU_Fan_Object>().firstColliderObject.name == gameObject.name && colliderObject.GetComponent<CPU_Fan_Object>().cpuHasPlace)
             {
 
                 colliderObject.transform.SetParent(this.gameObject.transform);
@@ -186,6 +188,24 @@ public class Object_Transform : MonoBehaviour
         }
     }
     //預設的物件座標函示，如果沒有特別設定的物件會統一使用這個。
+
+    void Cable_ObjectTransform()
+    {
+        if (colliderObject.GetComponent<Cable_Object>().firstColliderObject != null)
+        {
+            if (colliderObject.GetComponent<Cable_Object>().firstColliderObject.name == this.gameObject.name)
+            {
+                Cable_Object cable_Object=colliderObject.GetComponent<Cable_Object>();
+                if(cable_Object.CableType==CableType&&cable_Object.CableDirection==CableDirection){
+                    colliderObject.transform.SetParent(this.gameObject.transform);
+                    colliderObject.transform.position=this.gameObject.transform.position;
+                    colliderObject.transform.rotation=this.gameObject.transform.rotation;
+                    colliderObject.GetComponent<Rigidbody>().isKinematic=true;
+                    hasPlace=true;
+                }
+            }
+        }
+    }
     void ObjectTransform()
     {
 
