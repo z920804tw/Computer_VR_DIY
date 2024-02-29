@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Cable_Object : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,8 +14,12 @@ public class Cable_Object : MonoBehaviour
     Rigidbody rb;
 
     [Header("電線設定")]
-    public string CableType;
-    public string CableDirection;
+    //public string CableType;
+    //public string CableDirection;
+
+    public CableType cableType;
+    public CableDirection cableDirection;
+
 
     [Header("Debug")]
     [SerializeField] bool isHolding;
@@ -44,6 +50,7 @@ public class Cable_Object : MonoBehaviour
             }
 
         }
+
     }
 
     public void Remove_Cable_setting()
@@ -85,11 +92,23 @@ public class Cable_Object : MonoBehaviour
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
-                    obj.GetComponent<Outline>().enabled = true;
+                    Object_Transform object_Transform = obj.GetComponent<Object_Transform>();
+                    Outline outline=obj.GetComponent<Outline>();
+
+                    if (outline!= null&&object_Transform != null)
+                    { 
+                        if (object_Transform.T_cableType==cableType)
+                        {
+                            obj.GetComponent<Outline>().enabled = true;
+                        }
+                    }
+
                 }
+                this.gameObject.GetComponent<Outline>().enabled=true;
             }
             isHolding = true;
             check = true;
         }
     }
 }
+

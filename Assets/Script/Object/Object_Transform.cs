@@ -12,8 +12,11 @@ public class Object_Transform : MonoBehaviour
     [Header("主機板腳位設定")]
     public int m_LGA;
     [Header("電纜設定")]
-    [SerializeField] string CableType;
-    [SerializeField] string CableDirection;
+    //[SerializeField] string CableType;
+    //[SerializeField] string CableDirection;
+
+    public CableType T_cableType;
+    public CableDirection T_cableDirection;
 
 
     [Header("Debug")]
@@ -64,8 +67,8 @@ public class Object_Transform : MonoBehaviour
                         Cable_ObjectTransform();
                         break;
                     default:
-                        ObjectTransform();
-
+                        //ObjectTransform();
+                        Debug.Log("找不到");
                         break;
 
                 }
@@ -196,7 +199,7 @@ public class Object_Transform : MonoBehaviour
             if (colliderObject.GetComponent<Cable_Object>().firstColliderObject.name == this.gameObject.name)
             {
                 Cable_Object cable_Object=colliderObject.GetComponent<Cable_Object>();
-                if(cable_Object.CableType==CableType&&cable_Object.CableDirection==CableDirection){
+                if(cable_Object.cableType==T_cableType&&cable_Object.cableDirection==T_cableDirection){
                     colliderObject.transform.SetParent(this.gameObject.transform);
                     colliderObject.transform.position=this.gameObject.transform.position;
                     colliderObject.transform.rotation=this.gameObject.transform.rotation;
@@ -206,7 +209,7 @@ public class Object_Transform : MonoBehaviour
             }
         }
     }
-    void ObjectTransform()
+    /*void ObjectTransform()
     {
 
         if (colliderObject.GetComponent<ObjectParent>().firstColliderObject != null)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
@@ -224,7 +227,7 @@ public class Object_Transform : MonoBehaviour
         }
 
 
-    }
+    }*/
 
 
 

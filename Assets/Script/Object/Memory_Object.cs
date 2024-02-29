@@ -80,6 +80,7 @@ public class Memory_Object : MonoBehaviour
         if (check == false)
         {
             ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+            
             if (ObjectsTransform != null)
             {
                 foreach (GameObject obj in ObjectsTransform)

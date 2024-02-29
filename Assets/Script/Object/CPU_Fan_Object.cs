@@ -92,17 +92,9 @@ public class CPU_Fan_Object : MonoBehaviour
                     Outline outline = obj.GetComponent<Outline>();
                     Object_Transform objTransform = obj.GetComponent<Object_Transform>();
 
-                    if (outline != null && objTransform != null)
-                    {
-
-                    }
                     outline.enabled = true;
-
                 }
-
             }
-
-
             isHolding = true;
             check = true;
         }
