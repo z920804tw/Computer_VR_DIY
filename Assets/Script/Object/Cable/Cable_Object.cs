@@ -107,6 +107,7 @@ public class Cable_Object : MonoBehaviour
                 this.gameObject.GetComponent<Outline>().enabled=true;
             }
             isHolding = true;
+            
             check = true;
         }
     }

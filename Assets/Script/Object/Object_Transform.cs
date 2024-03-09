@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Object_Transform : MonoBehaviour
 {
@@ -12,15 +14,16 @@ public class Object_Transform : MonoBehaviour
     [Header("主機板腳位設定")]
     public int m_LGA;
     [Header("電纜設定")]
-    //[SerializeField] string CableType;
-    //[SerializeField] string CableDirection;
-
     public CableType T_cableType;
     public CableDirection T_cableDirection;
+    [Header("螺絲設定")]
+    public ScrewEnum screwEnum = ScrewEnum.None;
+    public GameObject prev_Transform;
 
 
     [Header("Debug")]
     public bool hasPlace;
+
     void Start()
     {
         hasPlace = false;
@@ -66,6 +69,10 @@ public class Object_Transform : MonoBehaviour
                     case "Cable":
                         Cable_ObjectTransform();
                         break;
+
+                    case "Screw":
+                        Screw_ObjectTransform();
+                        break;
                     default:
                         //ObjectTransform();
                         Debug.Log("找不到");
@@ -93,8 +100,6 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 hasPlace = true;                                                                               //確定物件都用好後，這格放置座標就設定有放置物件了。
-
-
             }
         }
     }
@@ -198,15 +203,50 @@ public class Object_Transform : MonoBehaviour
         {
             if (colliderObject.GetComponent<Cable_Object>().firstColliderObject.name == this.gameObject.name)
             {
-                Cable_Object cable_Object=colliderObject.GetComponent<Cable_Object>();
-                if(cable_Object.cableType==T_cableType&&cable_Object.cableDirection==T_cableDirection){
+                Cable_Object cable_Object = colliderObject.GetComponent<Cable_Object>();
+                if (cable_Object.cableType == T_cableType && cable_Object.cableDirection == T_cableDirection)
+                {
                     colliderObject.transform.SetParent(this.gameObject.transform);
-                    colliderObject.transform.position=this.gameObject.transform.position;
-                    colliderObject.transform.rotation=this.gameObject.transform.rotation;
-                    colliderObject.GetComponent<Rigidbody>().isKinematic=true;
-                    hasPlace=true;
+                    colliderObject.transform.position = this.gameObject.transform.position;
+                    colliderObject.transform.rotation = this.gameObject.transform.rotation;
+                    colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hasPlace = true;
                 }
             }
+        }
+    }
+    void Screw_ObjectTransform()
+    {
+
+        if (colliderObject.GetComponent<Screw_Object>() != null)
+        {
+            Screw_Object screw_Object = colliderObject.GetComponent<Screw_Object>();
+
+            if (screw_Object.firstColliderObject != null)
+            {
+                if (screw_Object.screwEnum == screwEnum)
+                {
+                    prev_Transform = screw_Object.firstColliderObject;
+                    colliderObject.transform.SetParent(this.gameObject.transform);
+                    colliderObject.transform.position = this.gameObject.transform.position;
+                    colliderObject.transform.rotation = this.gameObject.transform.rotation;
+                    colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+                    //hasPlace = true;
+                    if (screwEnum == ScrewEnum.hold)
+                    {
+                        screw_Object.screwEnum = ScrewEnum.place;
+                        Debug.Log("現在接的是螺絲起子，螺絲更改成place");
+                    }
+                    else if (screwEnum == ScrewEnum.place)
+                    {
+                        screw_Object.screwEnum = ScrewEnum.hold;
+                        Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
+
+                    }
+                }
+
+            }
+
         }
     }
     /*void ObjectTransform()
