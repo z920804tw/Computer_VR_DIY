@@ -48,8 +48,9 @@ public class Screw_Object : MonoBehaviour
                 if (object_Transform.screwEnum == screwEnum) //雙方的螺絲設定也要一樣才會記錄
                 {
                     firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                    showScrewOutline();
                     //firstColliderObject.GetComponent<Object_Transform>().prev_Transform=this.gameObject;
-                    isFirstCollider=true;
+                    isFirstCollider = true;
                     Debug.Log("1");
                 }
 
@@ -64,7 +65,7 @@ public class Screw_Object : MonoBehaviour
     {
         Debug.Log("重製螺絲設定");
         this.gameObject.transform.SetParent(null);
-        isFirstCollider=false;
+        isFirstCollider = false;
         rb.isKinematic = false;
         if (firstColliderObject != null)
         {
@@ -73,11 +74,34 @@ public class Screw_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
+        removeScrewOutline();
     }
 
     public void showScrewOutline()
     {
+        ObjectsTransform = GameObject.FindGameObjectsWithTag("Screw");
+        if (ObjectsTransform != null)
+        {
+            foreach (GameObject obj in ObjectsTransform)
+            {
+                if (obj.GetComponent<Outline>() != null)
+                {
+                    obj.GetComponent<Outline>().enabled = true;
+                }
 
+            }
+        }
 
+    }
+    public void removeScrewOutline()
+    {
+        foreach (GameObject obj in ObjectsTransform)
+        {
+            if (obj.GetComponent<Outline>() != null)
+            {
+                obj.GetComponent<Outline>().enabled = false;
+            }
+
+        }
     }
 }

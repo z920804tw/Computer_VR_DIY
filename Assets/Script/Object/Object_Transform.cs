@@ -18,7 +18,6 @@ public class Object_Transform : MonoBehaviour
     public CableDirection T_cableDirection;
     [Header("螺絲設定")]
     public ScrewEnum screwEnum = ScrewEnum.None;
-    public GameObject prev_Transform;
 
 
     [Header("Debug")]
@@ -226,20 +225,26 @@ public class Object_Transform : MonoBehaviour
             {
                 if (screw_Object.screwEnum == screwEnum)
                 {
-                    prev_Transform = screw_Object.firstColliderObject;
+                    screw_Object.firstColliderObject.GetComponent<Object_Transform>().hasPlace=false;
+                    screw_Object.firstColliderObject=this.gameObject;
+
                     colliderObject.transform.SetParent(this.gameObject.transform);
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    //hasPlace = true;
+                    hasPlace = true;
                     if (screwEnum == ScrewEnum.hold)
                     {
+
                         screw_Object.screwEnum = ScrewEnum.place;
+                        screw_Object.showScrewOutline();
+                        
                         Debug.Log("現在接的是螺絲起子，螺絲更改成place");
                     }
                     else if (screwEnum == ScrewEnum.place)
                     {
                         screw_Object.screwEnum = ScrewEnum.hold;
+                        screw_Object.removeScrewOutline();
                         Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
 
                     }
