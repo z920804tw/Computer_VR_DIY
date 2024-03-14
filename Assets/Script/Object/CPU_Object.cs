@@ -55,7 +55,7 @@ public class CPU_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        //CpuThermal.SetActive(false);
+        CpuThermal.SetActive(false);
         if (firstColliderObject != null)
         {
 
