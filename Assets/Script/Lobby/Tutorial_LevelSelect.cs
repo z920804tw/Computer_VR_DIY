@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelSelect : MonoBehaviour
+public class Tutorial_LevelSelect : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_Dropdown TD_LevelName;       //取的當前下拉清單
@@ -70,8 +70,8 @@ public class LevelSelect : MonoBehaviour
                 StartCoroutine(LoadingLevel("CPU_Level1"));
 
                 break;
-            case "CPU風扇安裝":
-                Debug.Log("切換到CPU風扇安裝關卡");
+            case "CPU風扇安裝關卡":
+                StartCoroutine(LoadingLevel("CPU_Level2"));
                 break;
             default:
                 Debug.Log("目前找不到你所選的關卡");

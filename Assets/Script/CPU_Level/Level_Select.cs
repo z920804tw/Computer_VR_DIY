@@ -6,12 +6,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CPU_Level_Select : MonoBehaviour
+public class Level_Select : MonoBehaviour
 {
     // Start is called before the first frame update
     public Image LoadingBarImage;                           //讀取UI的進度條圖片
     public TextMeshProUGUI progressText;                    //讀取UI的進度文字
-    public Level_Stauts levelStauts;                        //在這個.程式碼中會去調用他的closeAllUI功能
     public GameObject levelUI;                              //在這個程式碼中會去控制讀取UI的開關
     
     void Start()
@@ -45,7 +44,7 @@ public class CPU_Level_Select : MonoBehaviour
     IEnumerator asynSceneLoad (string LevelName)
     {
         AsyncOperation scence = SceneManager.LoadSceneAsync(LevelName);     //用背景載入的方式來讀取，這樣不會讓程式有卡頓。
-        levelStauts.closeAllUI();                                           //關閉全部UI
+        //levelStauts.closeAllUI();                                           //關閉全部UI
         levelUI.SetActive(true);                                            //打開讀取UI
         while (scence.isDone != true)                                       //判斷場景有沒有被載入完成，如果還沒就繼續更新進度條，如果載入完成就補到100%並自動切換場景。
         {
@@ -61,4 +60,6 @@ public class CPU_Level_Select : MonoBehaviour
         }
 
     }
+
+    
 }

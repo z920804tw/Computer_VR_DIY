@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CPU_UI : MonoBehaviour
+public class TextUI : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextAsset TextFile;  //可以丟在記事本打好的文字檔，到時候會用一個字串變數去接。
