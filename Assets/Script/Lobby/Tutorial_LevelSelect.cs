@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,12 +13,12 @@ public class Tutorial_LevelSelect : MonoBehaviour
     public Image LoadingBarImage;           //讀取UI的圖片
     public TextMeshProUGUI progressText;    //讀取UI的文字
 
-    public Menu LoadingUI;                  
+    public Menu LoadingUI;
 
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 break;
 
             case "GraphicsCard_Level":
-
+                    GraphicsCard_Level(selectedLevelName);
                 break;
             default:
                 Debug.Log("找不到關卡");
@@ -77,6 +78,23 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 Debug.Log("目前找不到你所選的關卡");
                 break;
 
+        }
+
+    }
+
+    void GraphicsCard_Level(string i)
+    {
+        switch (i)
+        {
+            case "顯示卡安裝關卡(無供電)":
+            StartCoroutine(LoadingLevel("GraphicsCrad_Level1"));
+            break;
+            case "顯示卡安裝關卡(有供電)":
+            StartCoroutine(LoadingLevel("GraphicsCrad_Level2"));
+            break;
+            default:
+            Debug.Log("目前找不到你所選的關卡");
+            break;
         }
 
     }

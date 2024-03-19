@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CPU_Level/CPU_Level2.unity
     guid: a6ed088170275f543bf2689cef54b15d
+  - enabled: 1
+    path: Assets/Scenes/GraphicsCard_Level/GraphicsCrad_Level1.unity
+    guid: 888e12294b321a94eaa180c11c8bf058
+  - enabled: 1
+    path: Assets/Scenes/GraphicsCard_Level/GraphicsCrad_Level2.unity
+    guid: ba780b0f8271a454fadf4b12cef53b4b
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4c8ec5e46d2638e469b66964d0e38100, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9f8254a6f0f744947aa517c238b20569, type: 2}
