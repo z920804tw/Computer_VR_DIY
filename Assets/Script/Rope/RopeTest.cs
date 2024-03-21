@@ -51,7 +51,7 @@ public class RopeTest : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         distance = Vector3.Distance(StartObject.transform.position, EndObject.transform.position);
         if (distance > max)
@@ -72,7 +72,7 @@ public class RopeTest : MonoBehaviour
             }
 
         }
-    }
+    }*/
 
 
 
