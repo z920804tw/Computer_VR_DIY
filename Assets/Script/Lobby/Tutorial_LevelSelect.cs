@@ -41,7 +41,7 @@ public class Tutorial_LevelSelect : MonoBehaviour
 
                 break;
             case "Power_Level":
-
+                Power_Level(selectedLevelName);
                 break;
 
             case "MotherBoard_Level":
@@ -49,11 +49,11 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 break;
 
             case "Memory_Level":
-
+                Memory_Level(selectedLevelName);
                 break;
 
             case "GraphicsCard_Level":
-                    GraphicsCard_Level(selectedLevelName);
+                GraphicsCard_Level(selectedLevelName);
                 break;
             default:
                 Debug.Log("找不到關卡");
@@ -87,16 +87,42 @@ public class Tutorial_LevelSelect : MonoBehaviour
         switch (i)
         {
             case "顯示卡安裝關卡(無供電)":
-            StartCoroutine(LoadingLevel("GraphicsCrad_Level1"));
-            break;
+                StartCoroutine(LoadingLevel("GraphicsCrad_Level1"));
+                break;
             case "顯示卡安裝關卡(有供電)":
-            StartCoroutine(LoadingLevel("GraphicsCrad_Level2"));
-            break;
+                StartCoroutine(LoadingLevel("GraphicsCrad_Level2"));
+                break;
             default:
-            Debug.Log("目前找不到你所選的關卡");
-            break;
+                Debug.Log("目前找不到你所選的關卡");
+                break;
         }
 
+    }
+
+    void Power_Level(string i)
+    {
+        switch (i)
+        {
+            case "電源供應器安裝關卡":
+                StartCoroutine(LoadingLevel("Power_Level1"));
+                break;
+            default:
+                Debug.Log("目前找不到你所選的關卡");
+                break;
+        }
+    }
+    void Memory_Level(string i)
+    {
+        switch (i)
+        {
+            case "記憶體安裝關卡":
+                StartCoroutine(LoadingLevel("Memory_Level1"));
+                break;
+            default:
+                Debug.Log("目前找不到你所選的關卡");
+                break;
+
+        }
     }
     //背景讀取關卡的協程
     IEnumerator LoadingLevel(string LevelName)

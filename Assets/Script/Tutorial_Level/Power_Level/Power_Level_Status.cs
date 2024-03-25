@@ -9,7 +9,8 @@ public class Power_Level_Status : MonoBehaviour
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
 
-    [SerializeField] GameObject Power_Transform;
+    [SerializeField] GameObject Power_Transform, soket_Transform,soket2_Transform;
+
     [SerializeField] GameObject Power;
     [SerializeField] GameObject[] Screw_Transform;
     public GameObject[] MenuPanels;
@@ -55,17 +56,21 @@ public class Power_Level_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-                foreach (GameObject i in Screw_Transform)
-                {
-                    i.GetComponent<Outline>().enabled = true;
-                }
-                if(screw1.hasPlace==true && screw2.hasPlace == true && screw3.hasPlace == true && scrwe4.hasPlace == true)
+
+                if (screw1.hasPlace == true && screw2.hasPlace == true && screw3.hasPlace == true && scrwe4.hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
+                if (soket_Transform.GetComponent<Object_Transform>().hasPlace == true&&soket2_Transform.GetComponent<Object_Transform>().hasPlace==true)
+                {
+                    NextStatus();
+                }
+                break;
+            case 6:
+                MenuPanels[6].SetActive(true);
                 break;
             default:
                 Debug.Log("找不到目標");
