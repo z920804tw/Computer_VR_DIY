@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HardDriver_Level_Status : MonoBehaviour
+public class HardDriver_Level2_Status : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject pickUI;
@@ -25,7 +25,7 @@ public class HardDriver_Level_Status : MonoBehaviour
         switch (status)
         {
             case 0:                                                                     //開始介紹
-                MenuPanels[0].SetActive(true);      
+                MenuPanels[0].SetActive(true);
                 break;
             case 1:                                                                     //硬碟介紹 有1-1跟1-2
                 MenuPanels[1].SetActive(true);
@@ -49,14 +49,14 @@ public class HardDriver_Level_Status : MonoBehaviour
                 break;
             case 4:                                                                     //要求使用者先安裝主板-硬碟的電源線安裝, 元素0跟1分別是主板的安裝位置跟硬碟的安裝位置。
                 MenuPanels[4].SetActive(true);
-                if(Cables_Transform[0].hasPlace==true&&Cables_Transform[1].hasPlace==true)
+                if (Cables_Transform[0].hasPlace == true && Cables_Transform[1].hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
             case 5:                                                                     //要求使用者安裝電源供應器-硬碟的電源線安裝,元素2跟3分別是電源供應器跟硬碟(PW)部分
                 MenuPanels[5].SetActive(true);
-                if(Cables_Transform[2].hasPlace==true&&Cables_Transform[3].hasPlace==true)
+                if (Cables_Transform[2].hasPlace == true && Cables_Transform[3].hasPlace == true)
                 {
                     NextStatus();
                 }
@@ -66,8 +66,9 @@ public class HardDriver_Level_Status : MonoBehaviour
                 break;
 
         }
-    }
 
+
+    }
     public void NextStatus()
     {
         if (l != null)

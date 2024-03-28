@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SSD_Object : MonoBehaviour
+public class HardDriver_Object : MonoBehaviour
 {
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
@@ -81,6 +81,7 @@ public class SSD_Object : MonoBehaviour
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
+                    
                     obj.GetComponent<Outline>().enabled = true;
                 }
             }

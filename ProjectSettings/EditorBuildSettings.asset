@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Power_Level/Power_Level1.unity
     guid: df50de779649b714eb7c4fbe7405a3c9
+  - enabled: 1
+    path: Assets/Scenes/HardDriver_Level/HardDriver_Level1.unity
+    guid: e8e7cf0f82ed33e47b831e9cf03fc04f
+  - enabled: 1
+    path: Assets/Scenes/HardDriver_Level/HardDriver_Level2.unity
+    guid: 79ce8f1522bfc6d458c022c3bfcc2559
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4c8ec5e46d2638e469b66964d0e38100, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9f8254a6f0f744947aa517c238b20569, type: 2}

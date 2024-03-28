@@ -97,7 +97,7 @@ public class Cable_Object : MonoBehaviour
 
                     if (outline!= null&&object_Transform != null)
                     { 
-                        if (object_Transform.T_cableType==cableType)
+                        if (object_Transform.T_cableType==cableType&&object_Transform.T_cableDirection==cableDirection)
                         {
                             obj.GetComponent<Outline>().enabled = true;
                         }

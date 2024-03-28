@@ -38,7 +38,7 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 CPU_Level(selectedLevelName);
                 break;
             case "HardDriver_Level":
-
+                HardDriver_Level(selectedLevelName);
                 break;
             case "Power_Level":
                 Power_Level(selectedLevelName);
@@ -105,6 +105,21 @@ public class Tutorial_LevelSelect : MonoBehaviour
         {
             case "電源供應器安裝關卡":
                 StartCoroutine(LoadingLevel("Power_Level1"));
+                break;
+            default:
+                Debug.Log("目前找不到你所選的關卡");
+                break;
+        }
+    }
+    void HardDriver_Level(string i)
+    {
+        switch (i)
+        {
+            case "機械硬碟安裝關卡":
+                StartCoroutine(LoadingLevel("HardDriver_Level1"));
+                break;
+            case "固態硬碟(SATA SSD)安裝關卡":
+                StartCoroutine(LoadingLevel("HardDriver_Level2"));
                 break;
             default:
                 Debug.Log("目前找不到你所選的關卡");
