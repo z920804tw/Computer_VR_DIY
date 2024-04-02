@@ -17,7 +17,7 @@ public class Object_Transform : MonoBehaviour
     public CableDirection T_cableDirection;
     [Header("螺絲設定")]
     public ScrewEnum screwEnum = ScrewEnum.None;
-
+    public ScrewType screwType=ScrewType.None;
 
     [Header("Debug")]
     public bool hasPlace;
@@ -222,7 +222,7 @@ public class Object_Transform : MonoBehaviour
 
             if (screw_Object.firstColliderObject != null)
             {
-                if (screw_Object.screwEnum == screwEnum)
+                if (screw_Object.screwEnum == screwEnum &&screw_Object.screwType==screwType)
                 {
                     screw_Object.firstColliderObject.GetComponent<Object_Transform>().hasPlace=false;
                     screw_Object.firstColliderObject=this.gameObject;

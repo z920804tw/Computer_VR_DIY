@@ -322,6 +322,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
+  screwType: 1
   hasPlace: 0
 --- !u!114 &4633227867483925954
 MonoBehaviour:
@@ -432,6 +433,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
+  screwType: 0
   hasPlace: 0
 --- !u!1 &1393571614763121520
 GameObject:
@@ -699,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077817420405567668
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,6 +1006,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
+  screwType: 1
   hasPlace: 0
 --- !u!114 &1268264281525887682
 MonoBehaviour:
@@ -1579,6 +1582,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
+  screwType: 1
   hasPlace: 0
 --- !u!114 &7428297223746239988
 MonoBehaviour:
@@ -1671,6 +1675,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
+  screwType: 0
   hasPlace: 0
 --- !u!114 &4796406254972064097
 MonoBehaviour:
@@ -1930,6 +1935,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
+  screwType: 0
   hasPlace: 0
 --- !u!65 &3393732008089639352
 BoxCollider:
@@ -2301,7 +2307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2649069173810281577
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,6 +2446,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
+  screwType: 1
   hasPlace: 0
 --- !u!114 &1503732619650378493
 MonoBehaviour:

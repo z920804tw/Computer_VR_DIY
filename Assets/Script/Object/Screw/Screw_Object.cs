@@ -8,6 +8,13 @@ public enum ScrewEnum
     hold,
     place
 }
+public enum ScrewType
+{
+    None = 0,
+    Large,
+    Medium,
+    Small
+}
 
 public class Screw_Object : MonoBehaviour
 {
@@ -18,6 +25,8 @@ public class Screw_Object : MonoBehaviour
 
     [Header("螺絲設定")]
     public ScrewEnum screwEnum = ScrewEnum.None;
+    public ScrewType screwType = ScrewType.None;
+
 
     [Header("Debug")]
 
@@ -45,7 +54,7 @@ public class Screw_Object : MonoBehaviour
             Object_Transform object_Transform = other.GetComponent<Object_Transform>();
             if (isFirstCollider == false)
             {
-                if (object_Transform.screwEnum == screwEnum) //雙方的螺絲設定也要一樣才會記錄
+                if (object_Transform.screwEnum == screwEnum && object_Transform.screwType == screwType) //雙方的螺絲設定也要一樣才會記錄
                 {
                     firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
                     //showScrewOutline();
@@ -84,12 +93,14 @@ public class Screw_Object : MonoBehaviour
         {
             foreach (GameObject obj in ObjectsTransform)
             {
-                if (obj.GetComponent<Outline>() != null)
+                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
                 {
-                    obj.GetComponent<Outline>().enabled = true;
+                    if (obj.GetComponent<Object_Transform>().screwType==screwType){
+                        obj.GetComponent<Outline>().enabled=true;
+                    }
                 }
-
             }
+            this.GetComponent<Outline>().enabled = true;
         }
 
     }

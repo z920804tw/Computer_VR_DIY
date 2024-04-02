@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class Tutorial_LevelSelect : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 break;
 
             case "MotherBoard_Level":
-
+                MotherBoard_Level(selectedLevelName);
                 break;
 
             case "Memory_Level":
@@ -137,6 +138,18 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 Debug.Log("目前找不到你所選的關卡");
                 break;
 
+        }
+    }
+
+    void MotherBoard_Level(string i)
+    {
+        switch(i){
+            case "主機安裝關卡":
+            StartCoroutine(LoadingLevel("MotherBoard_Level1"));
+            break;
+            default:
+            Debug.Log("目前找不到你所選的關卡");
+            break;
         }
     }
     //背景讀取關卡的協程
