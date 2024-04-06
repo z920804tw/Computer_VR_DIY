@@ -19,6 +19,9 @@ public class Object_Transform : MonoBehaviour
     public ScrewEnum screwEnum = ScrewEnum.None;
     public ScrewType screwType=ScrewType.None;
 
+    [Header("硬碟設定")]
+    public HardDriverType hardDriverType= HardDriverType.None;
+
     [Header("Debug")]
     public bool hasPlace;
 

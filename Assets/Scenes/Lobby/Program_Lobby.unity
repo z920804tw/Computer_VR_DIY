@@ -16174,6 +16174,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: "\u56FA\u614B\u786C\u789F(SATA SSD)\u5B89\u88DD\u95DC\u5361"
       m_Image: {fileID: 0}
+    - m_Text: "M.2 SSD\u5B89\u88DD\u95DC\u5361"
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

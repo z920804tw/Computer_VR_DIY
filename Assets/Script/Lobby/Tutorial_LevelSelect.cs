@@ -122,6 +122,9 @@ public class Tutorial_LevelSelect : MonoBehaviour
             case "固態硬碟(SATA SSD)安裝關卡":
                 StartCoroutine(LoadingLevel("HardDriver_Level2"));
                 break;
+            case "M.2 SSD安裝關卡":
+                StartCoroutine(LoadingLevel("HardDriver_Level3"));
+                break;
             default:
                 Debug.Log("目前找不到你所選的關卡");
                 break;
@@ -143,13 +146,14 @@ public class Tutorial_LevelSelect : MonoBehaviour
 
     void MotherBoard_Level(string i)
     {
-        switch(i){
+        switch (i)
+        {
             case "主機安裝關卡":
-            StartCoroutine(LoadingLevel("MotherBoard_Level1"));
-            break;
+                StartCoroutine(LoadingLevel("MotherBoard_Level1"));
+                break;
             default:
-            Debug.Log("目前找不到你所選的關卡");
-            break;
+                Debug.Log("目前找不到你所選的關卡");
+                break;
         }
     }
     //背景讀取關卡的協程

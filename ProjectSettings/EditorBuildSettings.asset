@@ -31,6 +31,9 @@ EditorBuildSettings:
     guid: e8e7cf0f82ed33e47b831e9cf03fc04f
   - enabled: 1
     path: Assets/Scenes/HardDriver_Level/HardDriver_Level2.unity
+    guid: 953f06f8046acb742be32d6d9f777566
+  - enabled: 1
+    path: Assets/Scenes/HardDriver_Level/HardDriver_Level3.unity
     guid: 79ce8f1522bfc6d458c022c3bfcc2559
   - enabled: 1
     path: Assets/Scenes/MotherBoard_Level/MotherBoard_Leve1.unity

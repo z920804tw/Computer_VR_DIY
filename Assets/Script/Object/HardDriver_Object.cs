@@ -1,12 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+public enum HardDriverType
+{
+    None = 0,
+    HHD,
+    SSD,
+    M2
+}
+
 
 public class HardDriver_Object : MonoBehaviour
 {
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
 
+    public HardDriverType hardDriverType;
 
     public bool isHolding;
 
@@ -30,15 +41,19 @@ public class HardDriver_Object : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
-        if (other.gameObject.tag == this.gameObject.tag)
+        if (other.gameObject.tag == this.gameObject.tag && other.gameObject.GetComponent<Object_Transform>() != null)
         {
-
-            if (isFirstCollider == false)                                  //判斷是否第一次碰撞
+            if (isFirstCollider == false)
             {
-                isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
-                firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
-            }
+                Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
+                if (obj.hardDriverType == this.hardDriverType)
+                {
 
+                    isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
+                    firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+
+                }
+            }
         }
     }
 
@@ -81,9 +96,15 @@ public class HardDriver_Object : MonoBehaviour
             {
                 foreach (GameObject obj in ObjectsTransform)
                 {
-                    
-                    obj.GetComponent<Outline>().enabled = true;
+                    if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+                    {
+                        if (obj.GetComponent<Object_Transform>().hardDriverType == hardDriverType)
+                        {
+                            obj.GetComponent<Outline>().enabled = true;
+                        }
+                    }
                 }
+                this.GetComponent<Outline>().enabled = true;
             }
             isHolding = true;
             check = true;
