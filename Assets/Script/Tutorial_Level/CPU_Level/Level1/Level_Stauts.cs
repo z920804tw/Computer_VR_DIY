@@ -10,8 +10,8 @@ public class Level_Stauts : MonoBehaviour
     public Level_Select l;
     public GameObject[] MenuPanels;
 
-    public GameObject[] CPU_GameObject;
-    public GameObject Mother_GameObject;
+    [SerializeField] GameObject[] CPU_GameObject;
+    [SerializeField] GameObject Mother_GameObject, guideUI, pickUI;
 
 
     void Start()
@@ -34,11 +34,16 @@ public class Level_Stauts : MonoBehaviour
             case 2:
                 //CPU的安裝頁面，會去偵測CPU有沒有被玩家拿起，如果有就切換到下一個劇情。
                 MenuPanels[2].SetActive(true);
-                foreach (GameObject i in CPU_GameObject)
+
+                if (pickUI.activeSelf == true)
                 {
-                    if (i.GetComponent<CPU_Object>().isHolding == true)
+                    guideUI.SetActive(true);
+                    foreach (GameObject i in CPU_GameObject)
                     {
-                        NextStatus();
+                        if (i.GetComponent<CPU_Object>().isHolding == true)
+                        {
+                            NextStatus();
+                        }
                     }
                 }
 
