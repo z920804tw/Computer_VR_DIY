@@ -12,9 +12,15 @@ public class CPU_Level2_Stauts : MonoBehaviour
 
     public GameObject CPU_Thermal_GameObject;
     public GameObject Fan_Object;
+
+    AudioSource audioSource;
     void Start()
     {
-
+        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.volume = Menu.guideVolume;
+        }
     }
 
     // Update is called once per frame

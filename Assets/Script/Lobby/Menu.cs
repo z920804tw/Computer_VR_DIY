@@ -12,9 +12,16 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] MenuPanel;          //會用到的UI請放到這裡面。
 
+    [Header("音量設定")]
+    public Slider guideVolumeSlider;
+    public AudioClip[] audioClips;
+    public AudioSource audioSource;
+    public static float guideVolume = 0.5f;
+
     void Start()
     {
-
+        guideVolumeSlider.value = guideVolume;
+        audioSource.volume = guideVolume;
     }
 
     // Update is called once per frame
@@ -22,12 +29,33 @@ public class Menu : MonoBehaviour
     {
 
     }
-    //MainMenu切換到TotalLevelSelect
-    public void TotalLevelSelect()
+    //主菜單按鈕用的功能,目前只有關卡選擇跟設定會用到
+    public void MenuSelect()
     {
-        MenuPanel[0].SetActive(false);
-        MenuPanel[1].SetActive(true);
+        string select = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        closeAllUI();
+        switch (select)
+        {
+            case "關卡選擇":
+                
+                MenuPanel[1].SetActive(true);
+                break;
+            case "設定":
+                
+                MenuPanel[9].SetActive(true);
+                break;
+            case "音量設定":
+                MenuPanel[10].SetActive(true);
+                break;
+            default:
+                break;
+
+        }
     }
+
+
+
+
 
     //TotlaLevelSelect裡面各個電腦零件的關卡選擇
     public void LevelChoose()
@@ -86,6 +114,9 @@ public class Menu : MonoBehaviour
                 case "返回關卡選擇":
                     MenuPanel[1].SetActive(true);
                     break;
+                case "返回設定選單":
+                    MenuPanel[9].SetActive(true);
+                    break;
 
             }
 
@@ -100,6 +131,14 @@ public class Menu : MonoBehaviour
         {
             i.SetActive(false);
         }
+    }
+
+    public void testGuideVolume()
+    {
+        guideVolume = guideVolumeSlider.value;
+        audioSource.volume = guideVolume;
+        int rnd = UnityEngine.Random.Range(0,9);
+        audioSource.PlayOneShot(audioClips[rnd]);
     }
 
 }

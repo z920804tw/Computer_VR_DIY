@@ -8,15 +8,21 @@ public class Level_Stauts : MonoBehaviour
 
     public int status = 0;
     public Level_Select l;
-    public GameObject[] MenuPanels;
-
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] pictures;
     [SerializeField] GameObject[] CPU_GameObject;
     [SerializeField] GameObject Mother_GameObject, guideUI, pickUI;
+
+    AudioSource audioSource;
 
 
     void Start()
     {
-
+      audioSource=GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+      if(audioSource!=null){
+        audioSource.volume=Menu.guideVolume;
+      }
+        
     }
 
     // Update is called once per frame
@@ -30,6 +36,7 @@ public class Level_Stauts : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                pictures[0].SetActive(true);
                 break;
             case 2:
                 //CPU的安裝頁面，會去偵測CPU有沒有被玩家拿起，如果有就切換到下一個劇情。
@@ -37,7 +44,7 @@ public class Level_Stauts : MonoBehaviour
 
                 if (pickUI.activeSelf == true)
                 {
-                    guideUI.SetActive(true);
+                    pictures[1].SetActive(true);
                     foreach (GameObject i in CPU_GameObject)
                     {
                         if (i.GetComponent<CPU_Object>().isHolding == true)
@@ -50,6 +57,7 @@ public class Level_Stauts : MonoBehaviour
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
+                pictures[2].SetActive(true);
                 if (Mother_GameObject.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
@@ -79,6 +87,10 @@ public class Level_Stauts : MonoBehaviour
         }
 
         status++;
+
+        foreach(GameObject i in pictures){
+            i.SetActive(false);
+        }
 
     }
 
