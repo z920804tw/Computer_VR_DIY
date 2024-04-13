@@ -1,0 +1,12 @@
+CPU
+cpu運作流程:https://hackmd.io/@cvbookclub/SJw59k498
+風扇散熱原理:https://www.cgdirector.com/guide-to-aios-all-in-one-liquid-coolers/
+塗散熱膏:https://www.intel.com.tw/content/www/tw/zh/gaming/resources/how-to-apply-thermal-paste.html
+
+
+
+記憶體:
+1.記憶體比較:https://www.inside.com.tw/article/9595-dram
+2.記憶體比較2:https://ithelp.ithome.com.tw/m/articles/10294803
+3.DDR
+4.單雙通道差別:https://www.crucial.tw/articles/about-memory/what-is-dual-channel-memory

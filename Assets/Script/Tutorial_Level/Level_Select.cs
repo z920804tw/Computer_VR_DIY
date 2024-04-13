@@ -72,6 +72,18 @@ public class Level_Select : MonoBehaviour
             }
         }
 
+
+    }
+
+    public void closeAllPicture(GameObject[] pictures)
+    {
+        if (pictures != null)
+        {
+            foreach (GameObject i in pictures)
+            {
+                i.SetActive(false);
+            }
+        }
     }
 
 

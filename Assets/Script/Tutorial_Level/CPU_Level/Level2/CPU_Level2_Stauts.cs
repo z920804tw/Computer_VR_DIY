@@ -6,12 +6,12 @@ public class CPU_Level2_Stauts : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int status;
-    public Level_Select l;
-    public GameObject[] MenuPanels;
+    [SerializeField] int status;
+    [SerializeField] Level_Select l;
+    [SerializeField] GameObject[] MenuPanels, Pictures;
 
-    public GameObject CPU_Thermal_GameObject;
-    public GameObject Fan_Object;
+    [SerializeField] GameObject CPU_Thermal_GameObject, pickUI;
+    [SerializeField] GameObject Fan_Object;
 
     AudioSource audioSource;
     void Start()
@@ -33,16 +33,23 @@ public class CPU_Level2_Stauts : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                Pictures[0].SetActive(true);
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (CPU_Thermal_GameObject.activeSelf == true)
+                if (pickUI.activeSelf == true)
                 {
-                    NextStatus();
+                    Pictures[1].SetActive(true);
+                    if (CPU_Thermal_GameObject.activeSelf == true)
+                    {
+                        NextStatus();
+                    }
                 }
+
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
+                Pictures[2].SetActive(true);
                 if (CPU_Thermal_GameObject == true && Fan_Object.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
@@ -69,6 +76,10 @@ public class CPU_Level2_Stauts : MonoBehaviour
         else
         {
             Debug.Log("123");
+        }
+        foreach (GameObject i in Pictures)
+        {
+            i.SetActive(false);
         }
 
         status++;

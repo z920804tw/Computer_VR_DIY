@@ -15,7 +15,7 @@ public class Memory_Level_Status : MonoBehaviour
     [SerializeField] int status = 0;
     [SerializeField] GameObject[] Memory;
     [SerializeField] GameObject[] Memory_Transform;
-    public GameObject[] MenuPanels;
+    public GameObject[] MenuPanels, Pictures, pages;
     void Start()
     {
 
@@ -29,13 +29,30 @@ public class Memory_Level_Status : MonoBehaviour
             case 0:
                 MenuPanels[0].SetActive(true);
                 break;
-            case 1:
+            case 1:                                                //這邊會去判斷page陣列裡的特定元素是不是有啟用的狀態,如果有啟用,就先關閉全部的引導圖片,再把特定的引導圖片打開。
                 MenuPanels[1].SetActive(true);
+                if (pages[0].activeSelf == true)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[0].SetActive(true);
+                }
+                else if (pages[1].activeSelf == true)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[1].SetActive(true);
+                }
+                else if (pages[2].activeSelf == true)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[2].SetActive(true);
+                }
                 break;
+                
             case 2:
                 MenuPanels[2].SetActive(true);
                 if (pickUI.activeSelf == true)
                 {
+                    Pictures[3].SetActive(true);
                     foreach (GameObject i in Memory)
                     {
                         if (i.GetComponent<Memory_Object>().isHolding == true)
@@ -47,6 +64,7 @@ public class Memory_Level_Status : MonoBehaviour
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
+                Pictures[4].SetActive(true);
                 foreach (GameObject i in Memory_Transform)
                 {
                     if (i.GetComponent<Object_Transform>().hasPlace == true)
@@ -59,6 +77,7 @@ public class Memory_Level_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
+                Pictures[5].SetActive(true);
                 switch (currentTransformIndex)
                 {
                     case 0:
@@ -90,11 +109,13 @@ public class Memory_Level_Status : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(Pictures);
         }
         else
         {
             Debug.Log("123");
         }
+
         status++;
     }
 

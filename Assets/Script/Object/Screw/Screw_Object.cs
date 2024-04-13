@@ -32,11 +32,11 @@ public class Screw_Object : MonoBehaviour
 
     public bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
-    bool check;
+
 
     void Start()
     {
-        check = false;
+        
         isFirstCollider = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
