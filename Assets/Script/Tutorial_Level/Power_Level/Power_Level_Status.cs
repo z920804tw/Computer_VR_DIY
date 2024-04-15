@@ -9,21 +9,21 @@ public class Power_Level_Status : MonoBehaviour
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
 
-    [SerializeField] GameObject Power_Transform, soket_Transform,soket2_Transform;
-
+    [SerializeField] GameObject Power_Transform;
     [SerializeField] GameObject Power;
-    [SerializeField] GameObject[] Screw_Transform;
+    [SerializeField] Object_Transform[] Screw_Transform,Soket_Transform;
     public GameObject[] MenuPanels;
 
-
-    Object_Transform screw1, screw2, screw3, scrwe4;   //到時候再階段4要拿來判斷4個螺絲有沒有鎖上用的
+    AudioSource audioSource;
 
     void Start()
     {
-        screw1 = Screw_Transform[0].GetComponent<Object_Transform>();
-        screw2 = Screw_Transform[1].GetComponent<Object_Transform>();
-        screw3 = Screw_Transform[2].GetComponent<Object_Transform>();
-        scrwe4 = Screw_Transform[3].GetComponent<Object_Transform>();
+        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.volume = Menu.guideVolume;
+        }
+
     }
 
     // Update is called once per frame
@@ -57,14 +57,14 @@ public class Power_Level_Status : MonoBehaviour
             case 4:
                 MenuPanels[4].SetActive(true);
 
-                if (screw1.hasPlace == true && screw2.hasPlace == true && screw3.hasPlace == true && scrwe4.hasPlace == true)
+                if (Screw_Transform[0].hasPlace == true && Screw_Transform[1].hasPlace == true && Screw_Transform[2].hasPlace == true && Screw_Transform[3].hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
-                if (soket_Transform.GetComponent<Object_Transform>().hasPlace == true&&soket2_Transform.GetComponent<Object_Transform>().hasPlace==true)
+                if (Soket_Transform[0].hasPlace == true && Soket_Transform[1].hasPlace == true)
                 {
                     NextStatus();
                 }

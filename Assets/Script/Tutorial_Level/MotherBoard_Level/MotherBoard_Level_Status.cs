@@ -13,6 +13,8 @@ public class MotherBoard_Level_Status : MonoBehaviour
     [SerializeField] Object_Transform[] screw;
 
     public GameObject[] MenuPanels;
+
+    AudioSource audioSource;
     void Start()
     {
 

@@ -22,7 +22,7 @@ public class Cable_Object : MonoBehaviour
 
 
     [Header("Debug")]
-    [SerializeField] bool isHolding;
+    public bool isHolding;
     [SerializeField] bool isFirstCollider;
     [SerializeField] bool check;
 

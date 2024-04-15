@@ -13,9 +13,15 @@ public class HardDriver_Level3_Status : MonoBehaviour
     [SerializeField] Object_Transform HardDriver_Transform, Screw_Transform;
 
     public GameObject[] MenuPanels;
+
+    AudioSource audioSource;
     void Start()
     {
-
+        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.volume = Menu.guideVolume;
+        }
     }
 
     // Update is called once per frame
@@ -31,21 +37,25 @@ public class HardDriver_Level3_Status : MonoBehaviour
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if(pickUI.activeSelf == true){
-                    if(HardDriver.GetComponent<HardDriver_Object>().isHolding==true){
+                if (pickUI.activeSelf == true)
+                {
+                    if (HardDriver.GetComponent<HardDriver_Object>().isHolding == true)
+                    {
                         NextStatus();
                     }
                 }
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
-                if(HardDriver_Transform.hasPlace==true){
+                if (HardDriver_Transform.hasPlace == true)
+                {
                     NextStatus();
                 }
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-                if(Screw_Transform.hasPlace==true){
+                if (Screw_Transform.hasPlace == true)
+                {
                     NextStatus();
                 }
                 break;

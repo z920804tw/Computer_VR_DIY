@@ -16,9 +16,15 @@ public class Memory_Level_Status : MonoBehaviour
     [SerializeField] GameObject[] Memory;
     [SerializeField] GameObject[] Memory_Transform;
     public GameObject[] MenuPanels, Pictures, pages;
+
+    AudioSource audioSource;
     void Start()
     {
-
+        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.volume = Menu.guideVolume;
+        }
     }
 
     // Update is called once per frame
@@ -47,7 +53,7 @@ public class Memory_Level_Status : MonoBehaviour
                     Pictures[2].SetActive(true);
                 }
                 break;
-                
+
             case 2:
                 MenuPanels[2].SetActive(true);
                 if (pickUI.activeSelf == true)

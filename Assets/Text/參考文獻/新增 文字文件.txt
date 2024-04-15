@@ -10,3 +10,7 @@ cpu運作流程:https://hackmd.io/@cvbookclub/SJw59k498
 2.記憶體比較2:https://ithelp.ithome.com.tw/m/articles/10294803
 3.DDR
 4.單雙通道差別:https://www.crucial.tw/articles/about-memory/what-is-dual-channel-memory
+
+
+硬碟:
+1.機械硬碟內部結構:https://jetmedia-inc.com/zh-tw/blogs/article/the-factors-of-writing-and-erasing-speed-on-smr-hard-disks
