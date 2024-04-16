@@ -2593,7 +2593,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 67936890}
   m_HandleRect: {fileID: 67936889}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -20063,8 +20063,8 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1164964986}
   - {fileID: 163348855}
+  - {fileID: 1164964986}
   - {fileID: 1354828853}
   - {fileID: 1109049597}
   - {fileID: 2404700579643881118}
