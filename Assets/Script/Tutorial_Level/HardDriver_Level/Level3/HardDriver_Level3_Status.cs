@@ -5,14 +5,13 @@ using UnityEngine;
 public class HardDriver_Level3_Status : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject pickUI;
 
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
     [SerializeField] GameObject HardDriver;
     [SerializeField] Object_Transform HardDriver_Transform, Screw_Transform;
 
-    public GameObject[] MenuPanels;
+    public GameObject[] MenuPanels,Pictures,pages;
 
     AudioSource audioSource;
     void Start()
@@ -34,11 +33,13 @@ public class HardDriver_Level3_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                Pictures[0].SetActive(true);
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[0].activeSelf == true)
                 {
+                    Pictures[1].SetActive(true);
                     if (HardDriver.GetComponent<HardDriver_Object>().isHolding == true)
                     {
                         NextStatus();
@@ -47,6 +48,7 @@ public class HardDriver_Level3_Status : MonoBehaviour
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
+                Pictures[2].SetActive(true);
                 if (HardDriver_Transform.hasPlace == true)
                 {
                     NextStatus();
@@ -54,6 +56,7 @@ public class HardDriver_Level3_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
+                Pictures[3].SetActive (true);
                 if (Screw_Transform.hasPlace == true)
                 {
                     NextStatus();
@@ -69,6 +72,7 @@ public class HardDriver_Level3_Status : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(Pictures);
         }
         else
         {

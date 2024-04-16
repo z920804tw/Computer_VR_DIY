@@ -14,3 +14,6 @@ cpu運作流程:https://hackmd.io/@cvbookclub/SJw59k498
 
 硬碟:
 1.機械硬碟內部結構:https://jetmedia-inc.com/zh-tw/blogs/article/the-factors-of-writing-and-erasing-speed-on-smr-hard-disks
+2.
+3.
+4.SATA跟NVMe的差別:https://pcpepper.com/sata-vs-msata-vs-ngff-m-2-vs-nvme-pcie-m-2-which-is-the-right-ssd-for-me/
