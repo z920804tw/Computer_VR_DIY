@@ -8,11 +8,10 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
     // Start is called before the first frame update
     public int status = 0;
     public Level_Select l;
-    public GameObject[] MenuPanels;
-    public GameObject pickUI;      //在2-2用的，防止2-1時使用者就拿起GPU導致直接跳過page2的內容
+    [SerializeField] GameObject[] MenuPanels, Pictures, pages;
+
     [SerializeField] GameObject GraphicsCard;
-    [SerializeField] GameObject GraphicsCard_Transform;
-    [SerializeField] GameObject MotherBoard_Transform;
+    [SerializeField] Object_Transform GraphicsCard_Transform;
 
     AudioSource audioSource;
 
@@ -35,11 +34,22 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                if (pages[0].activeSelf == true)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[0].SetActive(true);
+                }
+                else if (pages[1].activeSelf)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[1].SetActive(true);
+                }
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[2].activeSelf == true)
                 {
+                    Pictures[2].SetActive(true);
                     if (GraphicsCard.GetComponent<GraphicsCard_Object>().isHolding == true)
                     {
                         NextStatus();
@@ -50,7 +60,8 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
             case 3:
 
                 MenuPanels[3].SetActive(true);
-                if (GraphicsCard_Transform.GetComponent<Object_Transform>().hasPlace == true)
+                Pictures[3].SetActive(true);
+                if (GraphicsCard_Transform.hasPlace == true)
                 {
 
                     NextStatus();
@@ -58,13 +69,6 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-                if (MotherBoard_Transform.GetComponent<Object_Transform>().hasPlace == true)
-                {
-                    NextStatus();
-                }
-                break;
-            case 5:
-                MenuPanels[5].SetActive(true);
                 break;
 
 
@@ -78,6 +82,7 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(Pictures);
         }
         else
         {

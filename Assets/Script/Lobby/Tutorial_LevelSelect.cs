@@ -148,7 +148,7 @@ public class Tutorial_LevelSelect : MonoBehaviour
     {
         switch (i)
         {
-            case "主機安裝關卡":
+            case "主機板安裝關卡":
                 StartCoroutine(LoadingLevel("MotherBoard_Level1"));
                 break;
             default:

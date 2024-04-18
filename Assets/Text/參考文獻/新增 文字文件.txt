@@ -17,3 +17,17 @@ cpu運作流程:https://hackmd.io/@cvbookclub/SJw59k498
 2.
 3.
 4.SATA跟NVMe的差別:https://pcpepper.com/sata-vs-msata-vs-ngff-m-2-vs-nvme-pcie-m-2-which-is-the-right-ssd-for-me/
+
+
+主機板
+
+
+
+
+顯示卡:
+1.顯示卡運作原理:https://www.mobile01.com/topicdetail.php?f=298&t=399440
+2.Trident TVGA9000B 2D顯示卡:https://www.vgamuseum.info/index.php/cpu/item/437-trident-tvga9000b
+3.3dfx Voodoo5 5500:https://en.wikipedia.org/wiki/Voodoo_5
+4.GTX1060:https://www.cool3c.com/article/108617
+5.RTX4060:https://www.bestbuy.com/site/nvidia-geforce-rtx-4060-ti-8gb-gddr6-graphics-card-titanium-black/6543946.p?skuId=6543946&intl=nosplash
+6.1060:https://loveevamk.life/product_details/41191366.html

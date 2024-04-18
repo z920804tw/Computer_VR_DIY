@@ -8,15 +8,12 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
     public int status = 0;
 
 
-    [SerializeField] GameObject pickUI;
     [SerializeField] Level_Select l;
     [SerializeField] GameObject GraphicsCard;
-    [SerializeField] GameObject GraphicsCard_Transform;
-    [SerializeField] GameObject MotherBoard_Transform;
-    [SerializeField] GameObject Power_Transform;
-    [SerializeField] GameObject PCIE_P_Transform, PCIE_G_Transform;
+    [SerializeField] Object_Transform GraphicsCard_Transform;
+    [SerializeField] Object_Transform[] PCIE_Transform;
 
-    public GameObject[] MenuPanels;
+    public GameObject[] MenuPanels, Pictures, pages;
 
     AudioSource audioSource;
     void Start()
@@ -38,11 +35,22 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                if (pages[0].activeSelf)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[0].SetActive(true);
+                }
+                else if (pages[1].activeSelf)
+                {
+                    l.closeAllPicture(Pictures);
+                    Pictures[1].SetActive(true);
+                }
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[2].activeSelf == true)
                 {
+                    Pictures[2].SetActive(true);
                     if (GraphicsCard.GetComponent<GraphicsCard_Object>().isHolding == true)
                     {
                         NextStatus();
@@ -51,6 +59,7 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
+                Pictures[3].SetActive(true);
                 if (GraphicsCard_Transform.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
@@ -58,29 +67,14 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-                if (MotherBoard_Transform.GetComponent<Object_Transform>().hasPlace == true)
+                Pictures[4].SetActive(true);
+                if (PCIE_Transform[0].hasPlace == true && PCIE_Transform[1].hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
-                if (Power_Transform.GetComponent<Object_Transform>().hasPlace == true)
-                {
-                    NextStatus();
-                }
-                break;
-            case 6:
-                MenuPanels[6].SetActive(true);
-                Object_Transform p = PCIE_P_Transform.GetComponent<Object_Transform>();
-                Object_Transform g = PCIE_G_Transform.GetComponent<Object_Transform>();
-                if (p.hasPlace == true && g.hasPlace == true)
-                {
-                    NextStatus();
-                }
-                break;
-            case 7:
-                MenuPanels[7].SetActive(true);
                 break;
             default:
                 Debug.Log("無選項");
@@ -94,6 +88,7 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(Pictures);
         }
         else
         {
