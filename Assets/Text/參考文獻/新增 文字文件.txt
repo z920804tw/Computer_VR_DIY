@@ -31,3 +31,7 @@ cpu運作流程:https://hackmd.io/@cvbookclub/SJw59k498
 4.GTX1060:https://www.cool3c.com/article/108617
 5.RTX4060:https://www.bestbuy.com/site/nvidia-geforce-rtx-4060-ti-8gb-gddr6-graphics-card-titanium-black/6543946.p?skuId=6543946&intl=nosplash
 6.1060:https://loveevamk.life/product_details/41191366.html
+
+
+電源供應器
+PSU簡單原理:https://erasernote.blogspot.com/2014/06/psu.html

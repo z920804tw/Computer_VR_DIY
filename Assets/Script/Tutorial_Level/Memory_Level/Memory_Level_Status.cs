@@ -37,19 +37,17 @@ public class Memory_Level_Status : MonoBehaviour
                 break;
             case 1:                                                //這邊會去判斷page陣列裡的特定元素是不是有啟用的狀態,如果有啟用,就先關閉全部的引導圖片,再把特定的引導圖片打開。
                 MenuPanels[1].SetActive(true);
+                l.closeAllPicture(Pictures);
                 if (pages[0].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[0].SetActive(true);
                 }
                 else if (pages[1].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[1].SetActive(true);
                 }
                 else if (pages[2].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[2].SetActive(true);
                 }
                 break;

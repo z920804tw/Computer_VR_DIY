@@ -12,14 +12,15 @@ public class HardDriver_Level_Status : MonoBehaviour
     [SerializeField] GameObject HardDriver;
     [SerializeField] Object_Transform HardDriver_Transform;
     [SerializeField] Object_Transform[] Cables_Transform;
-    public GameObject[] MenuPanels,Pictures,page;
+    public GameObject[] MenuPanels, Pictures, page;
     AudioSource audioSource;
     void Start()
     {
-      audioSource=GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-      if(audioSource!=null){
-        audioSource.volume=Menu.guideVolume;
-      }
+        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.volume = Menu.guideVolume;
+        }
     }
 
     // Update is called once per frame
@@ -28,16 +29,17 @@ public class HardDriver_Level_Status : MonoBehaviour
         switch (status)
         {
             case 0:                                                                     //開始介紹
-                MenuPanels[0].SetActive(true);      
+                MenuPanels[0].SetActive(true);
                 break;
             case 1:                                                                     //硬碟介紹 有1-1跟1-2
                 MenuPanels[1].SetActive(true);
-                if(page[0].activeSelf==true){
-                    l.closeAllPicture(Pictures);
+                l.closeAllPicture(Pictures);
+                if (page[0].activeSelf == true)
+                {
                     Pictures[0].SetActive(true);
                 }
-                else if(page[1].activeSelf==true){
-                    l.closeAllPicture(Pictures);
+                else if (page[1].activeSelf == true)
+                {
                     Pictures[1].SetActive(true);
                 }
                 break;
@@ -63,7 +65,7 @@ public class HardDriver_Level_Status : MonoBehaviour
             case 4:                                                                     //要求使用者先安裝主板-硬碟的電源線安裝, 元素0跟1分別是主板的安裝位置跟硬碟的安裝位置。
                 MenuPanels[4].SetActive(true);
                 Pictures[4].SetActive(true);
-                if(Cables_Transform[0].hasPlace==true&&Cables_Transform[1].hasPlace==true)
+                if (Cables_Transform[0].hasPlace == true && Cables_Transform[1].hasPlace == true)
                 {
                     NextStatus();
                 }
@@ -71,7 +73,7 @@ public class HardDriver_Level_Status : MonoBehaviour
             case 5:                                                                     //要求使用者安裝電源供應器-硬碟的電源線安裝,元素2跟3分別是電源供應器跟硬碟(PW)部分
                 MenuPanels[5].SetActive(true);
                 Pictures[5].SetActive(true);
-                if(Cables_Transform[2].hasPlace==true&&Cables_Transform[3].hasPlace==true)
+                if (Cables_Transform[2].hasPlace == true && Cables_Transform[3].hasPlace == true)
                 {
                     NextStatus();
                 }

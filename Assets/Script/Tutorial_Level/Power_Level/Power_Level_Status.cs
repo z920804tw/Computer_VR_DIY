@@ -5,14 +5,13 @@ using UnityEngine;
 public class Power_Level_Status : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject pickUI;
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
 
-    [SerializeField] GameObject Power_Transform;
+    [SerializeField] Object_Transform Power_Transform;
     [SerializeField] GameObject Power;
-    [SerializeField] Object_Transform[] Screw_Transform,Soket_Transform;
-    public GameObject[] MenuPanels;
+    [SerializeField] Object_Transform[] Screw_Transform, Soket_Transform;
+    public GameObject[] MenuPanels, Pictures, pages;
 
     AudioSource audioSource;
 
@@ -36,11 +35,21 @@ public class Power_Level_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                l.closeAllPicture(Pictures);
+                if (pages[0].activeSelf)
+                {
+                    Pictures[0].SetActive(true);
+                }
+                else if (pages[1].activeSelf)
+                {
+                    Pictures[1].SetActive(true);   
+                }
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[2].activeSelf == true)
                 {
+                    Pictures[2].SetActive(true);
                     if (Power.GetComponent<Power_Object>().isHolding == true)
                     {
                         NextStatus();
@@ -49,14 +58,15 @@ public class Power_Level_Status : MonoBehaviour
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
-                if (Power_Transform.GetComponent<Object_Transform>().hasPlace == true)
+                Pictures[3].SetActive(true);
+                if (Power_Transform.hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-
+                Pictures[4].SetActive(true);
                 if (Screw_Transform[0].hasPlace == true && Screw_Transform[1].hasPlace == true && Screw_Transform[2].hasPlace == true && Screw_Transform[3].hasPlace == true)
                 {
                     NextStatus();
@@ -83,6 +93,7 @@ public class Power_Level_Status : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(Pictures);
         }
         else
         {

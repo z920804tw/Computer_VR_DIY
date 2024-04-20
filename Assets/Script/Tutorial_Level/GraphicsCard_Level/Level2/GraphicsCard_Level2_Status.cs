@@ -35,14 +35,13 @@ public class GraphicsCard_Level2_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                l.closeAllPicture(Pictures);
                 if (pages[0].activeSelf)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[0].SetActive(true);
                 }
                 else if (pages[1].activeSelf)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[1].SetActive(true);
                 }
                 break;

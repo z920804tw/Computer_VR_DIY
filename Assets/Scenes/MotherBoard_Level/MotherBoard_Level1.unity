@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 845304009}
-  m_IndirectSpecularColor: {r: 0.12912032, g: 0.13677251, b: 0.12479485, a: 1}
+  m_IndirectSpecularColor: {r: 0.12914255, g: 0.13680454, b: 0.12484236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2889,7 +2889,7 @@ MonoBehaviour:
   l: {fileID: 127846503}
   MotherBoard: {fileID: 785405063}
   Mother_Board_Transform: {fileID: 1681741352}
-  status: 1
+  status: 0
   screw:
   - {fileID: 496635143}
   - {fileID: 1095121026}

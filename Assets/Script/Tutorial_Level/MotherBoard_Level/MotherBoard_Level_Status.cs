@@ -34,19 +34,17 @@ public class MotherBoard_Level_Status : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
+                l.closeAllPicture(Pictures);
                 if (pages[0].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[0].SetActive(true);
                 }
                 else if (pages[1].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[1].SetActive(true);
                 }
                 else if (pages[2].activeSelf == true)
                 {
-                    l.closeAllPicture(Pictures);
                     Pictures[2].SetActive(true);
                 }
                 break;
