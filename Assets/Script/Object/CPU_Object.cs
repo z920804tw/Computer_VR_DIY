@@ -15,6 +15,8 @@ public class CPU_Object : MonoBehaviour
 
     public bool isHolding;
 
+    public Animator anim;
+
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
@@ -26,6 +28,7 @@ public class CPU_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,9 +59,11 @@ public class CPU_Object : MonoBehaviour
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
         CpuThermal.SetActive(false);
+
+        anim.enabled=true;                                  
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
-
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
             firstColliderObject = null;
             isFirstCollider = false;

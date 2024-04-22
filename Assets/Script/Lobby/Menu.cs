@@ -37,15 +37,18 @@ public class Menu : MonoBehaviour
         switch (select)
         {
             case "關卡選擇":
-                
+
                 MenuPanel[1].SetActive(true);
                 break;
             case "設定":
-                
+
                 MenuPanel[9].SetActive(true);
                 break;
             case "音量設定":
                 MenuPanel[10].SetActive(true);
+                break;
+            case "退出":
+                Application.Quit();
                 break;
             default:
                 break;
@@ -137,7 +140,7 @@ public class Menu : MonoBehaviour
     {
         guideVolume = guideVolumeSlider.value;
         audioSource.volume = guideVolume;
-        int rnd = UnityEngine.Random.Range(0,9);
+        int rnd = UnityEngine.Random.Range(0, 9);
         audioSource.PlayOneShot(audioClips[rnd]);
     }
 
