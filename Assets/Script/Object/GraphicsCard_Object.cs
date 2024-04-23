@@ -7,7 +7,7 @@ public class GraphicsCard_Object : MonoBehaviour
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
-
+    public Animator anim;
 
     public bool isHolding;
 
@@ -21,6 +21,7 @@ public class GraphicsCard_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,6 +51,9 @@ public class GraphicsCard_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
+
+        anim.enabled = true;
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 845304009}
-  m_IndirectSpecularColor: {r: 0.12912032, g: 0.13677251, b: 0.12479485, a: 1}
+  m_IndirectSpecularColor: {r: 0.12914255, g: 0.13680454, b: 0.12484236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1284,7 +1284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7247739662550812388, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7625052252899912904, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
       propertyPath: m_Name
@@ -2166,6 +2166,10 @@ PrefabInstance:
     - target: {fileID: 4768151937008785286, guid: 898c62b8ac2855d4faefed4e4159e796, type: 3}
       propertyPath: m_Name
       value: I3-8100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227280884539007813, guid: 898c62b8ac2855d4faefed4e4159e796, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4833,6 +4837,10 @@ PrefabInstance:
     - target: {fileID: 4768151937008785286, guid: 898c62b8ac2855d4faefed4e4159e796, type: 3}
       propertyPath: m_Name
       value: I3-8100 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227280884539007813, guid: 898c62b8ac2855d4faefed4e4159e796, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

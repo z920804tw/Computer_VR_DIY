@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using Unity.VisualScripting.FullSerializer;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CPU_Fan_Object : MonoBehaviour
@@ -15,6 +16,7 @@ public class CPU_Fan_Object : MonoBehaviour
     bool check;
     public bool isHolding;
     public bool cpuHasPlace;
+    public Animator anim;
     void Start()
     {
         check = false;
@@ -22,6 +24,7 @@ public class CPU_Fan_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,6 +59,9 @@ public class CPU_Fan_Object : MonoBehaviour
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
         cpuHasPlace=false;
+
+        anim.enabled=true;
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
 

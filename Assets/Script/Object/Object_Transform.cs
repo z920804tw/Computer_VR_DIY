@@ -122,8 +122,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                hasPlace = true;
-
+                cpuFanObj.anim.SetBool("place",true);
+                Invoke("place",1.3f);
             }
         }
 
@@ -156,7 +156,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
+                graphicsObj.anim.SetBool("place", true);
+                Invoke("place",1.3f);
             }
         }
     }
@@ -172,7 +173,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
+                memoryObj.anim.SetBool("place",true);
+                Invoke("place",1.3f);
             }
         }
     }
