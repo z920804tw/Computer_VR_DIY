@@ -18,7 +18,7 @@ public class HardDriver_Object : MonoBehaviour
     public GameObject[] ObjectsTransform;
 
     public HardDriverType hardDriverType;
-
+    public Animator anim;
     public bool isHolding;
 
 
@@ -31,6 +31,7 @@ public class HardDriver_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +65,8 @@ public class HardDriver_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
+        anim.enabled=true;
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
 

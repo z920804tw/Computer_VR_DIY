@@ -11,6 +11,7 @@ public class Cable_Object : MonoBehaviour
     public GameObject firstColliderObject;
     public GameObject cableParent;
     public GameObject[] ObjectsTransform;
+    public Animator anim;
     Rigidbody rb;
 
     [Header("電線設定")]
@@ -19,6 +20,8 @@ public class Cable_Object : MonoBehaviour
 
     public CableType cableType;
     public CableDirection cableDirection;
+
+
 
 
     [Header("Debug")]
@@ -33,6 +36,7 @@ public class Cable_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,6 +63,8 @@ public class Cable_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(cableParent.transform);
         rb.isKinematic = false;
+        anim.enabled=true;
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;

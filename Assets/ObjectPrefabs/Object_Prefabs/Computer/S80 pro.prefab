@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 98094349870543997}
   - component: {fileID: 1817626495074310729}
   - component: {fileID: 2343433613966898757}
+  - component: {fileID: 4433085455264850930}
   m_Layer: 0
   m_Name: S80 pro
   m_TagString: SSD
@@ -275,6 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstColliderObject: {fileID: 0}
   ObjectsTransform: []
+  hardDriverType: 3
+  anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
 --- !u!114 &2343433613966898757
@@ -295,6 +298,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &4433085455264850930
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938204877935722150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 166428fddbe9e9d4cb11ff7a9eac6de4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6974899438139906555
 PrefabInstance:
   m_ObjectHideFlags: 0

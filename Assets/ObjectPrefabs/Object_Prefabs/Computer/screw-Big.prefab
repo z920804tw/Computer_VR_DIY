@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3238941620966205272}
   - component: {fileID: 4824030643699631602}
   - component: {fileID: 8310997144102481675}
+  - component: {fileID: 501001312851302587}
   m_Layer: 0
   m_Name: screw-Big
   m_TagString: Screw
@@ -184,6 +185,7 @@ MonoBehaviour:
   prevColliderObject: {fileID: 0}
   ObjectsTransform: []
   screwEnum: 1
+  screwType: 2
   isFirstCollider: 0
 --- !u!114 &4824030643699631602
 MonoBehaviour:
@@ -367,3 +369,24 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &501001312851302587
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036470626952540413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 64f027e1ec5866346b7cfff08655d810, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

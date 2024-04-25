@@ -205,8 +205,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
-                Debug.Log("SSD放置");
+                hard_driverObj.anim.SetBool("place",true);
+                Invoke("place",1.3f);
             }
         }
     }
@@ -226,7 +226,9 @@ public class Object_Transform : MonoBehaviour
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    hasPlace = true;
+                    cableObj.enabled=false;
+                    cableObj.anim.SetBool("place",true);
+                    Invoke("place",1.3f);
                 }
             }
         }
@@ -236,7 +238,6 @@ public class Object_Transform : MonoBehaviour
         Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
         if (screwObj != null)
         {
-
 
             if (screwObj.firstColliderObject != null)
             {
@@ -249,7 +250,6 @@ public class Object_Transform : MonoBehaviour
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    hasPlace = true;
                     if (screwEnum == ScrewEnum.hold)
                     {
 
@@ -261,6 +261,8 @@ public class Object_Transform : MonoBehaviour
                     else if (screwEnum == ScrewEnum.place)
                     {
                         screwObj.screwEnum = ScrewEnum.hold;
+                        screwObj.anim.SetBool("place",true);
+                        Invoke("place",1.3f);
                         screwObj.removeScrewOutline();
                         Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
 

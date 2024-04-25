@@ -23,6 +23,8 @@ public class Screw_Object : MonoBehaviour
     public GameObject prevColliderObject;
     public GameObject[] ObjectsTransform;
 
+    public Animator anim;
+
     [Header("螺絲設定")]
     public ScrewEnum screwEnum = ScrewEnum.None;
     public ScrewType screwType = ScrewType.None;
@@ -36,9 +38,10 @@ public class Screw_Object : MonoBehaviour
 
     void Start()
     {
-        
+
         isFirstCollider = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -62,11 +65,8 @@ public class Screw_Object : MonoBehaviour
                     isFirstCollider = true;
                     Debug.Log("1");
                 }
-
             }
-
         }
-
     }
 
 
@@ -76,6 +76,8 @@ public class Screw_Object : MonoBehaviour
         this.gameObject.transform.SetParent(null);
         isFirstCollider = false;
         rb.isKinematic = false;
+        anim.enabled=true;
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
@@ -95,14 +97,14 @@ public class Screw_Object : MonoBehaviour
             {
                 if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
                 {
-                    if (obj.GetComponent<Object_Transform>().screwType==screwType){
-                        obj.GetComponent<Outline>().enabled=true;
+                    if (obj.GetComponent<Object_Transform>().screwType == screwType)
+                    {
+                        obj.GetComponent<Outline>().enabled = true;
                     }
                 }
             }
             this.GetComponent<Outline>().enabled = true;
         }
-
     }
     public void removeScrewOutline()
     {
@@ -112,7 +114,6 @@ public class Screw_Object : MonoBehaviour
             {
                 obj.GetComponent<Outline>().enabled = false;
             }
-
         }
     }
 }
