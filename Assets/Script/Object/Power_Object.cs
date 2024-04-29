@@ -9,6 +9,7 @@ public class Power_Object : MonoBehaviour
 
 
     public bool isHolding;
+    public Animator anim;
 
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
@@ -20,6 +21,7 @@ public class Power_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,8 @@ public class Power_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
+        //anim.enabled=true;
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 

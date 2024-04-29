@@ -89,7 +89,10 @@ public class Object_Transform : MonoBehaviour
 
     void place()
     {
-        colliderObject.GetComponent<Animator>().enabled=false;   //如果不把動畫控制器關掉,他會浮空。
+       /* if (colliderObject.GetComponent<Animator>() != null)
+        {
+            colliderObject.GetComponent<Animator>().enabled = false;   //如果不把動畫控制器關掉,他會浮空。
+        }*/
         hasPlace = true;
     }
     //CPU用的，主要多了CPU跟主機板的LGA腳位判斷
@@ -100,12 +103,12 @@ public class Object_Transform : MonoBehaviour
         {
             if (cpuObj.firstColliderObject.name == this.gameObject.name && cpuObj.c_LGA == m_LGA)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣，並且雙方的LGA也要一樣
             {
-                
+
                 colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                cpuObj.anim.SetBool("place",true);                                                           //執行放置的動畫
+                cpuObj.anim.SetBool("place", true);                                                           //執行放置的動畫
                 Invoke("place", 2.1f);
             }
         }
@@ -122,8 +125,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                cpuFanObj.anim.SetBool("place",true);
-                Invoke("place",1.3f);
+                cpuFanObj.anim.SetBool("place", true);
+                Invoke("place", 1.3f);
             }
         }
 
@@ -139,7 +142,9 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
+                motherboardObj.anim.SetBool("place", true);
+                Invoke("place", 1.3f);
+
             }
         }
 
@@ -157,7 +162,7 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 graphicsObj.anim.SetBool("place", true);
-                Invoke("place",1.3f);
+                Invoke("place", 1.3f);
             }
         }
     }
@@ -173,8 +178,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                memoryObj.anim.SetBool("place",true);
-                Invoke("place",1.3f);
+                memoryObj.anim.SetBool("place", true);
+                Invoke("place", 1.3f);
             }
         }
     }
@@ -189,7 +194,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
+                powerObj.anim.SetBool("place", true);
+                Invoke("place", 1.3f);
             }
         }
     }
@@ -205,8 +211,8 @@ public class Object_Transform : MonoBehaviour
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hard_driverObj.anim.SetBool("place",true);
-                Invoke("place",1.3f);
+                hard_driverObj.anim.SetBool("place", true);
+                Invoke("place", 1.3f);
             }
         }
     }
@@ -226,9 +232,9 @@ public class Object_Transform : MonoBehaviour
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    cableObj.enabled=false;
-                    cableObj.anim.SetBool("place",true);
-                    Invoke("place",1.3f);
+                    cableObj.enabled = false;
+                    cableObj.anim.SetBool("place", true);
+                    Invoke("place", 1.3f);
                 }
             }
         }
@@ -254,6 +260,7 @@ public class Object_Transform : MonoBehaviour
                     {
 
                         screwObj.screwEnum = ScrewEnum.place;
+                        screwObj.anim.SetBool("place", false);
                         screwObj.showScrewOutline();
 
                         Debug.Log("現在接的是螺絲起子，螺絲更改成place");
@@ -261,8 +268,8 @@ public class Object_Transform : MonoBehaviour
                     else if (screwEnum == ScrewEnum.place)
                     {
                         screwObj.screwEnum = ScrewEnum.hold;
-                        screwObj.anim.SetBool("place",true);
-                        Invoke("place",1.3f);
+                        screwObj.anim.SetBool("place", true);
+                        Invoke("place", 1.3f);
                         screwObj.removeScrewOutline();
                         Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
 

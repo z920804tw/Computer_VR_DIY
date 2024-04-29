@@ -323,6 +323,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 2
   screwType: 1
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &4633227867483925954
 MonoBehaviour:
@@ -434,6 +435,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 0
   screwType: 0
+  hardDriverType: 0
   hasPlace: 0
 --- !u!1 &1393571614763121520
 GameObject:
@@ -1007,6 +1009,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 2
   screwType: 1
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &1268264281525887682
 MonoBehaviour:
@@ -1120,10 +1123,6 @@ GameObject:
   - component: {fileID: 8531554148356857375}
   - component: {fileID: 7737495484233161021}
   - component: {fileID: 1987017178810653203}
-  - component: {fileID: 5926745039454457266}
-  - component: {fileID: 5693594981011682953}
-  - component: {fileID: 8110486277410713522}
-  - component: {fileID: 170050103543860439}
   - component: {fileID: 1021540031967891511}
   m_Layer: 6
   m_Name: MB600L
@@ -1330,90 +1329,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!65 &5926745039454457266
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107908879303579973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.020870924, y: 0.68844557, z: 0.3014874}
-  m_Center: {x: -0.31089866, y: -0.01077573, z: 0.000000029802322}
---- !u!65 &5693594981011682953
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107908879303579973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.6699225, y: 0.026927233, z: 0.30249667}
-  m_Center: {x: 0.03482467, y: 0.31897408, z: -0.0015141368}
---- !u!65 &8110486277410713522
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107908879303579973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.6129205, y: 0.19148082, z: 0.30073726}
-  m_Center: {x: 0.00531435, y: -0.25892374, z: -0.0005722642}
---- !u!65 &170050103543860439
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5107908879303579973}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.054717064, y: 0.66110694, z: 0.30507898}
-  m_Center: {x: 0.34127295, y: -0.023798645, z: 0.0009520054}
 --- !u!114 &1021540031967891511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,6 +1498,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 2
   screwType: 1
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &7428297223746239988
 MonoBehaviour:
@@ -1676,6 +1592,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 0
   screwType: 0
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &4796406254972064097
 MonoBehaviour:
@@ -1936,6 +1853,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 0
   screwType: 0
+  hardDriverType: 0
   hasPlace: 0
 --- !u!65 &3393732008089639352
 BoxCollider:
@@ -2447,6 +2365,7 @@ MonoBehaviour:
   T_cableDirection: 0
   screwEnum: 2
   screwType: 1
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &1503732619650378493
 MonoBehaviour:

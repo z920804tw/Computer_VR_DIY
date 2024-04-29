@@ -60,7 +60,6 @@ public class CPU_Fan_Object : MonoBehaviour
         rb.isKinematic = false;
         cpuHasPlace=false;
 
-        anim.enabled=true;
         anim.SetBool("place",false);
         if (firstColliderObject != null)
         {

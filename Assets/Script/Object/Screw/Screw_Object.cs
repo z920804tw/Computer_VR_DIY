@@ -76,7 +76,6 @@ public class Screw_Object : MonoBehaviour
         this.gameObject.transform.SetParent(null);
         isFirstCollider = false;
         rb.isKinematic = false;
-        anim.enabled=true;
         anim.SetBool("place",false);
         if (firstColliderObject != null)
         {

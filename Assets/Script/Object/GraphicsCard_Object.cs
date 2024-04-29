@@ -51,8 +51,6 @@ public class GraphicsCard_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-
-        anim.enabled = true;
         anim.SetBool("place",false);
         if (firstColliderObject != null)
         {

@@ -7,10 +7,10 @@ public class Mother_Board_Object : MonoBehaviour
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
-
+    
 
     public bool isHolding;
-
+    public Animator anim;
 
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
@@ -21,6 +21,7 @@ public class Mother_Board_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        anim=GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +50,8 @@ public class Mother_Board_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
+        
+        anim.SetBool("place",false);
         if (firstColliderObject != null)
         {
 
