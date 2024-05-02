@@ -18059,6 +18059,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6418470061019729286, guid: 0a309077800f4844b80820175bc34874, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248255306488936869, guid: 0a309077800f4844b80820175bc34874, type: 3}
+      propertyPath: m_SelectMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248255306488936869, guid: 0a309077800f4844b80820175bc34874, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248255306488936869, guid: 0a309077800f4844b80820175bc34874, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1766767573}
     - target: {fileID: 7772546105872576798, guid: 0a309077800f4844b80820175bc34874, type: 3}
       propertyPath: m_Name
       value: flashlight
@@ -18068,6 +18084,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a309077800f4844b80820175bc34874, type: 3}
+--- !u!65 &1766767573 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7607476236777540345, guid: 0a309077800f4844b80820175bc34874, type: 3}
+  m_PrefabInstance: {fileID: 1766767572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771755057
 GameObject:
   m_ObjectHideFlags: 0
