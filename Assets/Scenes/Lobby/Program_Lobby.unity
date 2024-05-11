@@ -17011,6 +17011,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678029901}
   m_CullTransparentMesh: 1
+--- !u!1 &1694448920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5286592776795276142, guid: 681a965d718431745a8cca7222c77292, type: 3}
+  m_PrefabInstance: {fileID: 9151313091263146116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!59 &1694448924
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694448920}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: -0.78, y: 0.33, z: 0.94}
+  m_Axis: {x: 1, y: 9.46, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.28831768, y: 1.0287719, z: -59.871815}
+  serializedVersion: 2
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: 35.571556
+    max: 140
+    bounciness: 0.2
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &1694448925
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694448920}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1700875317
 GameObject:
   m_ObjectHideFlags: 0
@@ -22404,7 +22475,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5286592776795276142, guid: 681a965d718431745a8cca7222c77292, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1694448925}
+    - targetCorrespondingSourceObject: {fileID: 5286592776795276142, guid: 681a965d718431745a8cca7222c77292, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1694448924}
   m_SourcePrefab: {fileID: 100100000, guid: 681a965d718431745a8cca7222c77292, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
