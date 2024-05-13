@@ -42,7 +42,7 @@ public class Power_Level_Status : MonoBehaviour
                 }
                 else if (pages[1].activeSelf)
                 {
-                    Pictures[1].SetActive(true);   
+                    Pictures[1].SetActive(true);
                 }
                 break;
             case 2:
@@ -74,14 +74,26 @@ public class Power_Level_Status : MonoBehaviour
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
-                if (Soket_Transform[0].hasPlace == true && Soket_Transform[1].hasPlace == true)
+                if (pages[3].activeSelf == true)
                 {
-                    NextStatus();
+                    Pictures[5].SetActive(true);
+                    if (Soket_Transform[0].hasPlace && Soket_Transform[1].hasPlace && Soket_Transform[2].hasPlace && Soket_Transform[3].hasPlace)
+                    {
+                        NextStatus();
+                    }
                 }
                 break;
             case 6:
                 MenuPanels[6].SetActive(true);
+                if (Soket_Transform[4].hasPlace && Soket_Transform[5].hasPlace)
+                {
+                    NextStatus();
+                }
                 break;
+            case 7:
+                MenuPanels[7].SetActive(true);
+
+                break;   
             default:
                 Debug.Log("找不到目標");
                 break;
