@@ -1337,6 +1337,7 @@ GameObject:
   - component: {fileID: 3794182902171932046}
   - component: {fileID: 2376556702854078039}
   - component: {fileID: 5167622131525522542}
+  - component: {fileID: 106128255471643364}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1433,6 +1434,23 @@ MonoBehaviour:
   m_LocomotionProvider: {fileID: 0}
   m_MinHeight: 1.5
   m_MaxHeight: 2
+--- !u!114 &106128255471643364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381533353708696297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68cac9bb4bce9d49936b6edf0f17eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside: {fileID: 0}
+  outside: {fileID: 0}
+  outsideVolume: 0.2
+  insideVolume: 0.2
+  transitionDuration: 5
 --- !u!1 &3452101226588597805
 GameObject:
   m_ObjectHideFlags: 0
