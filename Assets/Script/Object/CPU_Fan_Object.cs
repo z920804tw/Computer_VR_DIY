@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using Unity.VisualScripting.FullSerializer;
-using UnityEditor.Animations;
+
 using UnityEngine;
 
 public class CPU_Fan_Object : MonoBehaviour
