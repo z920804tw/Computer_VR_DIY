@@ -27,7 +27,7 @@ public class TextUI : MonoBehaviour
 
     float timer;        //計時用的
     bool isActive;      //判斷文字現在是不是正在顯示中，如果顯示完會改成false
-    bool audioIsActive;
+    //bool audioIsActive;
 
 
 
@@ -35,12 +35,15 @@ public class TextUI : MonoBehaviour
     void Start()
     {
         audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        audioIsActive = false;
+        //audioIsActive = false;
         timer = 0;
         currentTextPos = 0;
         words = TextFile.ToString();
         Text.text = "";
         isActive = true;
+
+
+        audioSource.PlayOneShot(audioClip);
     }
 
     // Update is called once per frame
@@ -57,17 +60,17 @@ public class TextUI : MonoBehaviour
                 currentTextPos++;
                 Text.text = words.Substring(0, currentTextPos);
 
-                if (audioIsActive == false)
+                /*if (audioIsActive == false)
                 {
                     audioSource.PlayOneShot(audioClip);
                     audioIsActive = true;
-                }
+                }*/
                 //如果當前文字>=words的長度，就是文字全部顯示完成，就會停止。
                 if (currentTextPos >= words.Length)
                 {
                     currentTextPos = 0;
                     isActive = false;
-                    audioIsActive = false;
+                    //audioIsActive = false;
                     foreach (GameObject i in UI_button)
                     {
                         i.SetActive(true);

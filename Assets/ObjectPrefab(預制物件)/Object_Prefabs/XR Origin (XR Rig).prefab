@@ -1448,8 +1448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inside: {fileID: 0}
   outside: {fileID: 0}
-  outsideVolume: 0.2
-  insideVolume: 0.2
+  outsideVolume: 0.15
+  insideVolume: 0.15
   transitionDuration: 5
 --- !u!1 &3452101226588597805
 GameObject:

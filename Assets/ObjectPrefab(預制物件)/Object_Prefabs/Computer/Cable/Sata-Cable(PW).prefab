@@ -278,6 +278,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 6166771423655220631}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 9
   cableDirection: 1
   isHolding: 0
@@ -424,6 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141105218442729997}
   - component: {fileID: 1141543537707302092}
+  - component: {fileID: 5407665892890492174}
   m_Layer: 0
   m_Name: Sata-Cable(PW)
   m_TagString: Untagged
@@ -560,6 +562,21 @@ MonoBehaviour:
     iterations: 1
     SORFactor: 1
     enabled: 0
+--- !u!114 &5407665892890492174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166771423655220631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9704d540ac448439a425526f6b2986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solvers:
+  - {fileID: 1141543537707302092}
+  substeps: 4
 --- !u!1 &6867059333993458412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1124,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 6166771423655220631}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 9
   cableDirection: 2
   isHolding: 0
