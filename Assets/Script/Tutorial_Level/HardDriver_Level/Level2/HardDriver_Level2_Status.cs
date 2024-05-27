@@ -14,7 +14,6 @@ public class HardDriver_Level2_Status : MonoBehaviour
     [SerializeField] GameObject HardDriver;
     [SerializeField] Object_Transform HardDriver_Transform;
     [SerializeField] Object_Transform[] Cables_Transform;
-    [SerializeField] Cable_Object[] cable_Objects;
     public GameObject[] MenuPanels, Picture;
 
     AudioSource audioSource;
@@ -61,7 +60,7 @@ public class HardDriver_Level2_Status : MonoBehaviour
             case 4:                                                                     //要求使用者先安裝主板-硬碟的電源線安裝, 元素0跟1分別是主板的安裝位置跟硬碟的安裝位置。
                 MenuPanels[4].SetActive(true);
                 Picture[3].SetActive(true);
-                if (Cables_Transform[0].hasPlace == true && Cables_Transform[1].hasPlace == true && cable_Objects[0].isHolding == false && cable_Objects[1].isHolding == false)
+                if (Cables_Transform[0].hasPlace == true && Cables_Transform[1].hasPlace == true )
                 {
                     NextStatus();
                 }
@@ -69,7 +68,7 @@ public class HardDriver_Level2_Status : MonoBehaviour
             case 5:                                                                     //要求使用者安裝電源供應器-硬碟的電源線安裝,元素2跟3分別是電源供應器跟硬碟(PW)部分
                 MenuPanels[5].SetActive(true);
                 Picture[4].SetActive(true);
-                if (Cables_Transform[2].hasPlace == true && Cables_Transform[3].hasPlace == true && cable_Objects[1].isHolding == false && cable_Objects[2].isHolding == false)
+                if (Cables_Transform[2].hasPlace == true && Cables_Transform[3].hasPlace == true )
                 {
                     NextStatus();
                 }

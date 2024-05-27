@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
-  T_cableType: 7
+  T_cableType: 1
   T_cableDirection: 1
   screwEnum: 0
   screwType: 0
