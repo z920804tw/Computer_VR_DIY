@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby/Program_Lobby.unity
     guid: 71708ed028246f4429230843cf40d762
-  - enabled: 0
-    path: Assets/Scenes/Lobby/Program_Lobby1.unity
-    guid: 8bfe867eb7c688449b2b2bd4f11c5805
   - enabled: 1
     path: Assets/Scenes/CPU_Level/CPU_Level1.unity
     guid: f7a971f1b000ec243aa224e815447b4a
@@ -41,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MotherBoard_Level/MotherBoard_Level1.unity
     guid: 4e6be1d08553e214db1e4f0716ddf272
+  - enabled: 1
+    path: Assets/Scenes/ComputerDIY_Level/ComputerDIY_Level.unity
+    guid: 76beda0d8e2b73e4e9dd601d5d092aa6
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4c8ec5e46d2638e469b66964d0e38100, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 9f8254a6f0f744947aa517c238b20569, type: 2}
