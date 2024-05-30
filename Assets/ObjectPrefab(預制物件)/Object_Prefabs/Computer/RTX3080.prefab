@@ -386,8 +386,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009121895, y: 0.020184994, z: 0.006738782}
-  m_Center: {x: -0.0009791851, y: 0.000477314, z: 0.000062942505}
+  m_Size: {x: 0.01730436, y: 0.020184994, z: 0.013014004}
+  m_Center: {x: -0.005070398, y: 0.00047730535, z: -0.0000010350392}
 --- !u!114 &5664439754727904977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,8 @@ MonoBehaviour:
   T_cableType: 2
   T_cableDirection: 2
   screwEnum: 0
+  screwType: 0
+  hardDriverType: 0
   hasPlace: 0
 --- !u!114 &516724315830094688
 MonoBehaviour:
@@ -474,6 +476,7 @@ GameObject:
   - component: {fileID: 7466641822936455634}
   - component: {fileID: 4649211485452510575}
   - component: {fileID: 3865963694048680784}
+  - component: {fileID: 7003327234165852657}
   m_Layer: 0
   m_Name: RTX3080
   m_TagString: GraphicsCard
@@ -736,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstColliderObject: {fileID: 0}
   ObjectsTransform: []
+  anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
 --- !u!114 &3865963694048680784
@@ -756,6 +760,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &7003327234165852657
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960840733527266420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8ee2fd19b2313744d9c14ecc4da2b28f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7259272625710389832
 GameObject:
   m_ObjectHideFlags: 0

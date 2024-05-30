@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1129473490350127414}
   - component: {fileID: 8405610423115583437}
   - component: {fileID: 8428411541138337669}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (4)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 386745935882844061}
   - component: {fileID: 9021480026125769439}
   - component: {fileID: 6615310084978829826}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 8947330661331831313}
   - component: {fileID: 2002838951020350176}
   - component: {fileID: 4576187073463095686}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (2)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -1372,7 +1372,7 @@ GameObject:
   - component: {fileID: 3969697390202751355}
   - component: {fileID: 5235778565863632626}
   - component: {fileID: 750902748851495285}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 537635790845247558}
   - component: {fileID: 7785159843263653254}
   - component: {fileID: 8546552685301372615}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2130,7 +2130,7 @@ GameObject:
   - component: {fileID: 6078546902561911116}
   - component: {fileID: 2558941034179791484}
   - component: {fileID: 112923622855799936}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2462,7 +2462,7 @@ GameObject:
   - component: {fileID: 685228047089725241}
   - component: {fileID: 4813806239052492535}
   - component: {fileID: 759674479861191333}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 5102416721648996496}
   - component: {fileID: 2969602830782625140}
   - component: {fileID: 4710754971203062875}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (1)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -3206,7 +3206,7 @@ GameObject:
   - component: {fileID: 4428778684428949482}
   - component: {fileID: 8693333510364419278}
   - component: {fileID: 4308422359718485275}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (7)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -3964,7 +3964,7 @@ GameObject:
   - component: {fileID: 7870059595737580794}
   - component: {fileID: 334640601546999760}
   - component: {fileID: 844564142646057733}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (8)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -4660,7 +4660,7 @@ GameObject:
   - component: {fileID: 3623410550066954551}
   - component: {fileID: 1722240679121937901}
   - component: {fileID: 3310940838705595094}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5773,7 +5773,7 @@ GameObject:
   - component: {fileID: 9020312921217025583}
   - component: {fileID: 723134416381861951}
   - component: {fileID: 1467476076531485101}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (3)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -6989,7 +6989,7 @@ GameObject:
   - component: {fileID: 3731726467412270972}
   - component: {fileID: 6629377143354604855}
   - component: {fileID: 3603213859678790953}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7415,7 +7415,7 @@ GameObject:
   - component: {fileID: 922958803436073599}
   - component: {fileID: 8806961571611388369}
   - component: {fileID: 3333612168606544551}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7665,7 +7665,7 @@ GameObject:
   - component: {fileID: 7200883174901537304}
   - component: {fileID: 8197389337228394575}
   - component: {fileID: 4432173533086807274}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (6)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -8361,7 +8361,7 @@ GameObject:
   - component: {fileID: 7960496722291507872}
   - component: {fileID: 5135126310723960332}
   - component: {fileID: 1101071907503723930}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9687,7 +9687,7 @@ GameObject:
   - component: {fileID: 7792892866920995089}
   - component: {fileID: 8116349761556533089}
   - component: {fileID: 6473894992191186891}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: screw1 (5)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -10112,7 +10112,7 @@ GameObject:
   - component: {fileID: 586202828436352583}
   - component: {fileID: 4566048042500178350}
   - component: {fileID: 3191894991330661709}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10359,7 +10359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94682987650988213}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Screw Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

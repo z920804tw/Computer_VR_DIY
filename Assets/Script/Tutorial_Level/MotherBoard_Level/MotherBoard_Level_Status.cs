@@ -14,14 +14,10 @@ public class MotherBoard_Level_Status : MonoBehaviour
 
     public GameObject[] MenuPanels, Pictures, pages;
 
-    AudioSource audioSource;
+
     void Start()
     {
-        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.volume = Menu.guideVolume;
-        }
+
     }
 
     // Update is called once per frame

@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3473347616254914985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.00033, y: 0.0004, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 6239714045183268527}
   - component: {fileID: 7666253243152102790}
   - component: {fileID: 7884878060258351805}
+  - component: {fileID: 5891125366804082230}
   m_Layer: 0
   m_Name: End
   m_TagString: Cable
@@ -558,6 +559,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 5933877822390747636}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 2
   cableDirection: 2
   isHolding: 0
@@ -581,6 +583,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &5891125366804082230
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274213771078598761}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 63ea63335348b2746b345d7d39010ac2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5933877822390747636
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +787,7 @@ GameObject:
   - component: {fileID: 4287690956171800470}
   - component: {fileID: 5846805781079941431}
   - component: {fileID: 8053898644221450900}
+  - component: {fileID: 466531512488720471}
   m_Layer: 0
   m_Name: Start
   m_TagString: Cable
@@ -1056,6 +1080,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 5933877822390747636}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 7
   cableDirection: 1
   isHolding: 0
@@ -1079,6 +1104,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &466531512488720471
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436080842903523514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 27bd394479f31204da80ae35259c2a64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8889340886814625575
 GameObject:
   m_ObjectHideFlags: 0

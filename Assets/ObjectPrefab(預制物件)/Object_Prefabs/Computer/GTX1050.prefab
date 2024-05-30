@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 1618311098333613704}
   - component: {fileID: 4693954960645475420}
   - component: {fileID: 8725194352802878637}
+  - component: {fileID: 2021335980436344114}
   m_Layer: 6
   m_Name: GTX1050
   m_TagString: GraphicsCard
@@ -918,8 +919,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstColliderObject: {fileID: 0}
   ObjectsTransform: []
+  anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
+--- !u!95 &2021335980436344114
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858193064768574598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: a157eacb43487ad4a8afed06374466a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8087827267532219156
 GameObject:
   m_ObjectHideFlags: 0

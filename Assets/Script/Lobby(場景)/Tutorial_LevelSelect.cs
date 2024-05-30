@@ -56,6 +56,8 @@ public class Tutorial_LevelSelect : MonoBehaviour
             case "GraphicsCard_Level":
                 GraphicsCard_Level(selectedLevelName);
                 break;
+
+
             default:
                 Debug.Log("找不到關卡");
                 break;

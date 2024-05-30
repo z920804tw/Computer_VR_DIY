@@ -12,6 +12,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
     [SerializeField] Level_Select l;
     [SerializeField] GameObject[] MenuPanels;
     [SerializeField] GameObject CpuThermal;
+    [SerializeField] GameObject ScrewDriver;
 
     int currentTransformIndex = 0;
 
@@ -50,16 +51,12 @@ public class ComputerDIY_Level_Status : MonoBehaviour
     [SerializeField] Object_Transform[] PW_Screw__transform;
 
 
-    AudioSource audioSource;
+
     void Start()
     {
-        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.volume = Menu.guideVolume;
-        }
+
         currentTransformIndex = -1;
-        status = 0;
+        //status = 0;
 
 
     }
@@ -122,6 +119,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Medium;
                 if (M2_SSD_Transform.hasPlace && MB_Screw__transform[8].hasPlace)
                 {
                     NextStatus();
@@ -129,6 +127,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Small;
                 if (MotherBoard_Transform.hasPlace == true)
                 {
                     if (MB_Screw__transform[0].hasPlace && MB_Screw__transform[1].hasPlace && MB_Screw__transform[2].hasPlace &&
@@ -141,6 +140,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 6:
                 MenuPanels[6].SetActive(true);
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Large;
                 if (Power_Transform.hasPlace == true)
                 {
                     if (PW_Screw__transform[0].hasPlace && PW_Screw__transform[1].hasPlace &&
@@ -174,7 +174,8 @@ public class ComputerDIY_Level_Status : MonoBehaviour
             case 9:
                 MenuPanels[9].SetActive(true);
                 if (Cable_Transform[0].hasPlace && Cable_Transform[1].hasPlace &&
-                    Cable_Transform[2].hasPlace && Cable_Transform[3].hasPlace)
+                    Cable_Transform[2].hasPlace && Cable_Transform[3].hasPlace&&
+                    Cable_Transform[4].hasPlace && Cable_Transform[5].hasPlace)
                 {
                     NextStatus();
                 }
@@ -186,14 +187,10 @@ public class ComputerDIY_Level_Status : MonoBehaviour
             default:
                 break;
 
-
         }
-
-
-
-
     }
 
+    //記憶體用的,主要是用在雙通道功能偵測上
     void checkIndex(int index)
     {
         switch (index)

@@ -13,16 +13,12 @@ public class Level_Stauts : MonoBehaviour
     [SerializeField] GameObject[] CPU_GameObject;
     [SerializeField] GameObject Mother_GameObject, guideUI, pickUI;
 
-    AudioSource audioSource;
+
 
 
     void Start()
     {
-      audioSource=GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-      if(audioSource!=null){
-        audioSource.volume=Menu.guideVolume;
-      }
-        
+
     }
 
     // Update is called once per frame

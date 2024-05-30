@@ -20,7 +20,6 @@ public class Screw_Object : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
-    public GameObject prevColliderObject;
     public GameObject[] ObjectsTransform;
 
     public Animator anim;

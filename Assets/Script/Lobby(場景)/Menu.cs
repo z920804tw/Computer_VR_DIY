@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
@@ -12,16 +13,13 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] MenuPanel;          //會用到的UI請放到這裡面。
 
-    [Header("音量設定")]
-    public Slider guideVolumeSlider;
-    public AudioClip[] audioClips;
-    public AudioSource audioSource;
-    public static float guideVolume = 0.5f;
+    [SerializeField] AudioSource inside, outside;
 
     void Start()
     {
-        guideVolumeSlider.value = guideVolume;
-        audioSource.volume = guideVolume;
+
+
+
     }
 
     // Update is called once per frame
@@ -91,6 +89,9 @@ public class Menu : MonoBehaviour
                 case "顯示卡":
                     MenuPanel[7].SetActive(true);
                     break;
+                case "電腦完整組裝":
+                    SceneManager.LoadScene(11);
+                    break;
                 default:
                     Debug.Log("123");
                     break;
@@ -136,12 +137,6 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void testGuideVolume()
-    {
-        guideVolume = guideVolumeSlider.value;
-        audioSource.volume = guideVolume;
-        int rnd = UnityEngine.Random.Range(0, 9);
-        audioSource.PlayOneShot(audioClips[rnd]);
-    }
+
 
 }

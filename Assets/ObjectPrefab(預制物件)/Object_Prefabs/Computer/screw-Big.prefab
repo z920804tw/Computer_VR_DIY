@@ -184,8 +184,9 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   prevColliderObject: {fileID: 0}
   ObjectsTransform: []
+  anim: {fileID: 0}
   screwEnum: 1
-  screwType: 2
+  screwType: 1
   isFirstCollider: 0
 --- !u!114 &4824030643699631602
 MonoBehaviour:

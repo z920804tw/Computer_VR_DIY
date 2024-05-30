@@ -13,15 +13,10 @@ public class Power_Level_Status : MonoBehaviour
     [SerializeField] Object_Transform[] Screw_Transform, Soket_Transform;
     public GameObject[] MenuPanels, Pictures, pages;
 
-    AudioSource audioSource;
 
     void Start()
     {
-        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.volume = Menu.guideVolume;
-        }
+
 
     }
 

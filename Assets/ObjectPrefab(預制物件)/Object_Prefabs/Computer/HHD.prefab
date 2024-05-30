@@ -137,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.021447463, y: 0.008169591, z: 0.037512287}
-  m_Center: {x: 0.00012276851, y: 0.0004684627, z: -0.0007883161}
+  m_Size: {x: 0.03291653, y: 0.008169591, z: 0.037512287}
+  m_Center: {x: -0.0056117657, y: 0.0004684627, z: -0.00078831747}
 --- !u!114 &4726916121353123007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ GameObject:
   - component: {fileID: 4020481015776303274}
   - component: {fileID: 125427446407703997}
   - component: {fileID: 9216330743695713701}
-  - component: {fileID: 1644512540384258280}
+  - component: {fileID: 8116625134579587614}
   m_Layer: 0
   m_Name: HHD
   m_TagString: SSD
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstColliderObject: {fileID: 0}
   ObjectsTransform: []
-  hardDriverType: 0
+  hardDriverType: 1
   anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
@@ -934,7 +934,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.120384455, y: 0.03588158, z: 0.19354524}
   m_Center: {x: 0.000010609627, y: -0.016579777, z: -0.0031120405}
---- !u!95 &1644512540384258280
+--- !u!95 &8116625134579587614
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -1092,8 +1092,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019848421, y: 0.008063018, z: 0.020878064}
-  m_Center: {x: 0.015047322, y: 0.00041517615, z: 0.000941526}
+  m_Size: {x: 0.027965033, y: 0.008063018, z: 0.020878064}
+  m_Center: {x: 0.010989014, y: 0.00041517615, z: 0.00094152504}
 --- !u!114 &8301445690441288008
 MonoBehaviour:
   m_ObjectHideFlags: 0

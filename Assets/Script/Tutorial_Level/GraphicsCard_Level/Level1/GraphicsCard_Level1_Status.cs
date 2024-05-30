@@ -13,15 +13,11 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
     [SerializeField] GameObject GraphicsCard;
     [SerializeField] Object_Transform GraphicsCard_Transform;
 
-    AudioSource audioSource;
+
 
     void Start()
     {
-        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.volume = Menu.guideVolume;
-        }
+
     }
 
     // Update is called once per frame

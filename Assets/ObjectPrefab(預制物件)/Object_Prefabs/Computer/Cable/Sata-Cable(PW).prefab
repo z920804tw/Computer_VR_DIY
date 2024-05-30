@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1067361974030838723}
   - component: {fileID: 1018544745658556323}
   - component: {fileID: 3949490600722750959}
+  - component: {fileID: 3692295661892241671}
   m_Layer: 0
   m_Name: Start
   m_TagString: Cable
@@ -332,6 +333,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
+--- !u!95 &3692295661892241671
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012935631027625160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c0f2ebd1c2c4276468e90099ab25ff97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3576662259545044592
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +448,8 @@ GameObject:
   - component: {fileID: 1141105218442729997}
   - component: {fileID: 1141543537707302092}
   - component: {fileID: 5407665892890492174}
+  - component: {fileID: 6208634380767414782}
+  - component: {fileID: 4492267779557508252}
   m_Layer: 0
   m_Name: Sata-Cable(PW)
   m_TagString: Untagged
@@ -563,6 +587,36 @@ MonoBehaviour:
     SORFactor: 1
     enabled: 0
 --- !u!114 &5407665892890492174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166771423655220631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9704d540ac448439a425526f6b2986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solvers:
+  - {fileID: 1141543537707302092}
+  substeps: 4
+--- !u!114 &6208634380767414782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166771423655220631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9704d540ac448439a425526f6b2986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solvers:
+  - {fileID: 1141543537707302092}
+  substeps: 4
+--- !u!114 &4492267779557508252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -862,6 +916,7 @@ GameObject:
   - component: {fileID: 4228794715340015167}
   - component: {fileID: 3690710802071941121}
   - component: {fileID: 5857621871021540838}
+  - component: {fileID: 573204467979885483}
   m_Layer: 0
   m_Name: End
   m_TagString: Cable
@@ -1178,6 +1233,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &573204467979885483
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776158490847139194}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 55e8d428fc651df4889f0f609f933dfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8198929590838633669
 GameObject:
   m_ObjectHideFlags: 0

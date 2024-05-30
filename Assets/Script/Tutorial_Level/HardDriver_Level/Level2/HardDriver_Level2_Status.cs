@@ -16,14 +16,10 @@ public class HardDriver_Level2_Status : MonoBehaviour
     [SerializeField] Object_Transform[] Cables_Transform;
     public GameObject[] MenuPanels, Picture;
 
-    AudioSource audioSource;
+
     void Start()
     {
-        audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.volume = Menu.guideVolume;
-        }
+
     }
 
     // Update is called once per frame

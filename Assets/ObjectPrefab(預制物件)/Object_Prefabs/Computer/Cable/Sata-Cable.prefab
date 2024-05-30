@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 6110237913158140747}
   - component: {fileID: 7421615419022238232}
   - component: {fileID: 9027925234108942034}
+  - component: {fileID: 6275394628404330049}
   m_Layer: 0
   m_Name: End
   m_TagString: Cable
@@ -444,6 +445,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 9049540237343482091}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 8
   cableDirection: 2
   isHolding: 0
@@ -497,6 +499,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &6275394628404330049
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988446208546853972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: bfec326c44876b24a9dafa61ac96456b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4300885553346435184
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +805,7 @@ GameObject:
   - component: {fileID: 2469631557104530370}
   - component: {fileID: 6751961818560397603}
   - component: {fileID: 2964787025028890002}
+  - component: {fileID: 2666891001543549734}
   m_Layer: 0
   m_Name: Start
   m_TagString: Cable
@@ -1044,6 +1068,7 @@ MonoBehaviour:
   firstColliderObject: {fileID: 0}
   cableParent: {fileID: 9049540237343482091}
   ObjectsTransform: []
+  anim: {fileID: 0}
   cableType: 8
   cableDirection: 1
   isHolding: 0
@@ -1097,6 +1122,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
+--- !u!95 &2666891001543549734
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991221847867246875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 0364bd72e9bf0ae459f93a124c304aa5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9049540237343482091
 GameObject:
   m_ObjectHideFlags: 0
