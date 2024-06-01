@@ -15,6 +15,7 @@ public class SceneAudio : MonoBehaviour
     public float transitionDuration;
     public static float bgVolume = 0.15f;
 
+
     GameObject currentPos;
     bool isTransitioning = false;
 
@@ -49,8 +50,8 @@ public class SceneAudio : MonoBehaviour
         outside = GameObject.Find("Outside").GetComponent<AudioSource>();
         if (inside != null && outside != null)
         {
-            insideVolume=bgVolume;
-            outsideVolume=bgVolume;
+            insideVolume = bgVolume;
+            outsideVolume = bgVolume;
         }
     }
 
@@ -91,6 +92,7 @@ public class SceneAudio : MonoBehaviour
     private IEnumerator transitionVolume()   //音樂的轉場效果
     {
         float timer = 0;
+
         if (isTransitioning == false)
         {
             isTransitioning = true;
@@ -137,13 +139,17 @@ public class SceneAudio : MonoBehaviour
     }
     public void testBgVolume()
     {
-        bgVolume=bgVolumeSilder.value;
+        bgVolume = bgVolumeSilder.value;
         //要立即改室內跟室外的音量
-        inside.volume=bgVolume;
-        outside.volume=bgVolume;
+        //inside.volume=bgVolume;
+        //outside.volume=bgVolume;
+        insideVolume = bgVolume;
+        outsideVolume = bgVolume;
+        if (isTransitioning == false)
+        {
+            StartCoroutine(transitionVolume());
+        }
 
-        insideVolume=bgVolume;
-        outsideVolume=bgVolume;
     }
 
 }
