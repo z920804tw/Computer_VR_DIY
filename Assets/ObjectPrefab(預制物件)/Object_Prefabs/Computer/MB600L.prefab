@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3833023368549620813}
   - component: {fileID: 3879692704087971688}
   - component: {fileID: 4633227867483925954}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Screw Transform
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 272282276770354875}
   - component: {fileID: 6788519117799467619}
   - component: {fileID: 2208695494507113592}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SSD Transform
   m_TagString: SSD
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   - component: {fileID: 2025288643884400765}
   - component: {fileID: 283420987065563398}
   - component: {fileID: 1268264281525887682}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Screw Transform (2)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 8563513943856258332}
   - component: {fileID: 3134008130216539169}
   - component: {fileID: 7428297223746239988}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Screw Transform (3)
   m_TagString: Screw
   m_Icon: {fileID: 0}
@@ -1530,7 +1530,7 @@ GameObject:
   - component: {fileID: 5365933685161660921}
   - component: {fileID: 3610370578878466376}
   - component: {fileID: 4796406254972064097}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MotherBoard Transform
   m_TagString: MotherBoard
   m_Icon: {fileID: 0}
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 3333338456880487881}
   - component: {fileID: 4889124151396838785}
   - component: {fileID: 3393732008089639352}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Power Transform
   m_TagString: Power
   m_Icon: {fileID: 0}
@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: 3315476365464204371}
   - component: {fileID: 5493453112979268149}
   - component: {fileID: 1503732619650378493}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Screw Transform (1)
   m_TagString: Screw
   m_Icon: {fileID: 0}

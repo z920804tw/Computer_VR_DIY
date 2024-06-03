@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 7421615419022238232}
   - component: {fileID: 9027925234108942034}
   - component: {fileID: 6275394628404330049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 6751961818560397603}
   - component: {fileID: 2964787025028890002}
   - component: {fileID: 2666891001543549734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Start
   m_TagString: Cable
   m_Icon: {fileID: 0}

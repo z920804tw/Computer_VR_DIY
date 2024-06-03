@@ -61,7 +61,7 @@ public class SceneAudio : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //進入室內跟室外的時候會執行以下的內容
     {
         if (other.gameObject.name == "Inside")
         {
@@ -70,10 +70,6 @@ public class SceneAudio : MonoBehaviour
             StartCoroutine(transitionVolume());
             Debug.Log("室內");
 
-            //outside.Pause();
-            //inside.volume = 0.2f;
-            //inside.Play();
-
         }
         else if (other.gameObject.name == "Outside")
         {
@@ -81,10 +77,6 @@ public class SceneAudio : MonoBehaviour
             outside.Play();
             StartCoroutine(transitionVolume());
             Debug.Log("室外");
-
-            //inside.Pause();
-            //outside.volume = audioVolume;
-            //outside.Play();
 
         }
     }
@@ -130,14 +122,14 @@ public class SceneAudio : MonoBehaviour
         Debug.Log("完成!");
     }
 
-    public void testGuideVolume()
+    public void testGuideVolume()       //給設定->音量設定裡面的引導音量測試按鈕用
     {
         guideVolume = guideVolumeSlider.value;
         audioSource.volume = guideVolume;
         int rnd = UnityEngine.Random.Range(0, 9);
         audioSource.PlayOneShot(audioClips[rnd]);
     }
-    public void testBgVolume()
+    public void testBgVolume()          //給設定->音量設定裡面的背景音量測試按鈕用
     {
         bgVolume = bgVolumeSilder.value;
         //要立即改室內跟室外的音量

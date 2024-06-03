@@ -28,9 +28,9 @@ public class Menu : MonoBehaviour
 
     }
     //主菜單按鈕用的功能,目前只有關卡選擇跟設定會用到
-    public void MenuSelect()
+    public void MenuSelect() //用在主菜單功能上
     {
-        string select = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        string select = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().text;   //可以取得當前按鈕的文字是甚麼的功能
         closeAllUI();
         switch (select)
         {
@@ -58,18 +58,18 @@ public class Menu : MonoBehaviour
 
 
 
-    //TotlaLevelSelect裡面各個電腦零件的關卡選擇
-    public void LevelChoose()
+  
+    public void LevelChoose()  //用在關卡選擇裡面各個電腦零件的關卡按鈕
     {
         //EventSystem.current.currentSelectedGameObject是判斷我現在互動的那個按鈕，然後去取得他的子物件的text。
         string button = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().text;
         Debug.Log(button);
         if (button != null)
         {
-            //先把MenuPanel的所有會用到的UI全部關閉
-            closeAllUI();
-            //去switch剛剛取得的互動按鈕裡的文字，根據零件名稱去開啟MenuPanel陣列裡對應的零件選擇關卡。
-            switch (button)
+            
+            closeAllUI();//先把MenuPanel的所有會用到的UI全部關閉
+            
+            switch (button)//去switch剛剛取得的互動按鈕裡的文字，根據零件名稱去開啟MenuPanel陣列裡對應的零件選擇關卡。
             {
                 case "處理器":
                     MenuPanel[2].SetActive(true);
@@ -129,7 +129,7 @@ public class Menu : MonoBehaviour
 
     }
 
-    public void closeAllUI()
+    public void closeAllUI()        //關掉全部的頁面
     {
         foreach (GameObject i in MenuPanel)
         {

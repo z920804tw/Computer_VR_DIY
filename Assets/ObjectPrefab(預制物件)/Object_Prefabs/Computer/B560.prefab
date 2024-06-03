@@ -4473,13 +4473,13 @@ GameObject:
   - component: {fileID: 5866288151548055550}
   - component: {fileID: 8981880660091580247}
   - component: {fileID: 6281375319550574006}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fan-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5791754375252937872
 Transform:
   m_ObjectHideFlags: 0
@@ -5596,7 +5596,7 @@ GameObject:
   - component: {fileID: 4176705565955417712}
   - component: {fileID: 4966231005638708847}
   - component: {fileID: 2289725839539126507}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: M.2 SSD Transform
   m_TagString: SSD
   m_Icon: {fileID: 0}
@@ -6210,7 +6210,7 @@ GameObject:
   - component: {fileID: 681643568500619074}
   - component: {fileID: 382701635940506655}
   - component: {fileID: 2096927075041885782}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CPU-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -6304,7 +6304,7 @@ GameObject:
   - component: {fileID: 8265974363581439045}
   - component: {fileID: 4182804061018943109}
   - component: {fileID: 717872374307136401}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MPWR-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -6896,13 +6896,13 @@ GameObject:
   - component: {fileID: 1675355688673446392}
   - component: {fileID: 6757902259631084146}
   - component: {fileID: 5454147329778697950}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fan-Cable Transform (1)
   m_TagString: Cable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7537990205937025773
 Transform:
   m_ObjectHideFlags: 0
@@ -7322,7 +7322,7 @@ GameObject:
   - component: {fileID: 8258566875354976869}
   - component: {fileID: 6575284130721755304}
   - component: {fileID: 5545104589872012479}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fan-Cable Transform (2)
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -7765,7 +7765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4754918011606461355
 Transform:
   m_ObjectHideFlags: 0
@@ -9261,7 +9261,7 @@ GameObject:
   - component: {fileID: 7341287369064911090}
   - component: {fileID: 4081966618988719147}
   - component: {fileID: 3113095253495828663}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sata-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}

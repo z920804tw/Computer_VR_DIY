@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 1254271096295539799}
   - component: {fileID: 5531506857718339448}
   - component: {fileID: 7041338101251845067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Start
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 6471129112947050224}
   - component: {fileID: 7016016470112169975}
   - component: {fileID: 7454247062777847432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: Cable
   m_Icon: {fileID: 0}

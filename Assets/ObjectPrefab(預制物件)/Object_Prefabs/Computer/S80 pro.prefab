@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1817626495074310729}
   - component: {fileID: 2343433613966898757}
   - component: {fileID: 4433085455264850930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: S80 pro
   m_TagString: SSD
   m_Icon: {fileID: 0}

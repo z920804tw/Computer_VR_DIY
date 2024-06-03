@@ -1338,6 +1338,7 @@ GameObject:
   - component: {fileID: 2376556702854078039}
   - component: {fileID: 5167622131525522542}
   - component: {fileID: 106128255471643364}
+  - component: {fileID: 2565647596510648055}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1451,6 +1452,32 @@ MonoBehaviour:
   outsideVolume: 0.15
   insideVolume: 0.15
   transitionDuration: 5
+  audioClips: []
+  audioSource: {fileID: 0}
+  guideVolumeSlider: {fileID: 0}
+  bgVolumeSilder: {fileID: 0}
+--- !u!114 &2565647596510648055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381533353708696297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d12b8334fe6e804ba1354f112959d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand1: {fileID: 4744821690605499978}
+  hand2: {fileID: 1533339404804190592}
+  RayDistance: 20
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 320
+  LeftHandgripInputActionReference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  RightHandgripInputActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  preObject1: {fileID: 0}
+  preObject2: {fileID: 0}
 --- !u!1 &3452101226588597805
 GameObject:
   m_ObjectHideFlags: 0

@@ -648,8 +648,8 @@ GameObject:
   - component: {fileID: 4020481015776303274}
   - component: {fileID: 125427446407703997}
   - component: {fileID: 9216330743695713701}
-  - component: {fileID: 8116625134579587614}
-  m_Layer: 0
+  - component: {fileID: 4717034508437381483}
+  m_Layer: 6
   m_Name: HHD
   m_TagString: SSD
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.120384455, y: 0.03588158, z: 0.19354524}
   m_Center: {x: 0.000010609627, y: -0.016579777, z: -0.0031120405}
---- !u!95 &8116625134579587614
+--- !u!95 &4717034508437381483
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

@@ -28,12 +28,12 @@ public class Tutorial_LevelSelect : MonoBehaviour
 
     }
 
-    public void SelectLevel()
+    public void SelectLevel()    //在關卡選擇某個零件後,會有下拉選單,這邊是給選好要的關卡後可以讀取的功能。
     {
         GameObject currentComponet = this.gameObject;                               //取得當前的componet所屬的物件
         string selectedLevelName = TD_LevelName.options[TD_LevelName.value].text;   //取得當前TMP_DP的所選值是甚麼
         Debug.Log(selectedLevelName);
-        switch (currentComponet.name)                                               //去switch當前的componet物件名稱，如果是CPU就做CPU的事情
+        switch (currentComponet.name)                                               //去switch當前的componet物件名稱，如果是CPU就做CPU的事情...以此類推
         {
             case "CPU_Level":
                 CPU_Level(selectedLevelName);

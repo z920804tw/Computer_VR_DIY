@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1574492105578231695}
   - component: {fileID: 4502902936002493002}
   - component: {fileID: 4520935452417935168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CPU-Fan
   m_TagString: Fans
   m_Icon: {fileID: 0}

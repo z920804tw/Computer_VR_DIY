@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 673685666570422111}
   - component: {fileID: 6124031176335027068}
   - component: {fileID: 5227235083546784236}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PCIE-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 3723740756977697143}
   - component: {fileID: 5512580755082906942}
   - component: {fileID: 4519701985488211163}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: MB-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 780901852039997720}
   - component: {fileID: 3377457366160230261}
   - component: {fileID: 4827608933745437905}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Power-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 690709833114242852}
   - component: {fileID: 9049909617454198186}
   - component: {fileID: 1957804071957411264}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CPU-Cable Transform (1)
   m_TagString: Cable
   m_Icon: {fileID: 0}
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 847351793640636133}
   - component: {fileID: 2131513771609841752}
   - component: {fileID: 9141564693494587343}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SATA(PW)-Cable Transform
   m_TagString: Cable
   m_Icon: {fileID: 0}

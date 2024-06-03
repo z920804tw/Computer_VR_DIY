@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 4649211485452510575}
   - component: {fileID: 3865963694048680784}
   - component: {fileID: 7003327234165852657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RTX3080
   m_TagString: GraphicsCard
   m_Icon: {fileID: 0}

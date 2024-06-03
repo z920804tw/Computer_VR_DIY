@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 6835345039753886422}
   - component: {fileID: 8272444532540477845}
   - component: {fileID: 2621288516609784532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: End
   m_TagString: Cable
   m_Icon: {fileID: 0}
