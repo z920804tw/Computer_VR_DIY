@@ -506,4 +506,6 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 1
+  screwType: 0
+  hardDriverType: 0
   hasPlace: 0

@@ -439,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstColliderObject: {fileID: 0}
   ObjectsTransform: []
+  anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
 --- !u!65 &613097496250698498
