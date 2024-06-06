@@ -124,6 +124,7 @@ public class SceneAudio : MonoBehaviour
 
     public void testGuideVolume()       //給設定->音量設定裡面的引導音量測試按鈕用
     {
+        
         guideVolume = guideVolumeSlider.value;
         audioSource.volume = guideVolume;
         int rnd = UnityEngine.Random.Range(0, 9);
@@ -143,5 +144,5 @@ public class SceneAudio : MonoBehaviour
         }
 
     }
-
+    
 }

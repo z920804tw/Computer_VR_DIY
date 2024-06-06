@@ -11,6 +11,7 @@ public class SelectObjectOutline : MonoBehaviour
     public LayerMask layerMask;
     public InputActionReference LeftHandgripInputActionReference, RightHandgripInputActionReference;
 
+
     GameObject hitObject1, hitObject2;
     [SerializeField] GameObject preObject1, preObject2;
     Ray ray1, ray2;
@@ -31,21 +32,27 @@ public class SelectObjectOutline : MonoBehaviour
         float Righthold = RightHandgripInputActionReference.action.ReadValue<float>();
         //Debug.Log(hold);
 
+
+
         if (Lefthold == 0)
         {
             Hand1();
-        }else{}
+        }
+        else { }
 
 
         if (Righthold == 0)
         {
             Hand2();
-        }else{}
+        }
+        else { }
 
 
         //讓雙手只到某個物件就會有outline顯示出來
 
     }
+
+
     //2
     void Hand1()
     {
@@ -111,7 +118,7 @@ public class SelectObjectOutline : MonoBehaviour
         }
     }
 
-
+    
 
 
 }

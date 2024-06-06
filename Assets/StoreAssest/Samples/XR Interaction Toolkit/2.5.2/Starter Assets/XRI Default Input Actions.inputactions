@@ -785,7 +785,7 @@
                 {
                     "name": "PrimaryButton",
                     "type": "Button",
-                    "id": "4c9a494c-1bd4-4a88-89e0-80d8d234ec5b",
+                    "id": "1e00198d-c0c6-4b3f-be76-c3327051ee1b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -960,8 +960,8 @@
                 },
                 {
                     "name": "",
-                    "id": "9ce4fcc4-3b49-45c8-bd9c-c2c4fa3d0653",
-                    "path": "<XRController>{LeftHand}/menu",
+                    "id": "49c2ece1-2192-4bf4-931a-eb7d2f139038",
+                    "path": "<XRInputV1::HTC::HTCViveControllerOpenXR>/trackpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
