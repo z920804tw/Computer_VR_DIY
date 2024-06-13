@@ -1382,6 +1382,7 @@ GameObject:
   - component: {fileID: 5167622131525522542}
   - component: {fileID: 106128255471643364}
   - component: {fileID: 2565647596510648055}
+  - component: {fileID: 3794418302066917937}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1521,6 +1522,23 @@ MonoBehaviour:
   RightHandgripInputActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   preObject1: {fileID: 0}
   preObject2: {fileID: 0}
+--- !u!114 &3794418302066917937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381533353708696297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bbbfe4cdb2cc94c800b1ec0f84ee6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ContinuousMove: {fileID: 2692761728098423182}
+  Teleportation: {fileID: 4888082628831286398}
+  XRcontroller: {fileID: 6627619622806499999}
+  continuousTurnProvider: {fileID: 648538999862885234}
+  snapTurnProvider: {fileID: 7142825419351491807}
 --- !u!1 &3452101226588597805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2060,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_SelectAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Select
       m_Type: 1
@@ -2054,7 +2072,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -4084014799535200556, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectActionValue:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Select Value
       m_Type: 0
@@ -2612,9 +2630,9 @@ GameObject:
   - component: {fileID: 2881335390621164576}
   - component: {fileID: 6273526399178425504}
   - component: {fileID: 4888082628831286398}
+  - component: {fileID: 2692761728098423182}
   - component: {fileID: 7142825419351491807}
   - component: {fileID: 648538999862885234}
-  - component: {fileID: 2692761728098423182}
   m_Layer: 0
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -2665,6 +2683,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 6273526399178425504}
   m_DelayTime: 0
+--- !u!114 &2692761728098423182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998794186798246597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 6273526399178425504}
+  m_MoveSpeed: 5
+  m_EnableStrafe: 1
+  m_EnableFly: 0
+  m_UseGravity: 1
+  m_GravityApplicationMode: 0
+  m_ForwardSource: {fileID: 0}
+  m_LeftHandMoveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Left Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: bf0f129f-6348-456b-b7e0-9d33de8a0a1d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_RightHandMoveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 9ff6924b-c674-4e48-9c30-01c3102ac8bb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &7142825419351491807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,49 +2806,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &2692761728098423182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998794186798246597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 6273526399178425504}
-  m_MoveSpeed: 5
-  m_EnableStrafe: 1
-  m_EnableFly: 0
-  m_UseGravity: 1
-  m_GravityApplicationMode: 0
-  m_ForwardSource: {fileID: 0}
-  m_LeftHandMoveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Move
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: bf0f129f-6348-456b-b7e0-9d33de8a0a1d
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_RightHandMoveAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Hand Move
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: 9ff6924b-c674-4e48-9c30-01c3102ac8bb
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
 --- !u!1 &4744821690605499978
 GameObject:
   m_ObjectHideFlags: 0

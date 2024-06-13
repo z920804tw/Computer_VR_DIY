@@ -13,7 +13,9 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] MenuPanel;          //會用到的UI請放到這裡面。
 
-    [SerializeField] AudioSource inside, outside;
+
+
+
 
     void Start()
     {
@@ -44,6 +46,9 @@ public class Menu : MonoBehaviour
                 break;
             case "音量設定":
                 MenuPanel[10].SetActive(true);
+                break;
+            case "控制設定":
+                MenuPanel[11].SetActive(true);
                 break;
             case "退出":
                 Application.Quit();
