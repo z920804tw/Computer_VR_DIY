@@ -26,57 +26,128 @@ public class ControllerSetting : MonoBehaviour
     void Awake()
     {
 
-        if (move != null && turn != null)
+        if (ContinuousMove == null && Teleportation == null)
         {
-            move.value=moveIndex;
-            turn.value=turnIndex;
+            ContinuousMove = GameObject.Find("Locomotion System").GetComponent<ActionBasedContinuousMoveProvider>();
+            Teleportation = GameObject.Find("Locomotion System").GetComponent<TeleportationProvider>();
+        }
+
+        if (continuousTurnProvider == null && snapTurnProvider == null)
+        {
+            continuousTurnProvider = GameObject.Find("Locomotion System").GetComponent<ActionBasedContinuousTurnProvider>();
+            snapTurnProvider = GameObject.Find("Locomotion System").GetComponent<ActionBasedSnapTurnProvider>();
         }
 
 
-        if (continuousTurnProvider != null && snapTurnProvider != null)
+    }
+
+    private void Start()
+    {
+        if (move != null && turn != null)
+        {
+            move.value = moveIndex;
+            turn.value = turnIndex;
+        }
+
+
+        if (continuousTurnProvider != null && snapTurnProvider != null && ContinuousMove != null && Teleportation != null)
         {
             setMoveMode(moveIndex);
             setTurnMode(turnIndex);
 
+            //setMoveMode1(moveIndex);
+
+
         }
-
-
+        else
+        {
+            Debug.Log("找不到snap or move");
+        }
     }
 
     // Update is called once per frame
 
+    /* public void setMoveMode()
+     {
+         string Option = move.options[move.value].text;
+
+         switch (Option)
+         {
+             case "持續移動":
+                 ContinuousMove.enabled = true;
+                 Teleportation.enabled = false;
+                 XRcontroller.enableInputActions = false;
+                 moveIndex = 0;
+                 break;
+             case "定點移動":
+                 ContinuousMove.enabled = false;
+                 Teleportation.enabled = true;
+                 XRcontroller.enableInputActions = true;
+                 moveIndex = 1;
+                 break;
+
+             default:
+                 Debug.Log("123");
+                 break;
+         }
+     }
+     void setMoveMode1(int i)
+     {
+         switch (i)
+         {
+             case 0:
+                 ContinuousMove.enabled = true;
+                 Teleportation.enabled = false;
+                 XRcontroller.enableInputActions = false;
+                 break;
+             case 1:
+                 ContinuousMove.enabled = false;
+                 Teleportation.enabled = true;
+                 XRcontroller.enableInputActions = true;
+                 break;
+         }
+     }*/
+
 
     public void setMoveMode(int i)
     {
-        if (i == 0)
+        if (ContinuousMove != null && Teleportation != null)
         {
-            ContinuousMove.enabled = true;
-            Teleportation.enabled = false;
-            XRcontroller.enableInputActions = false;
-            moveIndex = 0;
+            if (i == 0)
+            {
+                ContinuousMove.enabled = true;
+                Teleportation.enabled = false;
+                XRcontroller.enableInputActions = false;
+                moveIndex = 0;
 
+            }
+            else if (i == 1)
+            {
+                ContinuousMove.enabled = false;
+                Teleportation.enabled = true;
+                XRcontroller.enableInputActions = true;
+                moveIndex = 1;
+            }
         }
-        else if (i == 1)
-        {
-            ContinuousMove.enabled = false;
-            Teleportation.enabled = true;
-            XRcontroller.enableInputActions = true;
-            moveIndex = 1;
-        }
+
     }
     public void setTurnMode(int i)
     {
-        if (i == 0)
+        if (continuousTurnProvider != null && snapTurnProvider != null)
         {
-            continuousTurnProvider.enabled = true;
-            snapTurnProvider.enabled = false;
-            turnIndex = 0;
+            if (i == 0)
+            {
+                continuousTurnProvider.enabled = true;
+                snapTurnProvider.enabled = false;
+                turnIndex = 0;
+            }
+            else if (i == 1)
+            {
+                continuousTurnProvider.enabled = false;
+                snapTurnProvider.enabled = true;
+                turnIndex = 1;
+            }
         }
-        else if (i == 1)
-        {
-            continuousTurnProvider.enabled = false;
-            snapTurnProvider.enabled = true;
-            turnIndex = 1;
-        }
+
     }
 }
