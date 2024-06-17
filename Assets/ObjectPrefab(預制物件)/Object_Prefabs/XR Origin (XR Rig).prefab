@@ -1383,6 +1383,7 @@ GameObject:
   - component: {fileID: 106128255471643364}
   - component: {fileID: 2565647596510648055}
   - component: {fileID: 3794418302066917937}
+  - component: {fileID: 3078942513989579585}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1493,13 +1494,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inside: {fileID: 0}
   outside: {fileID: 0}
-  outsideVolume: 0.15
-  insideVolume: 0.15
+  bgVolume: 0.15
   transitionDuration: 5
   audioClips: []
   audioSource: {fileID: 0}
   guideVolumeSlider: {fileID: 0}
   bgVolumeSilder: {fileID: 0}
+  guideVolume: 0.5
 --- !u!114 &2565647596510648055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1542,18 @@ MonoBehaviour:
   continuousTurnProvider: {fileID: 648538999862885234}
   snapTurnProvider: {fileID: 7142825419351491807}
   turn: {fileID: 0}
+--- !u!114 &3078942513989579585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381533353708696297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83eaf32054879d4588289548a2bdc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3452101226588597805
 GameObject:
   m_ObjectHideFlags: 0

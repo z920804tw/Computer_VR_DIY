@@ -26,7 +26,7 @@ public class SelectObjectOutline : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()//會抓手柄有沒有握住，如果有握住就不會有設限出來。
     {
         float Lefthold = LeftHandgripInputActionReference.action.ReadValue<float>();
         float Righthold = RightHandgripInputActionReference.action.ReadValue<float>();

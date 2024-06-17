@@ -14,13 +14,14 @@ public class ControllerSetting : MonoBehaviour
     public ActionBasedController XRcontroller;
 
     [SerializeField] TMP_Dropdown move;         //大廳設定就好
-    static int moveIndex = 0;
+
 
     [Header("旋轉控制設定")]
     public ActionBasedContinuousTurnProvider continuousTurnProvider;
     public ActionBasedSnapTurnProvider snapTurnProvider;
     [SerializeField] TMP_Dropdown turn;           //大廳設定就好
-    static int turnIndex = 0;
+
+
 
 
     void Awake()
@@ -43,19 +44,20 @@ public class ControllerSetting : MonoBehaviour
 
     private void Start()
     {
-        if (move != null && turn != null)
-        {
-            move.value = moveIndex;
-            turn.value = turnIndex;
-        }
+
 
 
         if (continuousTurnProvider != null && snapTurnProvider != null && ContinuousMove != null && Teleportation != null)
         {
-            setMoveMode(moveIndex);
-            setTurnMode(turnIndex);
+
+            int a = PlayerPrefs.GetInt("moveControl");
+            int b = PlayerPrefs.GetInt("turnControl");
+
+            setMoveMode(a);
+            setTurnMode(b);
 
             //setMoveMode1(moveIndex);
+
 
 
         }
@@ -118,7 +120,7 @@ public class ControllerSetting : MonoBehaviour
                 ContinuousMove.enabled = true;
                 Teleportation.enabled = false;
                 XRcontroller.enableInputActions = false;
-                moveIndex = 0;
+                PlayerPrefs.SetInt("moveControl", 0);
 
             }
             else if (i == 1)
@@ -126,9 +128,11 @@ public class ControllerSetting : MonoBehaviour
                 ContinuousMove.enabled = false;
                 Teleportation.enabled = true;
                 XRcontroller.enableInputActions = true;
-                moveIndex = 1;
+                PlayerPrefs.SetInt("moveControl", 1);
             }
+            else { }
         }
+        Debug.Log(PlayerPrefs.GetInt("moveControl"));
 
     }
     public void setTurnMode(int i)
@@ -139,15 +143,16 @@ public class ControllerSetting : MonoBehaviour
             {
                 continuousTurnProvider.enabled = true;
                 snapTurnProvider.enabled = false;
-                turnIndex = 0;
+                PlayerPrefs.SetInt("turnControl", 0);
             }
             else if (i == 1)
             {
                 continuousTurnProvider.enabled = false;
                 snapTurnProvider.enabled = true;
-                turnIndex = 1;
+                PlayerPrefs.SetInt("turnControl", 1);
             }
+            else { }
         }
-
+        Debug.Log(PlayerPrefs.GetInt("turnControl"));
     }
 }

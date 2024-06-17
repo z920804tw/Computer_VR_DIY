@@ -11,13 +11,12 @@ public class SceneAudio : MonoBehaviour
     [Header("背景音量設定")]
     [SerializeField] AudioSource inside;
     [SerializeField] AudioSource outside;
-    [SerializeField] float outsideVolume, insideVolume;
+    //[SerializeField] float outsideVolume, insideVolume;
+    [SerializeField] float bgVolume = 0.15f;
     public float transitionDuration;
-    public static float bgVolume = 0.15f;
 
 
-    GameObject currentPos;
-    bool isTransitioning = false;
+
 
 
     [Header("引導音量設定")]
@@ -25,34 +24,38 @@ public class SceneAudio : MonoBehaviour
     public AudioSource audioSource;
     [SerializeField] Slider guideVolumeSlider;
     [SerializeField] Slider bgVolumeSilder;
-    public static float guideVolume = 0.5f;
+    [SerializeField] float guideVolume = 0.5f;
+
+
+    [Space]
+    GameObject currentPos;
+    bool isTransitioning = false;
+
 
 
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetFloat("guideVolume"));
+        Debug.Log(PlayerPrefs.GetFloat("bgVolume"));
+
+
+
         //只會在大廳關卡執行,其他的不會。
         if (guideVolumeSlider != null && bgVolumeSilder != null)
         {
-            guideVolumeSlider.value = guideVolume;
-            bgVolumeSilder.value = bgVolume;
+            guideVolumeSlider.value = PlayerPrefs.GetFloat("guideVolume");
+            bgVolumeSilder.value = PlayerPrefs.GetFloat("bgVolume"); ;
         }
 
         //設定引導的音量
         audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
         if (audioSource != null)
         {
-            audioSource.volume = guideVolume;
+            audioSource.volume = PlayerPrefs.GetFloat("guideVolume"); ;
 
         }
 
-        //設定背景音樂的音量
-        inside = GameObject.Find("Inside").GetComponent<AudioSource>();
-        outside = GameObject.Find("Outside").GetComponent<AudioSource>();
-        if (inside != null && outside != null)
-        {
-            insideVolume = bgVolume;
-            outsideVolume = bgVolume;
-        }
+
     }
 
     // Update is called once per frame
@@ -93,9 +96,11 @@ public class SceneAudio : MonoBehaviour
                 timer += Time.deltaTime;
                 float t = timer / transitionDuration;
                 //Debug.Log(t);
-
+                float insideVolume = PlayerPrefs.GetFloat("bgVolume");
+                float outsideVolume = PlayerPrefs.GetFloat("bgVolume");
                 if (currentPos.name == "Inside")
                 {
+
                     inside.volume = Mathf.Lerp(0, insideVolume, t);
                     outside.volume = Mathf.Lerp(outsideVolume, 0, t);
                     if (outside.volume == 0)
@@ -124,25 +129,23 @@ public class SceneAudio : MonoBehaviour
 
     public void testGuideVolume()       //給設定->音量設定裡面的引導音量測試按鈕用
     {
-        
-        guideVolume = guideVolumeSlider.value;
-        audioSource.volume = guideVolume;
+
+        audioSource.volume = guideVolumeSlider.value;
         int rnd = UnityEngine.Random.Range(0, 9);
         audioSource.PlayOneShot(audioClips[rnd]);
+        PlayerPrefs.SetFloat("guideVolume", guideVolumeSlider.value);
+        PlayerPrefs.Save();
     }
     public void testBgVolume()          //給設定->音量設定裡面的背景音量測試按鈕用
     {
-        bgVolume = bgVolumeSilder.value;
-        //要立即改室內跟室外的音量
-        //inside.volume=bgVolume;
-        //outside.volume=bgVolume;
-        insideVolume = bgVolume;
-        outsideVolume = bgVolume;
+
+        PlayerPrefs.SetFloat("bgVolume", bgVolumeSilder.value);
         if (isTransitioning == false)
         {
             StartCoroutine(transitionVolume());
         }
+        PlayerPrefs.Save();
 
     }
-    
+
 }
