@@ -11,8 +11,6 @@ public class SceneAudio : MonoBehaviour
     [Header("背景音量設定")]
     [SerializeField] AudioSource inside;
     [SerializeField] AudioSource outside;
-    //[SerializeField] float outsideVolume, insideVolume;
-    [SerializeField] float bgVolume = 0.15f;
     public float transitionDuration;
 
 
@@ -24,7 +22,6 @@ public class SceneAudio : MonoBehaviour
     public AudioSource audioSource;
     [SerializeField] Slider guideVolumeSlider;
     [SerializeField] Slider bgVolumeSilder;
-    [SerializeField] float guideVolume = 0.5f;
 
 
     [Space]
@@ -35,8 +32,8 @@ public class SceneAudio : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetFloat("guideVolume"));
-        Debug.Log(PlayerPrefs.GetFloat("bgVolume"));
+        Debug.Log($"引導音量:{PlayerPrefs.GetFloat("guideVolume")}");
+        Debug.Log($"背景音量:{PlayerPrefs.GetFloat("bgVolume")}");
 
 
 
@@ -84,20 +81,21 @@ public class SceneAudio : MonoBehaviour
         }
     }
 
-    private IEnumerator transitionVolume()   //音樂的轉場效果
+    private IEnumerator transitionVolume()   //背景音樂的轉場效果
     {
         float timer = 0;
 
         if (isTransitioning == false)
         {
             isTransitioning = true;
+            float insideVolume = PlayerPrefs.GetFloat("bgVolume");
+            float outsideVolume = PlayerPrefs.GetFloat("bgVolume");
+
             while (timer < transitionDuration)
             {
                 timer += Time.deltaTime;
                 float t = timer / transitionDuration;
                 //Debug.Log(t);
-                float insideVolume = PlayerPrefs.GetFloat("bgVolume");
-                float outsideVolume = PlayerPrefs.GetFloat("bgVolume");
                 if (currentPos.name == "Inside")
                 {
 
@@ -135,6 +133,7 @@ public class SceneAudio : MonoBehaviour
         audioSource.PlayOneShot(audioClips[rnd]);
         PlayerPrefs.SetFloat("guideVolume", guideVolumeSlider.value);
         PlayerPrefs.Save();
+        Debug.Log($"引導音量:{PlayerPrefs.GetFloat("guideVolume")}");
     }
     public void testBgVolume()          //給設定->音量設定裡面的背景音量測試按鈕用
     {
@@ -145,6 +144,7 @@ public class SceneAudio : MonoBehaviour
             StartCoroutine(transitionVolume());
         }
         PlayerPrefs.Save();
+        Debug.Log($"背景音量:{PlayerPrefs.GetFloat("bgVolume")}");
 
     }
 

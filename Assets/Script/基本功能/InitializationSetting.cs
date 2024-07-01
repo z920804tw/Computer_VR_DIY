@@ -8,7 +8,7 @@ public class InitializationSetting : MonoBehaviour
 
     void Awake()
     {
-        if (PlayerPrefs.HasKey("isInitialization") == false)    //初始化，只會在第一次執行。
+        if (PlayerPrefs.HasKey("isInitialization") == false)    //初始化，只會在第一次執行，或是有設定重製按鈕時會執行。
         {
             PlayerPrefs.SetInt("isInitialization",1);
             PlayerPrefs.SetFloat("guideVolume",0.2f);

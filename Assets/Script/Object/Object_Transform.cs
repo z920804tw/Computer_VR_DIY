@@ -5,11 +5,11 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Object_Transform : MonoBehaviour
+public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點的物件上。
 {
     // Start is called before the first frame update
     public GameObject colliderObject;
-    Color currentOutlineColor;
+
     [Header("主機板腳位設定")]
     public int m_LGA;
     [Header("電纜設定")]
@@ -28,7 +28,7 @@ public class Object_Transform : MonoBehaviour
     void Start()
     {
         hasPlace = false;
-        currentOutlineColor = Color.red;
+
     }
 
     // Update is called once per frame
@@ -89,10 +89,6 @@ public class Object_Transform : MonoBehaviour
 
     void place()
     {
-       /* if (colliderObject.GetComponent<Animator>() != null)
-        {
-            colliderObject.GetComponent<Animator>().enabled = false;   //如果不把動畫控制器關掉,他會浮空。
-        }*/
         hasPlace = true;
     }
     //CPU用的，主要多了CPU跟主機板的LGA腳位判斷
@@ -113,6 +109,7 @@ public class Object_Transform : MonoBehaviour
             }
         }
     }
+    //CPU風扇用，主要多了判斷CPU插槽有沒有被放置
     void Cpu_Fan_ObjectTransform()
     {
         CPU_Fan_Object cpuFanObj = colliderObject.GetComponent<CPU_Fan_Object>();
@@ -134,14 +131,14 @@ public class Object_Transform : MonoBehaviour
     void MotherBoard_ObjectTransform()
     {
         Mother_Board_Object motherboardObj = colliderObject.GetComponent<Mother_Board_Object>();
-        if (motherboardObj.firstColliderObject != null && motherboardObj.isHolding == false)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        if (motherboardObj.firstColliderObject != null && motherboardObj.isHolding == false)                           
         {
-            if (motherboardObj.firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
+            if (motherboardObj.firstColliderObject.name == this.gameObject.name)  
             {
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
+                colliderObject.transform.SetParent(this.gameObject.transform);                              
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   
                 motherboardObj.anim.SetBool("place", true);
                 Invoke("place", 1.3f);
 
@@ -153,14 +150,14 @@ public class Object_Transform : MonoBehaviour
     void GraphicsCard_ObjectTransform()
     {
         GraphicsCard_Object graphicsObj = colliderObject.GetComponent<GraphicsCard_Object>();
-        if (graphicsObj.firstColliderObject != null && graphicsObj.isHolding == false)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        if (graphicsObj.firstColliderObject != null && graphicsObj.isHolding == false)                            
         {
-            if (graphicsObj.firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
+            if (graphicsObj.firstColliderObject.name == this.gameObject.name)  
             {
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
+                colliderObject.transform.SetParent(this.gameObject.transform);                               
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   
                 graphicsObj.anim.SetBool("place", true);
                 Invoke("place", 1.3f);
             }
@@ -170,14 +167,14 @@ public class Object_Transform : MonoBehaviour
     void Memory_ObjectTransform()
     {
         Memory_Object memoryObj = colliderObject.GetComponent<Memory_Object>();
-        if (memoryObj.firstColliderObject != null && memoryObj.isHolding == false)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        if (memoryObj.firstColliderObject != null && memoryObj.isHolding == false)                           
         {
-            if (memoryObj.firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
+            if (memoryObj.firstColliderObject.name == this.gameObject.name)  
             {
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
+                colliderObject.transform.SetParent(this.gameObject.transform);                               
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                  
                 memoryObj.anim.SetBool("place", true);
                 Invoke("place", 1.3f);
             }
@@ -186,14 +183,14 @@ public class Object_Transform : MonoBehaviour
     void Power_ObjectTransform()
     {
         Power_Object powerObj = colliderObject.GetComponent<Power_Object>();
-        if (powerObj.firstColliderObject != null && powerObj.isHolding == false)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        if (powerObj.firstColliderObject != null && powerObj.isHolding == false)                            
         {
-            if (powerObj.firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
+            if (powerObj.firstColliderObject.name == this.gameObject.name)  
             {
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
+                colliderObject.transform.SetParent(this.gameObject.transform);                               
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   
                 powerObj.anim.SetBool("place", true);
                 Invoke("place", 1.3f);
             }
@@ -202,22 +199,22 @@ public class Object_Transform : MonoBehaviour
     void HardDriver_ObjectTransform()
     {
         HardDriver_Object hard_driverObj = colliderObject.GetComponent<HardDriver_Object>();
-        if (hard_driverObj.firstColliderObject != null && hard_driverObj.isHolding == false)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        if (hard_driverObj.firstColliderObject != null && hard_driverObj.isHolding == false)                            
         {
-            if (hard_driverObj.firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
+            if (hard_driverObj.firstColliderObject.name == this.gameObject.name)  
             {
 
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
+                colliderObject.transform.SetParent(this.gameObject.transform);                               
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   
                 hard_driverObj.anim.SetBool("place", true);
                 Invoke("place", 1.3f);
             }
         }
     }
-    //預設的物件座標函示，如果沒有特別設定的物件會統一使用這個。
 
+    //電線的功能，主要多了電線的類型、方向判斷，雙方的類型和方向都要一樣才能插入
     void Cable_ObjectTransform()
     {
         Cable_Object cableObj = colliderObject.GetComponent<Cable_Object>();
@@ -239,33 +236,33 @@ public class Object_Transform : MonoBehaviour
             }
         }
     }
+    //螺絲物件位置的功能，主要多了螺絲的型號和模式判斷，如果都相符就會先將前一個紀錄的位置的hasPlace先變成false，之後再做下面的事情。
     void Screw_ObjectTransform()
     {
         Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
         if (screwObj != null)
         {
-
             if (screwObj.firstColliderObject != null)
             {
                 if (screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
                 {
-                    screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
+                    screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
                     screwObj.firstColliderObject = this.gameObject;
 
                     colliderObject.transform.SetParent(this.gameObject.transform);
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    if (screwEnum == ScrewEnum.hold)
+                    if (screwEnum == ScrewEnum.hold)   //拿起
                     {
 
                         screwObj.screwEnum = ScrewEnum.place;
                         screwObj.anim.SetBool("place", false);
                         screwObj.showScrewOutline();
-
+                        hasPlace = true;
                         Debug.Log("現在接的是螺絲起子，螺絲更改成place");
                     }
-                    else if (screwEnum == ScrewEnum.place)
+                    else if (screwEnum == ScrewEnum.place)  //放置
                     {
                         screwObj.screwEnum = ScrewEnum.hold;
                         screwObj.anim.SetBool("place", true);

@@ -20,7 +20,7 @@ public class Memory_Level_Status : MonoBehaviour
 
     void Start()
     {
-
+        currentTransformIndex=-1;
     }
 
     // Update is called once per frame

@@ -5,15 +5,21 @@ using UnityEngine.InputSystem;
 
 public class SelectObjectOutline : MonoBehaviour
 {
-    [Header("手把設定")]
-    public GameObject hand1, hand2;
+    [Header("手把設定")]            //設定手部模型和設限距離等等的功能
+    public GameObject hand1;
+    public GameObject hand2;
     public int RayDistance = 20;
     public LayerMask layerMask;
-    public InputActionReference LeftHandgripInputActionReference, RightHandgripInputActionReference;
 
+    [Header("互動功能")]            //設定輸入控制的地方
+    public InputActionReference LeftHandgripInputActionReference;
+    public InputActionReference RightHandgripInputActionReference;
 
+    [Header("Debug")]               //Debug區域，這邊是用來看左右手設限是打到哪裡。
+    [SerializeField] GameObject preObject1;
+    [SerializeField] GameObject preObject2;
     GameObject hitObject1, hitObject2;
-    [SerializeField] GameObject preObject1, preObject2;
+
     Ray ray1, ray2;
 
     RaycastHit raycastHit1, raycastHit2;
@@ -118,7 +124,7 @@ public class SelectObjectOutline : MonoBehaviour
         }
     }
 
-    
+
 
 
 }

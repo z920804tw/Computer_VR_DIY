@@ -33011,6 +33011,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1998679737}
+    - target: {fileID: 1268972297066549491, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268972297066549491, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268972297066549491, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268972297066549491, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268972297066549491, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1392910223099567116, guid: fce9445b8bab61e4aa1a48765bd61b39, type: 3}
       propertyPath: m_Mesh
       value: 

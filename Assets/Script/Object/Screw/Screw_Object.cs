@@ -59,10 +59,7 @@ public class Screw_Object : MonoBehaviour
                 if (object_Transform.screwEnum == screwEnum && object_Transform.screwType == screwType) //雙方的螺絲設定也要一樣才會記錄
                 {
                     firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
-                    //showScrewOutline();
-                    //firstColliderObject.GetComponent<Object_Transform>().prev_Transform=this.gameObject;
                     isFirstCollider = true;
-                    Debug.Log("1");
                 }
             }
         }

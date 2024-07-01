@@ -14,7 +14,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
     [SerializeField] GameObject CpuThermal;
     [SerializeField] GameObject ScrewDriver;
 
-    int currentTransformIndex = 0;
+    int currentTransformIndex ;
 
     [Header("CPU物件設定")]
     [SerializeField] Object_Transform CPU_Transform;
