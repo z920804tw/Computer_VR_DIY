@@ -4323,8 +4323,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15617,7 +15617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1109049597
 Transform:
   m_ObjectHideFlags: 0
@@ -27621,6 +27621,8 @@ MonoBehaviour:
     - m_Text: "CPU\u5B89\u88DD\u95DC\u5361"
       m_Image: {fileID: 0}
     - m_Text: "CPU\u98A8\u6247\u5B89\u88DD\u95DC\u5361"
+      m_Image: {fileID: 0}
+    - m_Text: "CPU\u98A8\u6247\u5B89\u88DD\u95DC\u5361(\u5854\u6247)"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

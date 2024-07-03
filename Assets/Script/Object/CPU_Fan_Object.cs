@@ -8,15 +8,20 @@ using UnityEngine;
 public class CPU_Fan_Object : MonoBehaviour
 {
     // Start is called before the first frame update
+    [Header("一般風扇物件設定")]
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    public Animator anim;
     public GameObject[] ObjectsTransform;
-    [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
 
-    Rigidbody rb;
-    bool check;
+
+    [Header("Debug")]
     public bool isHolding;
     public bool cpuHasPlace;
-    public Animator anim;
+    [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
+    Rigidbody rb;
+    bool check;
+
+
     void Start()
     {
         check = false;
@@ -24,7 +29,7 @@ public class CPU_Fan_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,10 +46,12 @@ public class CPU_Fan_Object : MonoBehaviour
                 firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
             }
         }
-        if(other.gameObject.tag=="Cpu"){
-            Object_Transform cpu=other.gameObject.GetComponent<Object_Transform>();
-            if(cpu!=null&&cpu.hasPlace==true){
-                cpuHasPlace=true;
+        if (other.gameObject.tag == "Cpu")
+        {
+            Object_Transform cpu = other.gameObject.GetComponent<Object_Transform>();
+            if (cpu != null && cpu.hasPlace == true)
+            {
+                cpuHasPlace = true;
             }
 
         }
@@ -58,9 +65,9 @@ public class CPU_Fan_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        cpuHasPlace=false;
+        cpuHasPlace = false;
 
-        anim.SetBool("place",false);
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 

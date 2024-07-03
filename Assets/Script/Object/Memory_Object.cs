@@ -6,14 +6,16 @@ using UnityEngine.Video;
 public class Memory_Object : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    [Header("記憶體物件設定")]
+
     public GameObject[] ObjectsTransform;
     public Animator anim;
 
-    public bool isHolding;
 
-
+    [Header("Debug")]
+    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
+    public bool isHolding;
     Rigidbody rb;
     bool check;
     void Start()
@@ -22,7 +24,7 @@ public class Memory_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -52,7 +54,7 @@ public class Memory_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        anim.SetBool("place",false);
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
@@ -82,7 +84,7 @@ public class Memory_Object : MonoBehaviour
         if (check == false)
         {
             ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
-            
+
             if (ObjectsTransform != null)
             {
                 foreach (GameObject obj in ObjectsTransform)

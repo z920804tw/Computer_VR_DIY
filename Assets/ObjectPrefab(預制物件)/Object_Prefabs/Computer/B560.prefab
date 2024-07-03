@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -413,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -507,6 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -1659,6 +1662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -2956,6 +2960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -3019,6 +3024,9 @@ Transform:
   - {fileID: 1448837766761584533}
   - {fileID: 7450182527548512034}
   - {fileID: 6991344123001851492}
+  - {fileID: 2993149808850058556}
+  - {fileID: 1091225244206297367}
+  - {fileID: 133728448272957106}
   - {fileID: 4541359553369629329}
   - {fileID: 1023934323597493230}
   - {fileID: 1860322947057111562}
@@ -3028,6 +3036,89 @@ Transform:
   - {fileID: 3899393552181767889}
   m_Father: {fileID: 9221614521215662337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2176705384728963284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095013556849438985}
+  - component: {fileID: 5769611196650512782}
+  - component: {fileID: 449678888212792935}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095013556849438985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176705384728963284}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0012, y: 0.00105, z: -0.00044}
+  m_LocalScale: {x: 0.010626806, y: 0.0030101645, z: 0.09922287}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1091225244206297367}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5769611196650512782
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176705384728963284}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &449678888212792935
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176705384728963284}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8212d3338e708fc49b7b06d9fbc63c0a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2267894119447144894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,6 +3355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -3537,6 +3629,101 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2635723628513626529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133728448272957106}
+  - component: {fileID: 1495658465602556875}
+  - component: {fileID: 7080604688933386087}
+  - component: {fileID: 4009652772387794247}
+  m_Layer: 0
+  m_Name: Fan-bracket Transform (2)
+  m_TagString: Fanbracket
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &133728448272957106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635723628513626529}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.044, y: 0.043, z: -2.587}
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3273366453669952013}
+  m_Father: {fileID: 1736809419724442491}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1495658465602556875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635723628513626529}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.012560834, y: 0.004537463, z: 0.100654565}
+  m_Center: {x: -0.0013520074, y: 0.0013916492, z: -0.00020849737}
+--- !u!114 &7080604688933386087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635723628513626529}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.8152195, b: 0, a: 1}
+  outlineWidth: 7
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4009652772387794247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635723628513626529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc128f6fc27faef4c948db5d67161677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+  m_LGA: 0
+  m_FanBracketType: 2
+  T_cableType: 0
+  T_cableDirection: 0
+  screwEnum: 0
+  screwType: 0
+  hardDriverType: 0
+  hasPlace: 0
 --- !u!1 &2665182574620317677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,6 +4209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -4046,6 +4234,89 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!1 &3066339651418158163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3273366453669952013}
+  - component: {fileID: 1655604414357624337}
+  - component: {fileID: 3016242338396615241}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3273366453669952013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066339651418158163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0018, y: 0.00105, z: 0.00057}
+  m_LocalScale: {x: 0.012264613, y: 0.0030101645, z: 0.0997987}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 133728448272957106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1655604414357624337
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066339651418158163}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3016242338396615241
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066339651418158163}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8212d3338e708fc49b7b06d9fbc63c0a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3103967640630648040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,6 +4802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 6
   T_cableDirection: 2
   screwEnum: 0
@@ -4643,6 +4915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 1151
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -5113,6 +5386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -5290,6 +5564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -5654,6 +5929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -5831,6 +6107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -5987,6 +6264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -6268,6 +6546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 1
   T_cableDirection: 2
   screwEnum: 0
@@ -6362,6 +6641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 3
   T_cableDirection: 2
   screwEnum: 0
@@ -6954,6 +7234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 6
   T_cableDirection: 2
   screwEnum: 0
@@ -7380,6 +7661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 6
   T_cableDirection: 2
   screwEnum: 0
@@ -7723,6 +8005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -7817,6 +8100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 6
   T_cableDirection: 2
   screwEnum: 0
@@ -7841,6 +8125,101 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!1 &6941611095811291929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091225244206297367}
+  - component: {fileID: 3942718238501312933}
+  - component: {fileID: 2207344959569074177}
+  - component: {fileID: 4588291374794496723}
+  m_Layer: 0
+  m_Name: Fan-bracket Transform (1)
+  m_TagString: Fanbracket
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091225244206297367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941611095811291929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.044, y: 0.043, z: -0.589}
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2095013556849438985}
+  m_Father: {fileID: 1736809419724442491}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &3942718238501312933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941611095811291929}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013578412, y: 0.00530988, z: 0.10012432}
+  m_Center: {x: -0.0014690311, y: 0.002138108, z: -0.0003406253}
+--- !u!114 &2207344959569074177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941611095811291929}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.8152195, b: 0, a: 1}
+  outlineWidth: 7
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4588291374794496723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941611095811291929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc128f6fc27faef4c948db5d67161677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+  m_LGA: 0
+  m_FanBracketType: 2
+  T_cableType: 0
+  T_cableDirection: 0
+  screwEnum: 0
+  screwType: 0
+  hardDriverType: 0
+  hasPlace: 0
 --- !u!1 &7078423085280811084
 GameObject:
   m_ObjectHideFlags: 0
@@ -8178,6 +8557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -9319,6 +9699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 8
   T_cableDirection: 2
   screwEnum: 0
@@ -9343,6 +9724,101 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!1 &7773898813412353067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2993149808850058556}
+  - component: {fileID: 8425565689608575632}
+  - component: {fileID: 5753212749495840920}
+  - component: {fileID: 1332495749646377750}
+  m_Layer: 0
+  m_Name: Fan-bracket Transform
+  m_TagString: Fanbracket
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2993149808850058556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773898813412353067}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.110001564, y: -0.072, z: -1.6040001}
+  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2253025159502787039}
+  m_Father: {fileID: 1736809419724442491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8425565689608575632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773898813412353067}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12995148, y: 0.009452403, z: 0.12392807}
+  m_Center: {x: -0.0002975464, y: -0.0025134385, z: 0.0008649826}
+--- !u!114 &5753212749495840920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773898813412353067}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.8152195, b: 0, a: 1}
+  outlineWidth: 7
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1332495749646377750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773898813412353067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc128f6fc27faef4c948db5d67161677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderObject: {fileID: 0}
+  m_LGA: 0
+  m_FanBracketType: 1
+  T_cableType: 0
+  T_cableDirection: 0
+  screwEnum: 0
+  screwType: 0
+  hardDriverType: 0
+  hasPlace: 0
 --- !u!1 &7780577981199335991
 GameObject:
   m_ObjectHideFlags: 0
@@ -9745,6 +10221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
@@ -10473,6 +10950,89 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &9035221158475764865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2253025159502787039}
+  - component: {fileID: 8053237103697000351}
+  - component: {fileID: 7237461743246345412}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2253025159502787039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035221158475764865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.00027, y: -0.0025, z: 0.00275}
+  m_LocalScale: {x: 0.12904623, y: 0.008388501, z: 0.11195621}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2993149808850058556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8053237103697000351
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035221158475764865}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7237461743246345412
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9035221158475764865}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8212d3338e708fc49b7b06d9fbc63c0a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &9085792146999079921
 GameObject:
   m_ObjectHideFlags: 0
@@ -10688,6 +11248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
+  m_FanBracketType: 0
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0

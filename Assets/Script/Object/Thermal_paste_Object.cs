@@ -8,10 +8,13 @@ using UnityEngine;
 public class Thermal_paste_Object : MonoBehaviour
 {
     // Start is called before the first frame update
-    Rigidbody rb;
+
+    [Header("Debug")]
     public bool isHolding;
     public Transform SpawnPos;
     public GameObject firstColliderObject;
+    Rigidbody rb;
+
     bool check;
     bool canSpawn;
     void Start()

@@ -14,14 +14,16 @@ public enum HardDriverType
 
 public class HardDriver_Object : MonoBehaviour
 {
-    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    [Header("硬碟物件設定")]
+
     public GameObject[] ObjectsTransform;
 
     public HardDriverType hardDriverType;
+
+    [Header("Debug")]
+    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
     public Animator anim;
     public bool isHolding;
-
-
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
     bool check;
@@ -31,7 +33,7 @@ public class HardDriver_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -65,7 +67,7 @@ public class HardDriver_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        anim.SetBool("place",false);
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 

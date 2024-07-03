@@ -5,13 +5,13 @@ using UnityEngine;
 public class GraphicsCard_Object : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    [Header("顯示卡物件設定")]
+    //紀錄第一個碰撞的物件
     public GameObject[] ObjectsTransform;
     public Animator anim;
-
+    [Header("Debug")]
+    public GameObject firstColliderObject;
     public bool isHolding;
-
-
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
     bool check;
@@ -21,7 +21,7 @@ public class GraphicsCard_Object : MonoBehaviour
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class GraphicsCard_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        anim.SetBool("place",false);
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 

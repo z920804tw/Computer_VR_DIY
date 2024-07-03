@@ -10,6 +10,7 @@ using UnityEngine.Video;
 public class Tutorial_LevelSelect : MonoBehaviour
 {
     // Start is called before the first frame update
+    [Header("物件設定")]
     public TMP_Dropdown TD_LevelName;       //取的當前下拉清單
     public Image LoadingBarImage;           //讀取UI的圖片
     public TextMeshProUGUI progressText;    //讀取UI的文字
@@ -76,6 +77,9 @@ public class Tutorial_LevelSelect : MonoBehaviour
                 break;
             case "CPU風扇安裝關卡":
                 StartCoroutine(LoadingLevel("CPU_Level2"));
+                break;
+            case "CPU風扇安裝關卡(塔扇)":
+                StartCoroutine(LoadingLevel("CPU_Level3"));
                 break;
             default:
                 Debug.Log("目前找不到你所選的關卡");

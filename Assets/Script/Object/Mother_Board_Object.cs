@@ -5,23 +5,25 @@ using UnityEngine;
 public class Mother_Board_Object : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
-    public GameObject[] ObjectsTransform;
-    
+    [Header("主機板物件設定")]
 
-    public bool isHolding;
+    public GameObject[] ObjectsTransform;
     public Animator anim;
 
+    [Header("Debug")]
+    public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    public bool isHolding;
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
     bool check;
+
     void Start()
     {
         check = false;
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,8 +52,8 @@ public class Mother_Board_Object : MonoBehaviour
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
-        
-        anim.SetBool("place",false);
+
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 
@@ -59,17 +61,14 @@ public class Mother_Board_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
-        if (check == true)
+        if (check == true && ObjectsTransform != null)
         {
-            if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
             {
-                foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-                {
 
-                    if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                    {
-                        obj.GetComponent<Outline>().enabled = false;
-                    }
+                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                {
+                    obj.GetComponent<Outline>().enabled = false;
                 }
             }
             check = false;

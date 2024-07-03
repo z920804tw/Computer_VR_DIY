@@ -17,6 +17,7 @@ TagManager:
   - Screw
   - button
   - Hands
+  - Fanbracket
   layers:
   - Default
   - TransparentFX
