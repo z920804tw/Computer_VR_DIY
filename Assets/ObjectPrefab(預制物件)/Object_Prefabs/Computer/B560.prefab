@@ -3717,7 +3717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
-  m_FanBracketType: 2
+  m_FanBracketType: 3
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -8213,7 +8213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
-  m_FanBracketType: 2
+  m_FanBracketType: 3
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -9271,10 +9271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283c83a6b77f0c047a876164167d43d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstColliderObject: {fileID: 0}
   ObjectsTransform: []
-  isHolding: 0
   anim: {fileID: 0}
+  firstColliderObject: {fileID: 0}
+  isHolding: 0
   isFirstCollider: 0
 --- !u!95 &2814984485000565186
 Animator:
@@ -9812,7 +9812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderObject: {fileID: 0}
   m_LGA: 0
-  m_FanBracketType: 1
+  m_FanBracketType: 2
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0

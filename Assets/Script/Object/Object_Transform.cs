@@ -285,12 +285,15 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         {
             if (FanbracketObj.fanBracketType == this.m_FanBracketType)
             {
+
+
                 colliderObject.transform.SetParent(this.gameObject.transform);
                 colliderObject.transform.position = this.transform.position;
                 colliderObject.transform.rotation = this.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
 
                 FanbracketObj.anim.SetBool("place", true);
+
 
                 Invoke("place", 1.3f);
 

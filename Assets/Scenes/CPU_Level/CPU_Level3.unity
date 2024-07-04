@@ -2076,18 +2076,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3318462820355618264, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5911119445863005140, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6861267973837894203, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7247739662550812388, guid: 964eb0087f6dc044f93f71ce115da1e3, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -9381,6 +9369,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 789617750736268133, guid: 1c9c110121d502043bb12b5261aba65d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963196272408815556, guid: 1c9c110121d502043bb12b5261aba65d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2085237323969018483, guid: 1c9c110121d502043bb12b5261aba65d, type: 3}
       propertyPath: m_Name
       value: Fan bracket2 (1)
@@ -10948,7 +10944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1353740651084636410, guid: 0500398137b02844385aefa79833655b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45700002
+      value: 0.526
       objectReference: {fileID: 0}
     - target: {fileID: 1353740651084636410, guid: 0500398137b02844385aefa79833655b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10982,15 +10978,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3417512629379507334, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5685081273921518488, guid: 0500398137b02844385aefa79833655b, type: 3}
       propertyPath: m_Name
       value: FanShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794425328225402361, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794425328225402361, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1839165194014256353}
+    - target: {fileID: 7794425328225402361, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveFanBracketSetting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794425328225402361, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FanBracket_Object, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794425328225402361, guid: 0500398137b02844385aefa79833655b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: "\u95DC\u9589"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0500398137b02844385aefa79833655b, type: 3}
+--- !u!114 &1839165194014256353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1766501140126680930, guid: 0500398137b02844385aefa79833655b, type: 3}
+  m_PrefabInstance: {fileID: 1839165194014256348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b142f13902367b84d8fa69e6d8a26d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &2840150237280974035
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11159,10 +11190,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan bracket
       objectReference: {fileID: 0}
+    - target: {fileID: 661449984668610905, guid: af3087e0bbe50ac43835b6ffb81a9cf8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0018285513
+      objectReference: {fileID: 0}
+    - target: {fileID: 661449984668610905, guid: af3087e0bbe50ac43835b6ffb81a9cf8, type: 3}
+      propertyPath: m_Center.y
+      value: 0.00094640255
+      objectReference: {fileID: 0}
     - target: {fileID: 1092672824087239347, guid: af3087e0bbe50ac43835b6ffb81a9cf8, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1904720807}
+    - target: {fileID: 6026337005963788133, guid: af3087e0bbe50ac43835b6ffb81a9cf8, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

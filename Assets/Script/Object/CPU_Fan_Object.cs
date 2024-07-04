@@ -102,7 +102,7 @@ public class CPU_Fan_Object : MonoBehaviour
                 foreach (GameObject obj in ObjectsTransform)
                 {
                     Outline outline = obj.GetComponent<Outline>();
-                    Object_Transform objTransform = obj.GetComponent<Object_Transform>();
+                    //Object_Transform objTransform = obj.GetComponent<Object_Transform>();
 
                     outline.enabled = true;
                 }

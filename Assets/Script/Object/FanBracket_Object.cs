@@ -61,18 +61,24 @@ public class FanBracket_Object : MonoBehaviour
             ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
             foreach (GameObject obj in ObjectsTransform)
             {
-                if (obj.GetComponent<Object_Transform>().m_FanBracketType == this.fanBracketType)
+                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
                 {
-                    obj.GetComponent<Outline>().enabled = true;
+                    if (obj.GetComponent<Object_Transform>().m_FanBracketType == this.fanBracketType)
+                    {
+                        obj.GetComponent<Outline>().enabled = true;
+                    }
                 }
-
             }
+            isHolding = true;
+            check = true;
+            this.gameObject.GetComponent<Outline>().enabled = true;
         }
     }
 
 
     public void RemoveFanBracketSetting()
     {
+        Debug.Log("重製風扇設定");
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
@@ -88,9 +94,16 @@ public class FanBracket_Object : MonoBehaviour
         {
             foreach (GameObject obj in ObjectsTransform)
             {
-                obj.GetComponent<Outline>().enabled = false;
+                if (obj.GetComponent<Outline>() != null)
+                {
+                    obj.GetComponent<Outline>().enabled = false;
+                }
+
             }
             check = false;
         }
+
     }
+
+
 }
