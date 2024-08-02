@@ -5040,7 +5040,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 33f9684f1327f8041a9286c030d59c74, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 4da7700ab2e425f46925f6a1c8b83846, type: 2}
 --- !u!4 &293249157
 Transform:
   m_ObjectHideFlags: 0
@@ -5050,7 +5050,7 @@ Transform:
   m_GameObject: {fileID: 293249155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: 0.9175682, z: 0.78}
+  m_LocalPosition: {x: 36.13, y: 0.9175682, z: -12.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16762,7 +16762,7 @@ PrefabInstance:
     - target: {fileID: 5167622131525522542, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
       propertyPath: m_LocomotionProvider
       value: 
-      objectReference: {fileID: 1139068726}
+      objectReference: {fileID: 0}
     - target: {fileID: 6627619622806499999, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
       propertyPath: m_EnableInputActions
       value: 0
@@ -16785,17 +16785,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 4728944245754093679, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
   m_PrefabInstance: {fileID: 1139068715}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1139068726 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4888082628831286398, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
-  m_PrefabInstance: {fileID: 1139068715}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1150329006
 GameObject:
   m_ObjectHideFlags: 0
@@ -21105,6 +21094,14 @@ PrefabInstance:
     - target: {fileID: 732512897382661137, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934011740085239437, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 934011740085239437, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3381533353708696297, guid: c23318e2ebedee942af8dba86e61ca03, type: 3}
       propertyPath: m_Name
