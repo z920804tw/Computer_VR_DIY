@@ -13,6 +13,12 @@ public class InitializationSetting : MonoBehaviour
             PlayerPrefs.SetInt("isInitialization",1);
             PlayerPrefs.SetFloat("guideVolume",0.2f);
             PlayerPrefs.SetFloat("bgVolume",0.15f);
+
+            PlayerPrefs.SetInt("MoveMode",0);
+            PlayerPrefs.SetFloat("ContinuousMoveValue",3);
+            
+            PlayerPrefs.SetInt("TurnMode",0);
+            
             PlayerPrefs.Save();
             Debug.Log("123");
         }
