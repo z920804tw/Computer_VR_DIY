@@ -43,12 +43,16 @@ public class FanBracket_Object : MonoBehaviour
     {
         if (other.gameObject.tag == this.gameObject.tag && other.gameObject.GetComponent<Object_Transform>() != null)
         {
-            Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
-            if (isFirstCollider == false && obj.m_FanBracketType == this.fanBracketType)
+            if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
-                firstColliderObject = other.gameObject;
-                isFirstCollider = true;
+                Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
+                if (isFirstCollider == false && obj.m_FanBracketType == this.fanBracketType)
+                {
+                    firstColliderObject = other.gameObject;
+                    isFirstCollider = true;
+                }
             }
+
         }
     }
 

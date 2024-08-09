@@ -46,17 +46,21 @@ public class HardDriver_Object : MonoBehaviour
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
         if (other.gameObject.tag == this.gameObject.tag && other.gameObject.GetComponent<Object_Transform>() != null)
         {
-            if (isFirstCollider == false)
+            if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
-                Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
-                if (obj.hardDriverType == this.hardDriverType)
+                if (isFirstCollider == false)
                 {
+                    Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
+                    if (obj.hardDriverType == this.hardDriverType)
+                    {
 
-                    isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
-                    firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                        isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
+                        firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
 
+                    }
                 }
             }
+
         }
     }
 

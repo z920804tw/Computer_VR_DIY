@@ -34,13 +34,17 @@ public class GraphicsCard_Object : MonoBehaviour
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
         if (other.gameObject.tag == this.gameObject.tag)
         {
-
-            if (isFirstCollider == false)                                  //判斷是否第一次碰撞
+            if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
-                isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
-                firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
+                {
+                    if (isFirstCollider == false)                                  //判斷是否第一次碰撞
+                    {
+                        isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
+                        firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                    }
+                }
             }
-
         }
     }
 

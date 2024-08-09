@@ -40,7 +40,7 @@ public class Screw_Object : MonoBehaviour
 
         isFirstCollider = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,13 +53,16 @@ public class Screw_Object : MonoBehaviour
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
         if (other.gameObject.tag == this.gameObject.tag)
         {
-            Object_Transform object_Transform = other.GetComponent<Object_Transform>();
-            if (isFirstCollider == false)
+            if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
-                if (object_Transform.screwEnum == screwEnum && object_Transform.screwType == screwType) //雙方的螺絲設定也要一樣才會記錄
+                Object_Transform object_Transform = other.GetComponent<Object_Transform>();
+                if (isFirstCollider == false)
                 {
-                    firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
-                    isFirstCollider = true;
+                    if (object_Transform.screwEnum == screwEnum && object_Transform.screwType == screwType) //雙方的螺絲設定也要一樣才會記錄
+                    {
+                        firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                        isFirstCollider = true;
+                    }
                 }
             }
         }
@@ -72,7 +75,7 @@ public class Screw_Object : MonoBehaviour
         this.gameObject.transform.SetParent(null);
         isFirstCollider = false;
         rb.isKinematic = false;
-        anim.SetBool("place",false);
+        anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;

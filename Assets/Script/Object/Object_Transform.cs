@@ -87,7 +87,6 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
             }
 
-
         }
     }
 
@@ -278,7 +277,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     }
 
     //塔扇固定架功能
-    void FanBracket_ObjectTansform()                           
+    void FanBracket_ObjectTansform()
     {
         FanBracket_Object FanbracketObj = colliderObject.GetComponent<FanBracket_Object>();
         if (FanbracketObj.firstColliderObject != null && FanbracketObj.isHolding == false)
