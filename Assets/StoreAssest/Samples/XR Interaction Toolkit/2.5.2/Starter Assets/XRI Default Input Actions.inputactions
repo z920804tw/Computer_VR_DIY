@@ -785,7 +785,16 @@
                 {
                     "name": "PrimaryButton",
                     "type": "Button",
-                    "id": "1e00198d-c0c6-4b3f-be76-c3327051ee1b",
+                    "id": "5dccb629-5a2b-4a9a-8cf8-d06e45c59cab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryButton",
+                    "type": "Button",
+                    "id": "2a8d20c4-94b3-4eea-8b6d-9b289c8b3752",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -955,6 +964,28 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Scale Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a1bbe75-5a3a-4b7c-927f-6615163ed76b",
+                    "path": "<ViveCosmosController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61354312-c353-44c1-a9fd-f5ed97c96d4e",
+                    "path": "<ViveCosmosController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
