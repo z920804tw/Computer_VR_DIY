@@ -27,6 +27,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
     [Header("Debug")]
     public bool hasPlace;
+    float waitTime=1f;
 
     void Start()
     {
@@ -108,7 +109,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 cpuObj.anim.SetBool("place", true);                                                           //執行放置的動畫
-                Invoke("place", 2.1f);
+                Invoke("place", waitTime);
             }
         }
     }
@@ -126,7 +127,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 cpuFanObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
             }
         }
 
@@ -143,7 +144,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 motherboardObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
 
             }
         }
@@ -162,7 +163,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 graphicsObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
             }
         }
     }
@@ -179,7 +180,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 memoryObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
             }
         }
     }
@@ -195,7 +196,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 powerObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
             }
         }
     }
@@ -212,7 +213,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 hard_driverObj.anim.SetBool("place", true);
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
             }
         }
     }
@@ -234,7 +235,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                     //cableObj.enabled = false;
                     cableObj.anim.SetBool("place", true);
-                    Invoke("place", 1.3f);
+                    Invoke("place", waitTime);
                 }
             }
         }
@@ -267,7 +268,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 {
                     screwObj.screwEnum = ScrewEnum.hold;
                     screwObj.anim.SetBool("place", true);
-                    Invoke("place", 1.3f);
+                    Invoke("place", waitTime);
                     screwObj.removeScrewOutline();
                     Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
 
@@ -294,7 +295,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 FanbracketObj.anim.SetBool("place", true);
 
 
-                Invoke("place", 1.3f);
+                Invoke("place", waitTime);
 
             }
         }

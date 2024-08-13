@@ -786,7 +786,6 @@ GameObject:
   - component: {fileID: 5701496952910377459}
   - component: {fileID: 6019094022686728943}
   - component: {fileID: 3643348560606922749}
-  - component: {fileID: 8683947756607733148}
   - component: {fileID: 7842352207695025216}
   m_Layer: 3
   m_Name: XR Origin (XR Rig)
@@ -913,28 +912,6 @@ MonoBehaviour:
   audioSource: {fileID: 4468283410245875560}
   guideVolumeSlider: {fileID: 0}
   bgVolumeSilder: {fileID: 0}
---- !u!114 &8683947756607733148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194509723832531139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d12b8334fe6e804ba1354f112959d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand1: {fileID: 3489163827393124034}
-  hand2: {fileID: 117260556508585078}
-  RayDistance: 20
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 320
-  LeftHandgripInputActionReference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  RightHandgripInputActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  preObject1: {fileID: 0}
-  preObject2: {fileID: 0}
 --- !u!114 &7842352207695025216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,6 +2062,7 @@ GameObject:
   - component: {fileID: 1079787213858936114}
   - component: {fileID: 3879323178216296787}
   - component: {fileID: 7597633523307517174}
+  - component: {fileID: 7084082887671570069}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Hands
@@ -2497,6 +2475,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   right: {fileID: 0}
+  primaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7731a3c3-6b4c-4c39-8004-bb403cd69373
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5297409416502965319, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  secondaryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d9f6245e-7531-407e-ab2b-c93c95d74021
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 5809756883027647187, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  handUi: {fileID: 0}
 --- !u!54 &7597633523307517174
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2524,6 +2527,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7084082887671570069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732668299115052034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d12b8334fe6e804ba1354f112959d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 0}
+  RayDistance: 20
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 320
+  handHold:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Hand Hold
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 125978ee-7476-4641-8f4c-0d87e551fcda
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  preObject: {fileID: 0}
 --- !u!1 &6871866302973576835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2571,7 @@ GameObject:
   - component: {fileID: 3187613395583489671}
   - component: {fileID: 7014076865353445857}
   - component: {fileID: 8913606178624450440}
+  - component: {fileID: 7504125247617196722}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Hands
@@ -2912,6 +2946,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  primaryButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 899944e0-ba1b-4b23-9c55-d798ab5d23b1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  secondaryButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3fad3b74-1a58-4a6d-8638-f9c6274a0e4a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  handUi: {fileID: 0}
 --- !u!54 &8913606178624450440
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2939,6 +2998,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7504125247617196722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871866302973576835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d12b8334fe6e804ba1354f112959d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 0}
+  RayDistance: 20
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 320
+  handHold:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Hand Hold
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 18fc0ab3-8626-4f50-9535-9cea7cd0cf85
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  preObject: {fileID: 0}
 --- !u!1 &7938246055429823568
 GameObject:
   m_ObjectHideFlags: 0

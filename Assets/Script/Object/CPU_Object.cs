@@ -58,7 +58,7 @@ public class CPU_Object : MonoBehaviour
 
     public void Remove_CPU_setting()
     {
-        Debug.Log("重製cpu設定");
+        
         isHolding = false;
         this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
@@ -69,6 +69,7 @@ public class CPU_Object : MonoBehaviour
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
             firstColliderObject = null;
             isFirstCollider = false;
+            Debug.Log("重製cpu設定");
         }
         if (check == true)
         {

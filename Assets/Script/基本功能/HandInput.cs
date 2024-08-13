@@ -9,6 +9,7 @@ public class HandInput : MonoBehaviour
 
     public InputActionReference left, right;
     public InputActionProperty primaryButton, secondaryButton;
+    [SerializeField] GameObject handUi;
     void Start()
     {
 
@@ -20,6 +21,15 @@ public class HandInput : MonoBehaviour
         if (primaryButton.action.WasPressedThisFrame())
         {
             Debug.Log("Primary被按下");
+            if (handUi.activeSelf)
+            {
+                handUi.SetActive(false);
+            }
+            else
+            {
+                handUi.SetActive(true);
+            }
+
         }
         if (secondaryButton.action.WasPressedThisFrame())
         {
