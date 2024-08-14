@@ -7,33 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: default
-    second: {fileID: 2100000, guid: a55ba6e147add744885761c443bfb717, type: 2}
+      name: "4060\u4E0A\u84CB"
+    second: {fileID: 2100000, guid: efdd9a3db24343a4aa1916aea3a201ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "4060\u5E95\u677F"
+    second: {fileID: 2100000, guid: 529dffbb763999346a8aabcd787a0f7d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "\u9810\u8A2D\u9280"
-    second: {fileID: 2100000, guid: 40df633954fe11445934a4a9aa751579, type: 2}
+    second: {fileID: 2100000, guid: 4e3a397254788a743974eae76ec56762, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "\u9810\u8A2D\u9ED1"
-    second: {fileID: 2100000, guid: db1d97729d23b8c459695bc27cbb9b4b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u986F\u793A\u5361\u4E0A\u84CB\u6750\u8CEA"
-    second: {fileID: 2100000, guid: f77cfd84c6f5d86479d5a20ab794207d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u986F\u793A\u5361\u4E3B\u677F\u6750\u8CEA"
-    second: {fileID: 2100000, guid: 113a0ee3281fcaf4e9c1591ac7a3597e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u986F\u793A\u5361\u80CC\u9762\u6750\u8CEA"
-    second: {fileID: 2100000, guid: e85021cf976b1bd4f89c69a9347df43d, type: 2}
+    second: {fileID: 2100000, guid: 2e5f883651102ee478384d74ff58b587, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
