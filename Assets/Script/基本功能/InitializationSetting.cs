@@ -10,17 +10,17 @@ public class InitializationSetting : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("isInitialization") == false)    //初始化，只會在第一次執行，或是有設定重製按鈕時會執行。
         {
-            PlayerPrefs.SetInt("isInitialization",1);
-            PlayerPrefs.SetFloat("guideVolume",0.2f);
-            PlayerPrefs.SetFloat("bgVolume",0.15f);
+            PlayerPrefs.SetInt("isInitialization",1);                   //初始化參數設定
+            PlayerPrefs.SetFloat("guideVolume",0.2f);                   //引導音量設定
+            PlayerPrefs.SetFloat("bgVolume",0.15f);                     //背景音樂設定
 
-            PlayerPrefs.SetInt("MoveMode",0);
-            PlayerPrefs.SetFloat("ContinuousMoveValue",3);
+            PlayerPrefs.SetInt("MoveMode",0);                           //預設移動模式
+            PlayerPrefs.SetFloat("ContinuousMoveValue",3);              //持續移動的參數
             
-            PlayerPrefs.SetInt("TurnMode",0);
+            PlayerPrefs.SetInt("TurnMode",0);                           //預設旋轉模式
             
             PlayerPrefs.Save();
-            Debug.Log("123");
+            Debug.Log("初始化完成");
         }
         
     }
