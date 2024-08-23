@@ -9,7 +9,6 @@ TagManager:
   - Memory
   - Cpu
   - Power
-  - SSD
   - Computer
   - SidePanels
   - Fans
@@ -18,6 +17,7 @@ TagManager:
   - button
   - Hands
   - Fanbracket
+  - HardDriver
   layers:
   - Default
   - TransparentFX

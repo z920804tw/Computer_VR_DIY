@@ -31,15 +31,13 @@ public class MoveSetting : MonoBehaviour
     {
         if (i == 0)                          //持續移動
         {
-            snapMove.enableInputActions = false;
-
             moveMode = 0;
 
             SetMoveValue(PlayerPrefs.GetInt("ContinuousmoveObject"));
         }
         else if (i == 1)                     //定點移動
         {
-            snapMove.enableInputActions = true;
+            
             moveMode = 1;
             SetMoveValue(-1);
         }
@@ -57,6 +55,7 @@ public class MoveSetting : MonoBehaviour
                 tMP_Dropdown.value = 0;
                 slider.value = i;
             }
+            snapMove.enableInputActions = false;
             continuousMove.moveSpeed = i;
 
             PlayerPrefs.SetInt("ContinuousmoveObject", (int)i);
@@ -69,6 +68,7 @@ public class MoveSetting : MonoBehaviour
                 moveObject.SetActive(false);
                 tMP_Dropdown.value = 1;
             }
+            snapMove.enableInputActions = true;
             continuousMove.moveSpeed = 0;
 
             PlayerPrefs.SetInt("MoveMode", 1);

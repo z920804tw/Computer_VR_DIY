@@ -22,12 +22,12 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     public ScrewEnum screwEnum = ScrewEnum.None;
     public ScrewType screwType = ScrewType.None;
 
-    [Header("硬碟設定")]
-    public HardDriverType hardDriverType = HardDriverType.None;
-
+     [Header("硬碟設定")]
+     public HardDriverType hardDriverType = HardDriverType.None;
+    
     [Header("Debug")]
     public bool hasPlace;
-    float waitTime=1f;
+    float waitTime = 1f;
 
     void Start()
     {
@@ -67,7 +67,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                     case "Power":
                         Power_ObjectTransform();
                         break;
-                    case "SSD":
+                    case "HardDriver":
                         HardDriver_ObjectTransform();
                         break;
                     case "Cable":
