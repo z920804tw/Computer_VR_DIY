@@ -9,6 +9,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 {
     // Start is called before the first frame update
     public GameObject colliderObject;
+    public Collider colliderObj;
 
     [Header("主機板腳位設定")]
     public int m_LGA;
@@ -22,9 +23,9 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     public ScrewEnum screwEnum = ScrewEnum.None;
     public ScrewType screwType = ScrewType.None;
 
-     [Header("硬碟設定")]
-     public HardDriverType hardDriverType = HardDriverType.None;
-    
+    [Header("硬碟設定")]
+    public HardDriverType hardDriverType = HardDriverType.None;
+
     [Header("Debug")]
     public bool hasPlace;
     float waitTime = 1f;
@@ -32,7 +33,10 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     void Start()
     {
         hasPlace = false;
-
+        if (transform.root.GetComponent<Collider>() != null)
+        {
+            colliderObj=transform.root.GetComponent<Collider>(); 
+        }
     }
 
     // Update is called once per frame
@@ -233,7 +237,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                     colliderObject.transform.position = this.gameObject.transform.position;
                     colliderObject.transform.rotation = this.gameObject.transform.rotation;
                     colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                    //cableObj.enabled = false;
+
+
                     cableObj.anim.SetBool("place", true);
                     Invoke("place", waitTime);
                 }
@@ -291,6 +296,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.position = this.transform.position;
                 colliderObject.transform.rotation = this.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+
+
 
                 FanbracketObj.anim.SetBool("place", true);
 

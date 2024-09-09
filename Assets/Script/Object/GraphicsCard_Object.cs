@@ -14,10 +14,9 @@ public class GraphicsCard_Object : MonoBehaviour
     public bool isHolding;
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
-    bool check;
+
     void Start()
     {
-        check = false;
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -36,13 +35,10 @@ public class GraphicsCard_Object : MonoBehaviour
         {
             if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
-                if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
+                if (isFirstCollider == false)                                  //判斷是否第一次碰撞
                 {
-                    if (isFirstCollider == false)                                  //判斷是否第一次碰撞
-                    {
-                        isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
-                        firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
-                    }
+                    isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
+                    firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
                 }
             }
         }
@@ -63,36 +59,32 @@ public class GraphicsCard_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
-        if (check == true)
-        {
-            if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
-            {
-                foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-                {
 
-                    if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                    {
-                        obj.GetComponent<Outline>().enabled = false;
-                    }
+        if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+        {
+            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
+            {
+
+                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                {
+                    obj.GetComponent<Outline>().enabled = false;
                 }
             }
-            check = false;
         }
+
     }
     public void showGraphicsCardOutline()
     {
-        if (check == false)
+
+        ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+        if (ObjectsTransform != null)
         {
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
-            if (ObjectsTransform != null)
+            foreach (GameObject obj in ObjectsTransform)
             {
-                foreach (GameObject obj in ObjectsTransform)
-                {
-                    obj.GetComponent<Outline>().enabled = true;
-                }
+                obj.GetComponent<Outline>().enabled = true;
             }
-            isHolding = true;
-            check = true;
         }
+        isHolding = true;
+
     }
 }

@@ -24,22 +24,31 @@ public class Cable_Object : MonoBehaviour
 
 
 
+
+
     [Header("Debug")]
     public bool isHolding;
     [SerializeField] bool isFirstCollider;
-    [SerializeField] bool check;
 
 
     void Start()
     {
-        check = false;
+
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        if (firstColliderObject != null && firstColliderObject.GetComponent<Object_Transform>().hasPlace == true)
+        {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<Collider>(), true);
+
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -61,61 +70,57 @@ public class Cable_Object : MonoBehaviour
     {
         Debug.Log("重製Cable設定");
         isHolding = false;
-        this.gameObject.transform.SetParent(cableParent.transform);
         rb.isKinematic = false;
-        anim.enabled=true;
-        anim.SetBool("place",false);
+        anim.enabled = true;
+        anim.SetBool("place", false);
+
+
+        this.gameObject.transform.SetParent(cableParent.transform);
         if (firstColliderObject != null)
         {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<Collider>(), false);
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
             firstColliderObject = null;
             isFirstCollider = false;
         }
-        if (check == true)
-        {
-            if (ObjectsTransform != null)
-            {
-                foreach (GameObject obj in ObjectsTransform)
-                {
 
-                    if (obj.GetComponent<Outline>() != null)
-                    {
-                        obj.GetComponent<Outline>().enabled = false;
-                    }
+        if (ObjectsTransform != null)
+        {
+            foreach (GameObject obj in ObjectsTransform)
+            {
+
+                if (obj.GetComponent<Outline>() != null)
+                {
+                    obj.GetComponent<Outline>().enabled = false;
                 }
             }
-            check = false;
         }
-
     }
 
     public void showCableOutline()
     {
-        if (check == false)
+
+        ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        if (ObjectsTransform != null)
         {
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-            if (ObjectsTransform != null)
+            foreach (GameObject obj in ObjectsTransform)
             {
-                foreach (GameObject obj in ObjectsTransform)
+                Object_Transform object_Transform = obj.GetComponent<Object_Transform>();
+                Outline outline = obj.GetComponent<Outline>();
+
+                if (outline != null && object_Transform != null)
                 {
-                    Object_Transform object_Transform = obj.GetComponent<Object_Transform>();
-                    Outline outline=obj.GetComponent<Outline>();
-
-                    if (outline!= null&&object_Transform != null)
-                    { 
-                        if (object_Transform.T_cableType==cableType&&object_Transform.T_cableDirection==cableDirection)
-                        {
-                            obj.GetComponent<Outline>().enabled = true;
-                        }
+                    if (object_Transform.T_cableType == cableType && object_Transform.T_cableDirection == cableDirection)
+                    {
+                        obj.GetComponent<Outline>().enabled = true;
                     }
-
                 }
-                this.gameObject.GetComponent<Outline>().enabled=true;
+
             }
-            isHolding = true;
-            
-            check = true;
+            this.gameObject.GetComponent<Outline>().enabled = true;
         }
+        isHolding = true;
+
     }
 }
 

@@ -19,12 +19,12 @@ public class CPU_Fan_Object : MonoBehaviour
     public bool cpuHasPlace;
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
-    bool check;
+
 
 
     void Start()
     {
-        check = false;
+
         cpuHasPlace = false;
         isFirstCollider = false;
         isHolding = false;
@@ -79,41 +79,38 @@ public class CPU_Fan_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
-        if (check == true)
-        {
-            if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
-            {
-                foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-                {
 
-                    if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                    {
-                        obj.GetComponent<Outline>().enabled = false;
-                    }
+        if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+        {
+            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
+            {
+
+                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                {
+                    obj.GetComponent<Outline>().enabled = false;
                 }
             }
-            check = false;
         }
+
+
     }
     public void showCpuFansOutline()
     {
-        if (check == false)
+
+        ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+
+        if (ObjectsTransform != null)
         {
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-
-            if (ObjectsTransform != null)
+            foreach (GameObject obj in ObjectsTransform)
             {
-                foreach (GameObject obj in ObjectsTransform)
-                {
-                    Outline outline = obj.GetComponent<Outline>();
-                    //Object_Transform objTransform = obj.GetComponent<Object_Transform>();
+                Outline outline = obj.GetComponent<Outline>();
+                //Object_Transform objTransform = obj.GetComponent<Object_Transform>();
 
-                    outline.enabled = true;
-                }
+                outline.enabled = true;
             }
-            isHolding = true;
-            check = true;
         }
+        isHolding = true;
+
     }
 
 

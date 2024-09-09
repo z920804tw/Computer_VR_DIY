@@ -22,6 +22,7 @@ public class MoveSetting : MonoBehaviour
     {
         snapMove = GameObject.Find("Left Ray Interactor(Teleport)").GetComponent<ActionBasedController>();
         continuousMove = GetComponent<ContinuousMoveProviderBase>();
+
         moveMode = PlayerPrefs.GetInt("MoveMode");
         SetMoveMode(moveMode);
     }
@@ -29,16 +30,13 @@ public class MoveSetting : MonoBehaviour
 
     public void SetMoveMode(int i)
     {
+        moveMode = i;
         if (i == 0)                          //持續移動
         {
-            moveMode = 0;
-
             SetMoveValue(PlayerPrefs.GetInt("ContinuousmoveObject"));
         }
         else if (i == 1)                     //定點移動
         {
-            
-            moveMode = 1;
             SetMoveValue(-1);
         }
 

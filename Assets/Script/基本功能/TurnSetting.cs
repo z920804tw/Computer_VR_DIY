@@ -34,15 +34,15 @@ public class TurnSetting : MonoBehaviour
 
     public void SetTurnMode(int i)
     {
+        turnMode = i;
         if (i == 0)                 //持續旋轉
         {
-            turnMode = 0;
+            //turnMode = 0;
             SetTurnValue(PlayerPrefs.GetInt("ContinuousTurnValue"));
         }
         else if (i == 1)            //定點旋轉
         {
-            turnMode = 1;
-
+            //turnMode = 1;
             SetTurnValue(PlayerPrefs.GetInt("SnapTurnValue"));
         }
 
@@ -55,7 +55,7 @@ public class TurnSetting : MonoBehaviour
             {
                 continuousObject.SetActive(true);
                 snapTurnObject.SetActive(false);
-                
+
                 continousSlider.value = i;
                 continuousValue.text = i.ToString();
                 tMP_Dropdown.value = 0;

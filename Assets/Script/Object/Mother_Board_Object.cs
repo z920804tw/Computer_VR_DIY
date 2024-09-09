@@ -15,11 +15,11 @@ public class Mother_Board_Object : MonoBehaviour
     public bool isHolding;
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
-    bool check;
+
 
     void Start()
     {
-        check = false;
+
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -54,7 +54,7 @@ public class Mother_Board_Object : MonoBehaviour
         Debug.Log("重製主機板設定");
         isHolding = false;
         this.gameObject.transform.SetParent(null);
-       // rb.isKinematic = false;
+        // rb.isKinematic = false;
 
         anim.SetBool("place", false);
         if (firstColliderObject != null)
@@ -64,38 +64,32 @@ public class Mother_Board_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
-        if (check == true && ObjectsTransform != null)
-        {
-            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-            {
 
-                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                {
-                    obj.GetComponent<Outline>().enabled = false;
-                }
+        foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
+        {
+
+            if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+            {
+                obj.GetComponent<Outline>().enabled = false;
             }
-            check = false;
         }
+
 
     }
     public void showMotherBoardOutline()
     {
-        if (check == false)
+
+
+        ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
+        if (ObjectsTransform != null)
         {
-
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
-            if (ObjectsTransform != null)
+            foreach (GameObject obj in ObjectsTransform)
             {
-                foreach (GameObject obj in ObjectsTransform)
-                {
-                    obj.GetComponent<Outline>().enabled = true;
-                }
-
+                obj.GetComponent<Outline>().enabled = true;
             }
-            isHolding = true;
-            check = true;
-
 
         }
+        isHolding = true;
+
     }
 }

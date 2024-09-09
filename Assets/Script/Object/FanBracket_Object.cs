@@ -23,12 +23,12 @@ public class FanBracket_Object : MonoBehaviour
     public bool isHolding;
     [SerializeField] bool isFirstCollider;
     Rigidbody rb;
-    bool check;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        check = false;
+
         isFirstCollider = false;
         isHolding = false;
     }
@@ -60,23 +60,22 @@ public class FanBracket_Object : MonoBehaviour
 
     public void showFanBracketOutline()
     {
-        if (check == false)
+
+        ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        foreach (GameObject obj in ObjectsTransform)
         {
-            ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-            foreach (GameObject obj in ObjectsTransform)
+            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
             {
-                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+                if (obj.GetComponent<Object_Transform>().m_FanBracketType == this.fanBracketType)
                 {
-                    if (obj.GetComponent<Object_Transform>().m_FanBracketType == this.fanBracketType)
-                    {
-                        obj.GetComponent<Outline>().enabled = true;
-                    }
+                    obj.GetComponent<Outline>().enabled = true;
                 }
             }
-            isHolding = true;
-            check = true;
-            this.gameObject.GetComponent<Outline>().enabled = true;
         }
+        isHolding = true;
+
+        this.gameObject.GetComponent<Outline>().enabled = true;
+
     }
 
 
@@ -94,18 +93,16 @@ public class FanBracket_Object : MonoBehaviour
             isFirstCollider = false;
         }
 
-        if (check == true && ObjectsTransform != null)
-        {
-            foreach (GameObject obj in ObjectsTransform)
-            {
-                if (obj.GetComponent<Outline>() != null)
-                {
-                    obj.GetComponent<Outline>().enabled = false;
-                }
 
+        foreach (GameObject obj in ObjectsTransform)
+        {
+            if (obj.GetComponent<Outline>() != null)
+            {
+                obj.GetComponent<Outline>().enabled = false;
             }
-            check = false;
+
         }
+
 
     }
 
