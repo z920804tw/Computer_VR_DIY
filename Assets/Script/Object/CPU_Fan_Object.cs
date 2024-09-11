@@ -10,6 +10,7 @@ public class CPU_Fan_Object : MonoBehaviour
     // Start is called before the first frame update
     [Header("一般風扇物件設定")]
     public GameObject firstColliderObject;                                  //紀錄第一個碰撞的物件
+    public GameObject cableParent;
     public Animator anim;
     public GameObject[] ObjectsTransform;
 
@@ -33,6 +34,13 @@ public class CPU_Fan_Object : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        if (firstColliderObject != null && isHolding == false)
+        {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<BoxCollider>(), true);
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -67,15 +75,17 @@ public class CPU_Fan_Object : MonoBehaviour
 
         Debug.Log("重製風扇設定");
         isHolding = false;
-        this.gameObject.transform.SetParent(null);
         rb.isKinematic = false;
         cpuHasPlace = false;
+
+        this.gameObject.transform.SetParent(cableParent.transform);
 
         anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
 
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<BoxCollider>(), false);
             firstColliderObject = null;
             isFirstCollider = false;
         }

@@ -26,7 +26,10 @@ public class GraphicsCard_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (firstColliderObject != null && isHolding == false)
+        {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<BoxCollider>(), true);
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -56,6 +59,7 @@ public class GraphicsCard_Object : MonoBehaviour
         {
 
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<BoxCollider>(), false);
             firstColliderObject = null;
             isFirstCollider = false;
         }

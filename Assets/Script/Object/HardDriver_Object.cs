@@ -39,12 +39,16 @@ public class HardDriver_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (firstColliderObject != null && isHolding == false)
+        {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<Collider>(), true);
 
+        }
     }
     private void OnTriggerStay(Collider other)
     {
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
-        if (other.gameObject.tag == this.gameObject.tag && other.gameObject.GetComponent<Object_Transform>() != null)
+        if (other.gameObject.tag == this.gameObject.tag )
         {
             if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {

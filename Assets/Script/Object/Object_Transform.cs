@@ -35,7 +35,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         hasPlace = false;
         if (transform.root.GetComponent<Collider>() != null)
         {
-            colliderObj=transform.root.GetComponent<Collider>(); 
+            colliderObj = transform.root.GetComponent<Collider>();
         }
     }
 
@@ -249,13 +249,15 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     void Screw_ObjectTransform()
     {
         Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
-        if (screwObj != null && screwObj.firstColliderObject != null)
-        {
-            if (screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
-            {
-                screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
-                screwObj.firstColliderObject = this.gameObject;
 
+        if (screwObj.firstColliderObject != null && screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
+        {
+
+            screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
+            screwObj.firstColliderObject = this.gameObject;
+
+            if (screwObj.firstColliderObject.name == this.gameObject.name)
+            {
                 colliderObject.transform.SetParent(this.gameObject.transform);
                 colliderObject.transform.position = this.gameObject.transform.position;
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;

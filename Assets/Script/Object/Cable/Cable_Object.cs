@@ -43,7 +43,7 @@ public class Cable_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (firstColliderObject != null && firstColliderObject.GetComponent<Object_Transform>().hasPlace == true)
+        if (firstColliderObject != null  && isHolding==false)
         {
             Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<Collider>(), true);
 

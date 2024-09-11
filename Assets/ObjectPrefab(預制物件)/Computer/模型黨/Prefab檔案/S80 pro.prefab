@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4433085455264850930}
   m_Layer: 6
   m_Name: S80 pro
-  m_TagString: SSD
+  m_TagString: HardDriver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,9 +274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8672eae5a21a2d40aed5b07502a9051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstColliderObject: {fileID: 0}
   ObjectsTransform: []
   hardDriverType: 3
+  firstColliderObject: {fileID: 0}
   anim: {fileID: 0}
   isHolding: 0
   isFirstCollider: 0
