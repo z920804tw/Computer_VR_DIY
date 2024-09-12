@@ -46,7 +46,10 @@ public class Screw_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       /* if (firstColliderObject != null)
+        {
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<BoxCollider>(), this.GetComponent<BoxCollider>(), true);
+        }*/
     }
     private void OnTriggerStay(Collider other)
     {
@@ -79,6 +82,7 @@ public class Screw_Object : MonoBehaviour
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
+            Physics.IgnoreCollision(firstColliderObject.GetComponent<BoxCollider>(), this.GetComponent<BoxCollider>(), true);
             screwEnum = ScrewEnum.hold;
             firstColliderObject = null;
             isFirstCollider = false;
@@ -89,20 +93,18 @@ public class Screw_Object : MonoBehaviour
     public void showScrewOutline()
     {
         ObjectsTransform = GameObject.FindGameObjectsWithTag("Screw");
-        if (ObjectsTransform != null)
+
+        foreach (GameObject obj in ObjectsTransform)
         {
-            foreach (GameObject obj in ObjectsTransform)
+            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
             {
-                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+                if (obj.GetComponent<Object_Transform>().screwType == screwType)
                 {
-                    if (obj.GetComponent<Object_Transform>().screwType == screwType)
-                    {
-                        obj.GetComponent<Outline>().enabled = true;
-                    }
+                    obj.GetComponent<Outline>().enabled = true;
                 }
             }
-            this.GetComponent<Outline>().enabled = true;
         }
+        this.GetComponent<Outline>().enabled = true;
     }
     public void removeScrewOutline()
     {

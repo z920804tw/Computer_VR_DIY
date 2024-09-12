@@ -85,10 +85,13 @@ public class Mother_Board_Object : MonoBehaviour
         {
             foreach (GameObject obj in ObjectsTransform)
             {
-                obj.GetComponent<Outline>().enabled = true;
+                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+                {
+                    obj.GetComponent<Outline>().enabled = true;
+                }
             }
-
         }
+        this.gameObject.GetComponent<Outline>().enabled = true;
         isHolding = true;
 
     }

@@ -22,6 +22,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     [Header("螺絲設定")]
     public ScrewEnum screwEnum = ScrewEnum.None;
     public ScrewType screwType = ScrewType.None;
+    bool isChange;
 
     [Header("硬碟設定")]
     public HardDriverType hardDriverType = HardDriverType.None;
@@ -32,6 +33,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
     void Start()
     {
+        isChange = false;
         hasPlace = false;
         if (transform.root.GetComponent<Collider>() != null)
         {
@@ -40,7 +42,6 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     }
 
     // Update is called once per frame
-
 
 
     //判斷碰撞偵測的物件，並把物件變成子物件
@@ -95,10 +96,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         }
     }
 
-    void place()
-    {
-        hasPlace = true;
-    }
+
     //CPU用的，主要多了CPU跟主機板的LGA腳位判斷
     void CPU_ObjectTransform()
     {
@@ -248,38 +246,37 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     //螺絲物件位置的功能，主要多了螺絲的型號和模式判斷，如果都相符就會先將前一個紀錄的位置的hasPlace先變成false，之後再做下面的事情。
     void Screw_ObjectTransform()
     {
-        Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
-
-        if (screwObj.firstColliderObject != null && screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
+        if (colliderObject.GetComponent<Screw_Object>() != null && isChange == false)
         {
 
-            screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
-            screwObj.firstColliderObject = this.gameObject;
-
-            if (screwObj.firstColliderObject.name == this.gameObject.name)
+            Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
+            if (screwObj.firstColliderObject != null && screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
             {
-                colliderObject.transform.SetParent(this.gameObject.transform);
-                colliderObject.transform.position = this.gameObject.transform.position;
-                colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;
-                if (screwEnum == ScrewEnum.hold)   //拿起
-                {
 
-                    screwObj.screwEnum = ScrewEnum.place;
-                    screwObj.anim.SetBool("place", false);
-                    screwObj.showScrewOutline();
-                    hasPlace = true;
-                    Debug.Log("現在接的是螺絲起子，螺絲更改成place");
-                }
-                else if (screwEnum == ScrewEnum.place)  //放置
-                {
-                    screwObj.screwEnum = ScrewEnum.hold;
-                    screwObj.anim.SetBool("place", true);
-                    Invoke("place", waitTime);
-                    screwObj.removeScrewOutline();
-                    Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
+                screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
+                screwObj.firstColliderObject = this.gameObject;                                 //再將物件設成自己
 
+                if (screwObj.firstColliderObject.name == this.gameObject.name)
+                {
+                    colliderObject.transform.SetParent(this.gameObject.transform);
+                    colliderObject.transform.position = this.gameObject.transform.position;
+                    colliderObject.transform.rotation = this.gameObject.transform.rotation;
+                    colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+
+                    if (screwEnum == ScrewEnum.hold)   //拿起
+                    {
+                        screwObj.anim.SetBool("place", false);
+                        screwObj.showScrewOutline();
+
+                    }
+                    else if (screwEnum == ScrewEnum.place)  //放置
+                    {
+                        screwObj.anim.SetBool("place", true);
+                        screwObj.removeScrewOutline();
+                    }
+                    Invoke("ScrewPlace", waitTime);
                 }
+                isChange = true;
             }
         }
     }
@@ -310,26 +307,26 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         }
 
     }
-    /*void ObjectTransform()
+
+
+    void place()
     {
-
-        if (colliderObject.GetComponent<ObjectParent>().firstColliderObject != null)                            //判斷碰撞物件上的ObjectParent中的firstCollider是不是有東西
+        hasPlace = true;
+    }
+    void ScrewPlace()
+    {
+        if (screwEnum == ScrewEnum.hold)
         {
-
-            if (colliderObject.GetComponent<ObjectParent>().firstColliderObject.name == this.gameObject.name)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣
-            {
-
-                colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
-                colliderObject.transform.position = this.gameObject.transform.position;
-                colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
-                hasPlace = true;
-            }
+            colliderObject.GetComponent<Screw_Object>().screwEnum = ScrewEnum.place;
+            Debug.Log("現在接的是螺絲起子，螺絲更改成place");
         }
-
-
-    }*/
-
-
+        else if (screwEnum == ScrewEnum.place)
+        {
+            colliderObject.GetComponent<Screw_Object>().screwEnum = ScrewEnum.hold;
+            Debug.Log("現在接的是螺絲Transform，螺絲更改成hold");
+        }
+        isChange = false;
+        hasPlace = true;
+    }
 
 }

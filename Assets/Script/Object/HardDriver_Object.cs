@@ -48,7 +48,7 @@ public class HardDriver_Object : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
-        if (other.gameObject.tag == this.gameObject.tag )
+        if (other.gameObject.tag == this.gameObject.tag)
         {
             if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
@@ -83,38 +83,31 @@ public class HardDriver_Object : MonoBehaviour
             firstColliderObject = null;
             isFirstCollider = false;
         }
-
-        if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+        foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
         {
-            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-            {
 
-                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                {
-                    obj.GetComponent<Outline>().enabled = false;
-                }
+            if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+            {
+                obj.GetComponent<Outline>().enabled = false;
             }
         }
-
     }
     public void showSSDOutline()
     {
 
         ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
-        if (ObjectsTransform != null)
+
+        foreach (GameObject obj in ObjectsTransform)
         {
-            foreach (GameObject obj in ObjectsTransform)
+            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
             {
-                if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+                if (obj.GetComponent<Object_Transform>().hardDriverType == hardDriverType)
                 {
-                    if (obj.GetComponent<Object_Transform>().hardDriverType == hardDriverType)
-                    {
-                        obj.GetComponent<Outline>().enabled = true;
-                    }
+                    obj.GetComponent<Outline>().enabled = true;
                 }
             }
-            this.GetComponent<Outline>().enabled = true;
         }
+        this.GetComponent<Outline>().enabled = true;
         isHolding = true;
 
     }

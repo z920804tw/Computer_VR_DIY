@@ -75,46 +75,38 @@ public class CPU_Object : MonoBehaviour
             isFirstCollider = false;
             Debug.Log("重製cpu設定");
         }
-
-        if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
+        foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
         {
-            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
+            if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
             {
-
-                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                {
-                    obj.GetComponent<Outline>().enabled = false;
-                }
+                obj.GetComponent<Outline>().enabled = false;
             }
         }
-
-
     }
 
     public void showCpuOutline()
     {
 
         ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
-        if (ObjectsTransform != null)
+
+        foreach (GameObject obj in ObjectsTransform)
         {
-            foreach (GameObject obj in ObjectsTransform)
+            if (obj.GetComponent<Outline>() != null && obj.GetComponent<Object_Transform>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
             {
-                if (obj.GetComponent<Outline>() != null && obj.GetComponent<Object_Transform>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+                if (obj.GetComponent<Object_Transform>().m_LGA == c_LGA)
                 {
-                    if (obj.GetComponent<Object_Transform>().m_LGA == c_LGA)
-                    {
 
-                        obj.GetComponent<Outline>().OutlineColor = new Color(255f / 255, 208f / 255, 0f, 255f / 255);
-                    }
-                    else
-                    {
-                        obj.GetComponent<Outline>().OutlineColor = Color.red;
-
-                    }
+                    obj.GetComponent<Outline>().OutlineColor = new Color(255f / 255, 208f / 255, 0f, 255f / 255);
                 }
-                obj.GetComponent<Outline>().enabled = true;
+                else
+                {
+                    obj.GetComponent<Outline>().OutlineColor = Color.red;
+
+                }
             }
+            obj.GetComponent<Outline>().enabled = true;
         }
+        this.gameObject.GetComponent<Outline>().enabled = true;
         isHolding = true;
 
 

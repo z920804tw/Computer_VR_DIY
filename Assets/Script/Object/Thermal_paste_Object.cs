@@ -13,15 +13,15 @@ public class Thermal_paste_Object : MonoBehaviour
     public bool isHolding;
     public Transform SpawnPos;
     public GameObject firstColliderObject;
-    Rigidbody rb;
 
-    bool check;
+
+
     bool canSpawn;
     void Start()
     {
         isHolding = false;
-        check = false;
-        rb = this.gameObject.GetComponent<Rigidbody>();
+
+
     }
 
     // Update is called once per frame
@@ -62,25 +62,23 @@ public class Thermal_paste_Object : MonoBehaviour
 
     public void Remove_ThermalPaste_Setting()
     {
-        if (check == true)
-        {
-            Debug.Log("放開散熱高");
-            this.gameObject.GetComponent<Outline>().enabled = false;
-            firstColliderObject = null;
-            check = false;
-            canSpawn = false;
-            isHolding = false;
 
-        }
+        Debug.Log("放開散熱高");
+        this.gameObject.GetComponent<Outline>().enabled = false;
+        firstColliderObject = null;
+
+        canSpawn = false;
+        isHolding = false;
+
+
     }
     public void showThermalOutline()
     {
-        if (check == false)
-        {
-            Debug.Log("拿起散熱高");
-            this.gameObject.GetComponent<Outline>().enabled = true;
-            check = true;
-            isHolding = true;
-        }
+
+        Debug.Log("拿起散熱高");
+        this.gameObject.GetComponent<Outline>().enabled = true;
+
+        isHolding = true;
+
     }
 }

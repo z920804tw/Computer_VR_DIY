@@ -25,7 +25,6 @@ public class CPU_Fan_Object : MonoBehaviour
 
     void Start()
     {
-
         cpuHasPlace = false;
         isFirstCollider = false;
         isHolding = false;
@@ -47,7 +46,6 @@ public class CPU_Fan_Object : MonoBehaviour
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
         if (other.gameObject.tag == this.gameObject.tag)
         {
-
             if (other.gameObject.GetComponent<Object_Transform>().hasPlace == false) //要先判斷該放置座標的hasPlace必須為false(上面沒東西)才能放置
             {
                 if (isFirstCollider == false)                                  //判斷是否第一次碰撞
@@ -78,27 +76,31 @@ public class CPU_Fan_Object : MonoBehaviour
         rb.isKinematic = false;
         cpuHasPlace = false;
 
-        this.gameObject.transform.SetParent(cableParent.transform);
+        if (cableParent != null)
+        {
+            this.gameObject.transform.SetParent(cableParent.transform);
+        }
+        else
+        {
+            this.gameObject.transform.SetParent(null);
+        }
 
         anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
-
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
             Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<BoxCollider>(), false);
             firstColliderObject = null;
             isFirstCollider = false;
         }
 
-        if (ObjectsTransform != null)                                      //看放置座標陣列裡有沒有值，如果有才會執行
-        {
-            foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
-            {
 
-                if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
-                {
-                    obj.GetComponent<Outline>().enabled = false;
-                }
+        foreach (GameObject obj in ObjectsTransform)             //用foreach來把該陣列裡面的所有物件的Outline都關閉
+        {
+
+            if (obj.GetComponent<Outline>() != null)               //會先檢查這個物件有沒有Outline這個Component，如果有才會把他關閉，否則就什麼都不做
+            {
+                obj.GetComponent<Outline>().enabled = false;
             }
         }
 
@@ -108,17 +110,15 @@ public class CPU_Fan_Object : MonoBehaviour
     {
 
         ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-
-        if (ObjectsTransform != null)
+        
+        foreach (GameObject obj in ObjectsTransform)
         {
-            foreach (GameObject obj in ObjectsTransform)
+            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
             {
-                Outline outline = obj.GetComponent<Outline>();
-                //Object_Transform objTransform = obj.GetComponent<Object_Transform>();
-
-                outline.enabled = true;
+                obj.GetComponent<Outline>().enabled = true;
             }
         }
+        this.gameObject.GetComponent<Outline>().enabled = true;
         isHolding = true;
 
     }

@@ -10,7 +10,7 @@ public class CPU_Level2_Stauts : MonoBehaviour
     [SerializeField] Level_Select l;
     [SerializeField] GameObject[] MenuPanels, Pictures;
 
-    [SerializeField] GameObject CPU_Thermal_GameObject, pickUI, Fan_Object, Fan_socket;
+    [SerializeField] GameObject CPU_Thermal_GameObject, pickUI, _fan_Transform, _fan_Socket_Transform;
 
 
     //AudioSource audioSource;
@@ -52,7 +52,7 @@ public class CPU_Level2_Stauts : MonoBehaviour
             case 3:
                 MenuPanels[3].SetActive(true);
                 Pictures[2].SetActive(true);
-                if (CPU_Thermal_GameObject == true && Fan_Object.GetComponent<Object_Transform>().hasPlace == true)
+                if (CPU_Thermal_GameObject == true && _fan_Transform.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
                 }
@@ -60,7 +60,7 @@ public class CPU_Level2_Stauts : MonoBehaviour
             case 4:
                 MenuPanels[4].SetActive(true);
                 Pictures[3].SetActive(true);
-                if (Fan_socket.GetComponent<Object_Transform>().hasPlace == true)
+                if (_fan_Socket_Transform.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
                 }

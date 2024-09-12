@@ -10,8 +10,8 @@ public class Level_Stauts : MonoBehaviour
     public Level_Select l;
     [SerializeField] GameObject[] MenuPanels;
     [SerializeField] GameObject[] pictures;
-    [SerializeField] GameObject[] CPU_GameObject;
-    [SerializeField] GameObject Mother_GameObject, guideUI, pickUI;
+    [SerializeField] GameObject[] CPU_GameObject;      
+    [SerializeField] GameObject _cpuTransform, guideUI, pickUI;
 
 
 
@@ -54,7 +54,7 @@ public class Level_Stauts : MonoBehaviour
             case 3:
                 MenuPanels[3].SetActive(true);
                 pictures[2].SetActive(true);
-                if (Mother_GameObject.GetComponent<Object_Transform>().hasPlace == true)
+                if (_cpuTransform.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
                 }
