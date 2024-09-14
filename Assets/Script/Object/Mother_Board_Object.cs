@@ -54,7 +54,7 @@ public class Mother_Board_Object : MonoBehaviour
         Debug.Log("重製主機板設定");
         isHolding = false;
         this.gameObject.transform.SetParent(null);
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
 
         anim.SetBool("place", false);
         if (firstColliderObject != null)

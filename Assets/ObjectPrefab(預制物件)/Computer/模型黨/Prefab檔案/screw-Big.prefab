@@ -187,6 +187,7 @@ MonoBehaviour:
   screwEnum: 1
   screwType: 1
   isFirstCollider: 0
+  isHolding: 0
 --- !u!114 &4824030643699631602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +235,24 @@ MonoBehaviour:
       m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3238941620966205272}
+        m_TargetAssemblyTypeName: Screw_Object, Assembly-CSharp
+        m_MethodName: showScrewOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3238941620966205272}
         m_TargetAssemblyTypeName: Screw_Object, Assembly-CSharp
@@ -247,12 +266,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []

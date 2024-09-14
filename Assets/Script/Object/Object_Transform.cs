@@ -47,9 +47,9 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     //判斷碰撞偵測的物件，並把物件變成子物件
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == this.gameObject.tag)                                                   //判斷是否碰撞物件的tag是否與自己的tag一致
+        if (other.gameObject.tag == this.gameObject.tag && other.gameObject.GetComponent<Object_Transform>() == null)                                                   //判斷是否碰撞物件的tag是否與自己的tag一致
         {
-            if (hasPlace == false)                                                                         //判斷這個放置座標物件是不是已經有被放置東西了
+            if (hasPlace == false && isChange == false)                                                                         //判斷這個放置座標物件是不是已經有被放置東西了
             {
                 colliderObject = other.gameObject;                                                        //沒有的話會記錄碰撞到的物件
                 switch (colliderObject.tag)                                                              //使用switch判斷物件的tag來選擇要執行的函示
@@ -111,6 +111,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 cpuObj.anim.SetBool("place", true);                                                           //執行放置的動畫
+                
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -129,6 +131,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 cpuFanObj.anim.SetBool("place", true);
+
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -146,6 +150,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 motherboardObj.anim.SetBool("place", true);
+
+                isChange = true;
                 Invoke("place", waitTime);
 
             }
@@ -165,6 +171,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 graphicsObj.anim.SetBool("place", true);
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -182,6 +189,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 memoryObj.anim.SetBool("place", true);
+
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -198,6 +207,8 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 powerObj.anim.SetBool("place", true);
+
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -215,6 +226,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;
                 hard_driverObj.anim.SetBool("place", true);
+                isChange = true;
                 Invoke("place", waitTime);
             }
         }
@@ -238,6 +250,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
 
                     cableObj.anim.SetBool("place", true);
+                    isChange = true;
                     Invoke("place", waitTime);
                 }
             }
@@ -246,37 +259,33 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     //螺絲物件位置的功能，主要多了螺絲的型號和模式判斷，如果都相符就會先將前一個紀錄的位置的hasPlace先變成false，之後再做下面的事情。
     void Screw_ObjectTransform()
     {
-        if (colliderObject.GetComponent<Screw_Object>() != null && isChange == false)
+        Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
+        if (screwObj.firstColliderObject != null && screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
         {
+            screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
+            screwObj.firstColliderObject = this.gameObject;                                 //再將物件設成自己
 
-            Screw_Object screwObj = colliderObject.GetComponent<Screw_Object>();
-            if (screwObj.firstColliderObject != null && screwObj.screwEnum == screwEnum && screwObj.screwType == screwType)
+            if (screwObj.firstColliderObject.name == this.gameObject.name)
             {
+                colliderObject.transform.SetParent(this.gameObject.transform);
+                colliderObject.transform.position = this.gameObject.transform.position;
+                colliderObject.transform.rotation = this.gameObject.transform.rotation;
+                colliderObject.GetComponent<Rigidbody>().isKinematic = true;
 
-                screwObj.firstColliderObject.GetComponent<Object_Transform>().hasPlace = false; //會先讓前一個物件的hasPlace變成false，之後再變true;
-                screwObj.firstColliderObject = this.gameObject;                                 //再將物件設成自己
-
-                if (screwObj.firstColliderObject.name == this.gameObject.name)
+                if (screwEnum == ScrewEnum.hold)   //拿起
                 {
-                    colliderObject.transform.SetParent(this.gameObject.transform);
-                    colliderObject.transform.position = this.gameObject.transform.position;
-                    colliderObject.transform.rotation = this.gameObject.transform.rotation;
-                    colliderObject.GetComponent<Rigidbody>().isKinematic = true;
+                    screwObj.anim.SetBool("place", false);
+                    screwObj.showScrewOutline();
 
-                    if (screwEnum == ScrewEnum.hold)   //拿起
-                    {
-                        screwObj.anim.SetBool("place", false);
-                        screwObj.showScrewOutline();
-
-                    }
-                    else if (screwEnum == ScrewEnum.place)  //放置
-                    {
-                        screwObj.anim.SetBool("place", true);
-                        screwObj.removeScrewOutline();
-                    }
-                    Invoke("ScrewPlace", waitTime);
+                }
+                else if (screwEnum == ScrewEnum.place)  //放置
+                {
+                    screwObj.anim.SetBool("place", true);
+                    screwObj.removeScrewOutline();
                 }
                 isChange = true;
+                Invoke("ScrewPlace", waitTime);
+
             }
         }
     }
@@ -300,7 +309,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
                 FanbracketObj.anim.SetBool("place", true);
 
-
+                isChange = true;
                 Invoke("place", waitTime);
 
             }
@@ -311,12 +320,15 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
     void place()
     {
+        Debug.Log("121412415");
         hasPlace = true;
+        isChange = false;
     }
     void ScrewPlace()
     {
         if (screwEnum == ScrewEnum.hold)
         {
+
             colliderObject.GetComponent<Screw_Object>().screwEnum = ScrewEnum.place;
             Debug.Log("現在接的是螺絲起子，螺絲更改成place");
         }

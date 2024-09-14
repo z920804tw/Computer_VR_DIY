@@ -43,7 +43,7 @@ public class Cable_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (firstColliderObject != null  && isHolding==false)
+        if (firstColliderObject != null && isHolding == false)
         {
             Physics.IgnoreCollision(firstColliderObject.GetComponent<Object_Transform>().colliderObj, GetComponent<Collider>(), true);
 
@@ -55,13 +55,15 @@ public class Cable_Object : MonoBehaviour
         //判斷碰撞到的物體tag是否與自己的tag一致，如果一致就進到裡面
         if (other.gameObject.tag == this.gameObject.tag)
         {
-
-            if (isFirstCollider == false)                                  //判斷是否第一次碰撞
+            Object_Transform obj = other.gameObject.GetComponent<Object_Transform>();
+            if (obj.T_cableType == this.cableType && obj.T_cableDirection == this.cableDirection)
             {
-                isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
-                firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                if (isFirstCollider == false)                                  //判斷是否第一次碰撞
+                {
+                    isFirstCollider = true;                                   //設定true，這樣就不會修改到第一次紀錄的值
+                    firstColliderObject = other.gameObject;                   //設定第一次碰撞物為碰撞到的物件
+                }
             }
-
         }
 
     }

@@ -32,6 +32,7 @@ public class Screw_Object : MonoBehaviour
     [Header("Debug")]
 
     public bool isFirstCollider;                                  //判斷是否第一次碰撞
+    public bool isHolding;
     Rigidbody rb;
 
 
@@ -46,10 +47,7 @@ public class Screw_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if (firstColliderObject != null)
-        {
-            Physics.IgnoreCollision(firstColliderObject.GetComponent<BoxCollider>(), this.GetComponent<BoxCollider>(), true);
-        }*/
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -77,12 +75,13 @@ public class Screw_Object : MonoBehaviour
         Debug.Log("重製螺絲設定");
         this.gameObject.transform.SetParent(null);
         isFirstCollider = false;
+        isHolding=false;
         rb.isKinematic = false;
         anim.SetBool("place", false);
         if (firstColliderObject != null)
         {
             firstColliderObject.GetComponent<Object_Transform>().hasPlace = false;
-            Physics.IgnoreCollision(firstColliderObject.GetComponent<BoxCollider>(), this.GetComponent<BoxCollider>(), true);
+            //Physics.IgnoreCollision(firstColliderObject.GetComponent<BoxCollider>(), this.GetComponent<BoxCollider>(), true);
             screwEnum = ScrewEnum.hold;
             firstColliderObject = null;
             isFirstCollider = false;
@@ -98,12 +97,13 @@ public class Screw_Object : MonoBehaviour
         {
             if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
             {
-                if (obj.GetComponent<Object_Transform>().screwType == screwType)
+                if (obj.GetComponent<Object_Transform>().screwType == screwType && obj.GetComponent<Object_Transform>().hasPlace==false)
                 {
                     obj.GetComponent<Outline>().enabled = true;
                 }
             }
         }
+        isHolding=true;
         this.GetComponent<Outline>().enabled = true;
     }
     public void removeScrewOutline()
