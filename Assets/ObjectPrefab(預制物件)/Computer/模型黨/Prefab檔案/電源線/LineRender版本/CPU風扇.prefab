@@ -932,7 +932,6 @@ MonoBehaviour:
   anim: {fileID: 4182137764147520045}
   ObjectsTransform: []
   isHolding: 0
-  cpuHasPlace: 0
   isFirstCollider: 0
 --- !u!95 &4182137764147520045
 Animator:

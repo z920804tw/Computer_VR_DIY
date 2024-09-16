@@ -83,7 +83,7 @@ public class Memory_Object : MonoBehaviour
         ObjectsTransform = GameObject.FindGameObjectsWithTag(this.gameObject.tag);                //每次抓取特定物件就會去抓跟這個物件tag一致的物件
         foreach (GameObject obj in ObjectsTransform)
         {
-            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null)
+            if (obj.GetComponent<Object_Transform>() != null && obj.GetComponent<Outline>() != null && obj.GetComponent<Object_Transform>().hasPlace == false)
             {
                 obj.GetComponent<Outline>().enabled = true;
             }

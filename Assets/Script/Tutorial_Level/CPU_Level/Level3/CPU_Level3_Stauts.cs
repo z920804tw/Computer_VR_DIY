@@ -105,6 +105,7 @@ public class CPU_Level3_Stauts : MonoBehaviour
         {
             l.closeAllUI(MenuPanels);
             l.closeAllPicture(Pictures);
+            GameObject.Find("Camera Offset").GetComponent<AudioSource>().Stop();
         }
         status++;
     }

@@ -6,7 +6,7 @@ public class Button : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject button1;
-    
+
     bool isPressed = false;
 
     Animator anim;
@@ -26,20 +26,9 @@ public class Button : MonoBehaviour
 
         if (other.gameObject.tag == "Hands")
         {
-            if (other.gameObject.name == "Left Controller")
-            {
-
-                float value = other.gameObject.GetComponent<HandInput>().left.action.ReadValue<float>();
-                button1.GetComponent<Outline>().enabled = true;
-                PressButton(value);
-            }
-            else if (other.gameObject.name == "Right Controller")
-            {
-                float value = other.gameObject.GetComponent<HandInput>().right.action.ReadValue<float>();
-                button1.GetComponent<Outline>().enabled = true;
-                PressButton(value);
-            }
-
+            float value = other.gameObject.GetComponent<HandInput>().triggerButton.action.ReadValue<float>();
+            button1.GetComponent<Outline>().enabled = true;
+            PressButton(value);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -63,5 +52,5 @@ public class Button : MonoBehaviour
         isPressed = false;
         anim.SetBool("place", false);
     }
-    
+
 }

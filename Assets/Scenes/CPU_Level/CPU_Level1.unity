@@ -4483,6 +4483,10 @@ PrefabInstance:
       propertyPath: outside
       value: 
       objectReference: {fileID: 1906017415}
+    - target: {fileID: 3879323178216296787, guid: 852c9fd0909787042904ec8906cd0886, type: 3}
+      propertyPath: triggerButton.m_Action.m_Name
+      value: Trigger Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -78,6 +78,7 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
         {
             l.closeAllUI(MenuPanels);
             l.closeAllPicture(Pictures);
+            GameObject.Find("Camera Offset").GetComponent<AudioSource>().Stop();
         }
         else
         {

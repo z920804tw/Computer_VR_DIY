@@ -11,11 +11,14 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     public GameObject colliderObject;
     public Collider colliderObj;
 
-    [Header("主機板腳位設定")]
+    [Header("CPU設定")]
     public int m_LGA;
+    public CPU_Protect_Object cpuProjectShell; //當蓋子打開時，才能放CPU
 
     [Header("風扇固定插座設定")]
     public FanBracketType m_FanBracketType;
+    public Object_Transform cpuOBT;
+
     [Header("電纜設定")]
     public CableType T_cableType;
     public CableDirection T_cableDirection;
@@ -103,7 +106,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         CPU_Object cpuObj = colliderObject.GetComponent<CPU_Object>();
         if (cpuObj.firstColliderObject != null && cpuObj.isHolding == false)
         {
-            if (cpuObj.firstColliderObject.name == this.gameObject.name && cpuObj.c_LGA == m_LGA)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣，並且雙方的LGA也要一樣
+            if (cpuObj.firstColliderObject.name == this.gameObject.name && cpuObj.c_LGA == m_LGA && cpuProjectShell.isOpen)  //如果有東西就判斷他紀錄的值跟自己的名字是不是一樣，並且雙方的LGA也要一樣
             {
 
                 colliderObject.transform.SetParent(this.gameObject.transform);                               //設定成自己的子物件並套用座標、旋轉
@@ -123,7 +126,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
         CPU_Fan_Object cpuFanObj = colliderObject.GetComponent<CPU_Fan_Object>();
         if (cpuFanObj.firstColliderObject != null && cpuFanObj.isHolding == false)
         {
-            if (cpuFanObj.firstColliderObject.name == gameObject.name && cpuFanObj.cpuHasPlace)
+            if (cpuFanObj.firstColliderObject.name == gameObject.name && cpuOBT.hasPlace== true && cpuProjectShell.isOpen==false)
             {
 
                 colliderObject.transform.SetParent(this.gameObject.transform);
@@ -320,7 +323,6 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
 
     void place()
     {
-        Debug.Log("121412415");
         hasPlace = true;
         isChange = false;
     }

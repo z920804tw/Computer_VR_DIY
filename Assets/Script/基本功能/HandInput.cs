@@ -7,8 +7,8 @@ public class HandInput : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public InputActionReference left, right;
-    public InputActionProperty primaryButton, secondaryButton;
+
+    public InputActionProperty primaryButton, secondaryButton, triggerButton;
     [SerializeField] GameObject handUi;
     void Start()
     {
@@ -17,7 +17,8 @@ public class HandInput : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        /*
         if (primaryButton.action.WasPressedThisFrame())
         {
             Debug.Log("Primary被按下");
@@ -34,6 +35,6 @@ public class HandInput : MonoBehaviour
         if (secondaryButton.action.WasPressedThisFrame())
         {
             Debug.Log("Secondary被按下");
-        }
+        }*/
     }
 }

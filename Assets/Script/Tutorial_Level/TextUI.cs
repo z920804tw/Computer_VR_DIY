@@ -90,6 +90,7 @@ public class TextUI : MonoBehaviour
     public void NextPage()
     {
         nextPage.SetActive(true);
+        audioSource.Stop();
         this.gameObject.SetActive(false);
     }
 }

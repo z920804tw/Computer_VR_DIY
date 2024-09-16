@@ -17,7 +17,6 @@ public class CPU_Fan_Object : MonoBehaviour
 
     [Header("Debug")]
     public bool isHolding;
-    public bool cpuHasPlace;
     [SerializeField] bool isFirstCollider;                                  //判斷是否第一次碰撞
     Rigidbody rb;
 
@@ -25,7 +24,7 @@ public class CPU_Fan_Object : MonoBehaviour
 
     void Start()
     {
-        cpuHasPlace = false;
+
         isFirstCollider = false;
         isHolding = false;
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -56,15 +55,7 @@ public class CPU_Fan_Object : MonoBehaviour
             }
 
         }
-        if (other.gameObject.tag == "Cpu")
-        {
-            Object_Transform cpu = other.gameObject.GetComponent<Object_Transform>();
-            if (cpu != null && cpu.hasPlace == true)
-            {
-                cpuHasPlace = true;
-            }
 
-        }
 
     }
 
@@ -74,8 +65,6 @@ public class CPU_Fan_Object : MonoBehaviour
         Debug.Log("重製風扇設定");
         isHolding = false;
         rb.isKinematic = false;
-        cpuHasPlace = false;
-
         if (cableParent != null)
         {
             this.gameObject.transform.SetParent(cableParent.transform);

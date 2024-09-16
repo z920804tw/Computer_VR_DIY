@@ -69,6 +69,7 @@ public class HardDriver_Level3_Status : MonoBehaviour
         {
             l.closeAllUI(MenuPanels);
             l.closeAllPicture(Pictures);
+            GameObject.Find("Camera Offset").GetComponent<AudioSource>().Stop();
         }
         else
         {

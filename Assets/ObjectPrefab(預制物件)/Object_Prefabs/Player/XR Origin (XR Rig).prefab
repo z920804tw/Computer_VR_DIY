@@ -2473,8 +2473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c64221b9153a499dcf840bbc4e04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  right: {fileID: 0}
   primaryButton:
     m_UseReference: 1
     m_Action:
@@ -2499,6 +2497,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 5809756883027647187, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  triggerButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9671b0d9-8079-41c1-a725-db4d21b4fd1d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   handUi: {fileID: 0}
 --- !u!54 &7597633523307517174
 Rigidbody:
@@ -2944,8 +2954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c64221b9153a499dcf840bbc4e04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 0}
-  right: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   primaryButton:
     m_UseReference: 0
     m_Action:
@@ -2970,6 +2978,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  triggerButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: da05dd15-2c73-411c-9693-dd68e69c9f0a
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   handUi: {fileID: 0}
 --- !u!54 &8913606178624450440
 Rigidbody:

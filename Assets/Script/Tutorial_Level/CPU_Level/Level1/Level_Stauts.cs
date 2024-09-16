@@ -76,6 +76,7 @@ public class Level_Stauts : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            GameObject.Find("Camera Offset").GetComponent<AudioSource>().Stop();
         }
         else
         {
