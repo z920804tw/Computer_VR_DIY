@@ -11,9 +11,10 @@ public enum ScrewEnum
 public enum ScrewType
 {
     None = 0,
-    Large,
-    Medium,
-    Small
+    MotherBoard,
+    HardDriver,
+    Power,
+    FanBracket,
 }
 
 public class Screw_Object : MonoBehaviour

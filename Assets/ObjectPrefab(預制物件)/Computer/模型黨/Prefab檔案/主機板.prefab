@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3777696416603913851}
   - component: {fileID: 5113911932199108980}
   - component: {fileID: 2724162910559750827}
+  - component: {fileID: 6869126842563906570}
   m_Layer: 0
   m_Name: "CPU\u4FDD\u8B77\u84CB"
   m_TagString: Untagged
@@ -90,6 +91,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6869126842563906570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75629498814830730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &145414664555426084
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1004,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &5906607374124342010
@@ -2094,7 +2113,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &8191920891148729355
@@ -3135,7 +3154,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &2360274780986042688
@@ -3928,7 +3947,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 1
+  screwType: 2
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &2771546576047237484
@@ -6353,7 +6372,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &367735863262923035
@@ -7448,7 +7467,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &902936147595551441
@@ -8060,7 +8079,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &3499974285226151988
@@ -10050,7 +10069,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &2346488715149919640
@@ -10314,7 +10333,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &4152263243938873958
@@ -11699,7 +11718,7 @@ MonoBehaviour:
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 3
+  screwType: 1
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &2515110282238152852

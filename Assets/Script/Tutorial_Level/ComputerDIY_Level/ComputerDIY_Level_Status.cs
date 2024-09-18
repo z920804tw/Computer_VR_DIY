@@ -119,7 +119,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 4:
                 MenuPanels[4].SetActive(true);
-                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Medium;
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.HardDriver;
                 if (M2_SSD_Transform.hasPlace && MB_Screw__transform[8].hasPlace)
                 {
                     NextStatus();
@@ -127,7 +127,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 5:
                 MenuPanels[5].SetActive(true);
-                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Small;
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.MotherBoard;
                 if (MotherBoard_Transform.hasPlace == true)
                 {
                     if (MB_Screw__transform[0].hasPlace && MB_Screw__transform[1].hasPlace && MB_Screw__transform[2].hasPlace &&
@@ -140,7 +140,7 @@ public class ComputerDIY_Level_Status : MonoBehaviour
                 break;
             case 6:
                 MenuPanels[6].SetActive(true);
-                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Large;
+                ScrewDriver.GetComponentInChildren<Object_Transform>().screwType=ScrewType.Power;
                 if (Power_Transform.hasPlace == true)
                 {
                     if (PW_Screw__transform[0].hasPlace && PW_Screw__transform[1].hasPlace &&

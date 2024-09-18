@@ -39,7 +39,13 @@ public class CPU_Protect_Object : MonoBehaviour
                 }
                 Invoke("OpenShell", 1.3f);
             }
+            GetComponent<Outline>().enabled = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<Outline>().enabled = false;
     }
 
     void OpenShell()

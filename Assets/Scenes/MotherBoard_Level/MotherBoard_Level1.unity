@@ -4804,7 +4804,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4456624979189335844, guid: 2d6ae18a61f30dc4782cb4546c311820, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7397118726998216317, guid: 2d6ae18a61f30dc4782cb4546c311820, type: 3}
       propertyPath: m_Name
@@ -5733,7 +5733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -7539,7 +7539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -7679,7 +7679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -7968,7 +7968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -9783,7 +9783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -10490,7 +10490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -11396,7 +11396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name
@@ -12457,7 +12457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3238941620966205272, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: screwType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6036470626952540413, guid: 1b30ffcf06b256d419574a0dc7417e18, type: 3}
       propertyPath: m_Name

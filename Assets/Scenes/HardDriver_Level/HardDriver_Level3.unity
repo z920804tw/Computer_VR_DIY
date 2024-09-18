@@ -432,7 +432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4456624979189335844, guid: 2d6ae18a61f30dc4782cb4546c311820, type: 3}
       propertyPath: screwType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7397118726998216317, guid: 2d6ae18a61f30dc4782cb4546c311820, type: 3}
       propertyPath: m_Name

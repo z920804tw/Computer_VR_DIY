@@ -320,7 +320,9 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -665,7 +667,9 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -798,7 +802,9 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -1395,7 +1401,9 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 0
@@ -1658,11 +1666,13 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 1
+  screwType: 3
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &3591263024737971552
@@ -2883,11 +2893,13 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 1
+  screwType: 3
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &7649963689104310727
@@ -3147,11 +3159,13 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 1
+  screwType: 3
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &962272767992217324
@@ -3326,11 +3340,13 @@ MonoBehaviour:
   colliderObject: {fileID: 0}
   colliderObj: {fileID: 0}
   m_LGA: 0
+  cpuProjectShell: {fileID: 0}
   m_FanBracketType: 0
+  cpuOBT: {fileID: 0}
   T_cableType: 0
   T_cableDirection: 0
   screwEnum: 2
-  screwType: 1
+  screwType: 3
   hardDriverType: 0
   hasPlace: 0
 --- !u!114 &6416542990089145265

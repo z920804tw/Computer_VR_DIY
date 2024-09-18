@@ -17,7 +17,7 @@ public class CPU_Level3_Stauts : MonoBehaviour
 
     public GameObject[] pages;
     public GameObject[] fanBrackets;
-    public Object_Transform[] objectsTransform;
+    public Object_Transform[] objectsTransform, ScrewTransform;
 
     void Start()
     {
@@ -91,8 +91,15 @@ public class CPU_Level3_Stauts : MonoBehaviour
                     NextStatus();
                 }
                 break;
-            case 7:                                     //最後總結
+            case 7:
                 MenuPanels[7].SetActive(true);
+                if (ScrewTransform[0].hasPlace && ScrewTransform[1].hasPlace && ScrewTransform[2].hasPlace && ScrewTransform[3].hasPlace)
+                {
+                    NextStatus();
+                }
+                break;
+            case 8:                                     //最後總結
+                MenuPanels[8].SetActive(true);
                 break;
 
         }

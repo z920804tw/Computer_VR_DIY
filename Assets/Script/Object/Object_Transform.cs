@@ -37,7 +37,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     void Start()
     {
         isChange = false;
-        hasPlace = false;
+        //hasPlace = false;
         if (transform.root.GetComponent<Collider>() != null)
         {
             colliderObj = transform.root.GetComponent<Collider>();
@@ -114,7 +114,7 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
                 colliderObject.transform.rotation = this.gameObject.transform.rotation;
                 colliderObject.GetComponent<Rigidbody>().isKinematic = true;                                   //解決設成子物件後物件會亂動，所以把他的Kinematic設定成true，要變成false在ObjectParent.cs上面有註解。
                 cpuObj.anim.SetBool("place", true);                                                           //執行放置的動畫
-                
+
                 isChange = true;
                 Invoke("place", waitTime);
             }
@@ -124,9 +124,11 @@ public class Object_Transform : MonoBehaviour   //這個程式碼掛在放置點
     void Cpu_Fan_ObjectTransform()
     {
         CPU_Fan_Object cpuFanObj = colliderObject.GetComponent<CPU_Fan_Object>();
+
         if (cpuFanObj.firstColliderObject != null && cpuFanObj.isHolding == false)
         {
-            if (cpuFanObj.firstColliderObject.name == gameObject.name && cpuOBT.hasPlace== true && cpuProjectShell.isOpen==false)
+            
+            if (cpuFanObj.firstColliderObject.name == gameObject.name && cpuOBT.hasPlace == true && cpuProjectShell.isOpen == false)
             {
 
                 colliderObject.transform.SetParent(this.gameObject.transform);
