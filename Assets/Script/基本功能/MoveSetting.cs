@@ -25,6 +25,7 @@ public class MoveSetting : MonoBehaviour
 
         moveMode = PlayerPrefs.GetInt("MoveMode");
         SetMoveMode(moveMode);
+
     }
 
 
@@ -33,7 +34,7 @@ public class MoveSetting : MonoBehaviour
         moveMode = i;
         if (i == 0)                          //持續移動
         {
-            SetMoveValue(PlayerPrefs.GetInt("ContinuousmoveObject"));
+            SetMoveValue(PlayerPrefs.GetInt("ContinuousMoveValue"));
         }
         else if (i == 1)                     //定點移動
         {
@@ -56,7 +57,7 @@ public class MoveSetting : MonoBehaviour
             snapMove.enableInputActions = false;
             continuousMove.moveSpeed = i;
 
-            PlayerPrefs.SetInt("ContinuousmoveObject", (int)i);
+            PlayerPrefs.SetInt("ContinuousMoveValue", (int)i);
             PlayerPrefs.SetInt("MoveMode", 0);
         }
         else if (moveMode == 1)

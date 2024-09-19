@@ -22,11 +22,12 @@ public class CPU_Protect_Object : MonoBehaviour
 
     }
 
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Hands" && isChange == false)
         {
-            if (other.GetComponent<HandInput>().triggerButton.action.WasPressedThisFrame())
+            if (other.transform.parent.GetComponent<HandInput>().triggerButton.action.WasPressedThisFrame())
             {
                 Debug.Log("123");
                 if (isOpen)

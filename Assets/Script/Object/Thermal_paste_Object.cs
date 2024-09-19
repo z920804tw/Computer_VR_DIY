@@ -49,6 +49,7 @@ public class Thermal_paste_Object : MonoBehaviour
 
     public void SpawnThermalPaste()
     {
+        
         if (canSpawn == true && firstColliderObject != null)
         {
             if (firstColliderObject.GetComponent<CPU_Object>() != null)
@@ -57,7 +58,7 @@ public class Thermal_paste_Object : MonoBehaviour
             }
         }
 
-
+        
     }
 
     public void Remove_ThermalPaste_Setting()

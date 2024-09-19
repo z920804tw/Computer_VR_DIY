@@ -95,7 +95,7 @@ public class Menu : MonoBehaviour
                     MenuPanel[7].SetActive(true);
                     break;
                 case "電腦完整組裝":
-                    SceneManager.LoadScene(11);
+                    SceneManager.LoadScene("ComputerDIY_Level");
                     break;
                 default:
                     Debug.Log("123");
