@@ -16,7 +16,7 @@ PlayerSettings:
   productName: VR_DIY_ComputerSimulation
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.20754719, g: 0.1873146, b: 0.1873146, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -41,7 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: ea31f216c5beb174cad6dcb10dcb1060, type: 3}
-    duration: 3
+    duration: 2.5
   - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 387fd8c0c6e57d04e901fd569c5be29a, type: 3}
@@ -141,7 +141,9 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -334432518370395476, guid: 4c8ec5e46d2638e469b66964d0e38100, type: 2}
+  - {fileID: 7205433752138696060, guid: 9f8254a6f0f744947aa517c238b20569, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

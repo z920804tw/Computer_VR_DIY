@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Menu : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     //主菜單按鈕用的功能,目前只有關卡選擇跟設定會用到
     public void MenuSelect() //用在主菜單功能上
@@ -51,14 +52,14 @@ public class Menu : MonoBehaviour
                 MenuPanel[11].SetActive(true);
                 break;
             case "退出":
-                Application.Quit();
+                MenuPanel[12].SetActive(true);
                 break;
             default:
                 break;
 
         }
     }
-
+    
 
 
 
@@ -125,6 +126,9 @@ public class Menu : MonoBehaviour
                     break;
                 case "返回設定選單":
                     MenuPanel[9].SetActive(true);
+                    break ;
+                case "退出":
+                    Application.Quit();
                     break;
 
             }
