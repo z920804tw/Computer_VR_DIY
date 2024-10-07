@@ -8,10 +8,15 @@ public class HardDriver_Level3_Status : MonoBehaviour
 
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
+    [Header("UI設定")]
+    public GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
+    [Header("物件設定")]
     [SerializeField] GameObject HardDriver;
     [SerializeField] Object_Transform HardDriver_Transform, Screw_Transform;
 
-    public GameObject[] MenuPanels,Pictures,pages;
+    
 
 
     void Start()

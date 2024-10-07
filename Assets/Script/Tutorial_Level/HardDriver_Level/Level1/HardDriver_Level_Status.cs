@@ -5,14 +5,23 @@ using UnityEngine;
 public class HardDriver_Level_Status : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject pickUI;
 
     [SerializeField] Level_Select l;
     [SerializeField] int status = 0;
+
+    [Header("UI設定")]
+    [SerializeField] GameObject pickUI;
+
+
+
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
+
+    [Header("物件設定")]
     [SerializeField] GameObject HardDriver;
     [SerializeField] Object_Transform HardDriver_Transform;
     [SerializeField] Object_Transform[] Cables_Transform;
-    public GameObject[] MenuPanels, Pictures, page;
 
     void Start()
     {
@@ -30,11 +39,11 @@ public class HardDriver_Level_Status : MonoBehaviour
             case 1:                                                                     //硬碟介紹 有1-1跟1-2
                 MenuPanels[1].SetActive(true);
                 l.closeAllPicture(Pictures);
-                if (page[0].activeSelf == true)
+                if (pages[0].activeSelf == true)
                 {
                     Pictures[0].SetActive(true);
                 }
-                else if (page[1].activeSelf == true)
+                else if (pages[1].activeSelf == true)
                 {
                     Pictures[1].SetActive(true);
                 }

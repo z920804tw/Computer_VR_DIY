@@ -1427,7 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242126911}
   m_Layer: 0
-  m_Name: 1-2
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3318,16 +3318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7852281ae66cd634abeb0e57ca071b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUI: {fileID: 1909704801}
   l: {fileID: 127846503}
   status: 0
-  HardDriver: {fileID: 1511337868}
-  HardDriver_Transform: {fileID: 1869911759}
-  Cables_Transform:
-  - {fileID: 2012467196}
-  - {fileID: 1511337867}
-  - {fileID: 1511337866}
-  - {fileID: 74043803}
   MenuPanels:
   - {fileID: 97692689}
   - {fileID: 1773818574}
@@ -3342,6 +3334,15 @@ MonoBehaviour:
   - {fileID: 2066082298}
   - {fileID: 110419259}
   - {fileID: 1306543517}
+  pages:
+  - {fileID: 1909704801}
+  HardDriver: {fileID: 1511337868}
+  HardDriver_Transform: {fileID: 1869911759}
+  Cables_Transform:
+  - {fileID: 2012467196}
+  - {fileID: 1511337867}
+  - {fileID: 1511337866}
+  - {fileID: 74043803}
 --- !u!43 &635631414
 Mesh:
   m_ObjectHideFlags: 0

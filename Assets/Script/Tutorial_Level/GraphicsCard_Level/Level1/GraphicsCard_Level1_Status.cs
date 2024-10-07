@@ -8,8 +8,12 @@ public class GraphicsCard_Level1_Status : MonoBehaviour
     // Start is called before the first frame update
     public int status = 0;
     public Level_Select l;
-    [SerializeField] GameObject[] MenuPanels, Pictures, pages;
+    [Header("UI設定")]
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
 
+    [Header("物件設定")]
     [SerializeField] GameObject GraphicsCard;
     [SerializeField] Object_Transform GraphicsCard_Transform;
 

@@ -3588,6 +3588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   l: {fileID: 127846503}
+  status: 0
   MenuPanels:
   - {fileID: 97692689}
   - {fileID: 1773818574}
@@ -3606,13 +3607,12 @@ MonoBehaviour:
   - {fileID: 1258207088}
   - {fileID: 1050980293}
   - {fileID: 1648306380}
-  status: 0
-  CPU_Fan: {fileID: 1839165194014256349}
-  CPU_Thermal_GameObject: {fileID: 1985917730}
   pages:
   - {fileID: 1047090047}
   - {fileID: 1037657583}
   - {fileID: 1909704801}
+  CPU_Fan: {fileID: 1839165194014256349}
+  CPU_Thermal_GameObject: {fileID: 1985917730}
   fanBrackets:
   - {fileID: 1449340680}
   - {fileID: 941724816}
@@ -12485,7 +12485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ef421dafd4fa0748a91d5b472b69118, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 120a3166e121aea44a5e30de8e4cb13f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

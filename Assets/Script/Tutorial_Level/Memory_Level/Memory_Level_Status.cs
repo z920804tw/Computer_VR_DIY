@@ -7,20 +7,27 @@ public class Memory_Level_Status : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
-    [SerializeField] GameObject pickUI;
-
     [SerializeField] Level_Select l;
     [SerializeField] int currentTransformIndex;
     [SerializeField] int status = 0;
+
+    [Header("UI設定")]
+
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
+
+    [Header("物件設定")]
+
+
     [SerializeField] GameObject[] Memory;
     [SerializeField] GameObject[] Memory_Transform;
-    public GameObject[] MenuPanels, Pictures, pages;
+
 
 
     void Start()
     {
-        currentTransformIndex=-1;
+        currentTransformIndex = -1;
     }
 
     // Update is called once per frame
@@ -50,7 +57,7 @@ public class Memory_Level_Status : MonoBehaviour
 
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[3].activeSelf == true)
                 {
                     Pictures[3].SetActive(true);
                     foreach (GameObject i in Memory)

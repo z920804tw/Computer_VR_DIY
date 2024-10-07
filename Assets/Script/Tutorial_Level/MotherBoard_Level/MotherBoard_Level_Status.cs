@@ -5,14 +5,21 @@ using UnityEngine;
 public class MotherBoard_Level_Status : MonoBehaviour
 {
     // Start is called before the first frame update
-
     [SerializeField] Level_Select l;
-    [SerializeField] GameObject MotherBoard, Mother_Board_Transform;
     [SerializeField] int status = 0;
 
+    [Header("UI設定")]
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
+
+    [Header("物件設定")]
+
+    [SerializeField] GameObject MotherBoard;
+    [SerializeField] GameObject Mother_Board_Transform;
     [SerializeField] Object_Transform[] screw;
 
-    public GameObject[] MenuPanels, Pictures, pages;
+
 
 
     void Start()

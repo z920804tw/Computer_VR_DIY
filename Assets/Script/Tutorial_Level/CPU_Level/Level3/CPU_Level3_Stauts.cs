@@ -7,15 +7,16 @@ public class CPU_Level3_Stauts : MonoBehaviour
     // Start is called before the first frame update
     [Header("關卡設定")]
     public Level_Select l;
+    [SerializeField] int status;
+    [Header("UI設定")]
     [SerializeField] GameObject[] MenuPanels;
     [SerializeField] GameObject[] Pictures;
-    [SerializeField] int status;
+    public GameObject[] pages;
+
 
     [Header("物件設定")]
     public GameObject CPU_Fan;
     public GameObject CPU_Thermal_GameObject;
-
-    public GameObject[] pages;
     public GameObject[] fanBrackets;
     public Object_Transform[] objectsTransform, ScrewTransform;
 

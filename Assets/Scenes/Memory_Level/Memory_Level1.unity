@@ -3500,18 +3500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246c058231b01514391b784267362d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUI: {fileID: 1909704801}
   l: {fileID: 127846503}
   currentTransformIndex: 0
   status: 0
-  Memory:
-  - {fileID: 1550658979}
-  - {fileID: 576773651}
-  Memory_Transform:
-  - {fileID: 1894840397}
-  - {fileID: 1894840396}
-  - {fileID: 1894840395}
-  - {fileID: 1894840394}
   MenuPanels:
   - {fileID: 97692689}
   - {fileID: 1773818574}
@@ -3530,6 +3521,15 @@ MonoBehaviour:
   - {fileID: 1047090047}
   - {fileID: 1037657583}
   - {fileID: 1997759728}
+  - {fileID: 1909704801}
+  Memory:
+  - {fileID: 1550658979}
+  - {fileID: 576773651}
+  Memory_Transform:
+  - {fileID: 1894840397}
+  - {fileID: 1894840396}
+  - {fileID: 1894840395}
+  - {fileID: 1894840394}
 --- !u!1 &720106636
 GameObject:
   m_ObjectHideFlags: 0
@@ -10588,7 +10588,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1aca9683149b08244bc1312964c83b55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 120a3166e121aea44a5e30de8e4cb13f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

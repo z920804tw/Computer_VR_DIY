@@ -4398,18 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   l: {fileID: 127846503}
-  MotherBoard: {fileID: 588603290}
-  Mother_Board_Transform: {fileID: 1490473127}
   status: 0
-  screw:
-  - {fileID: 444382417}
-  - {fileID: 444382416}
-  - {fileID: 444382415}
-  - {fileID: 444382414}
-  - {fileID: 444382413}
-  - {fileID: 444382412}
-  - {fileID: 444382411}
-  - {fileID: 444382410}
   MenuPanels:
   - {fileID: 97692689}
   - {fileID: 1773818574}
@@ -4429,6 +4418,17 @@ MonoBehaviour:
   - {fileID: 2092512875}
   - {fileID: 84672452}
   - {fileID: 1909704801}
+  MotherBoard: {fileID: 588603290}
+  Mother_Board_Transform: {fileID: 1490473127}
+  screw:
+  - {fileID: 444382417}
+  - {fileID: 444382416}
+  - {fileID: 444382415}
+  - {fileID: 444382414}
+  - {fileID: 444382413}
+  - {fileID: 444382412}
+  - {fileID: 444382411}
+  - {fileID: 444382410}
 --- !u!43 &710586718
 Mesh:
   m_ObjectHideFlags: 0
@@ -7486,7 +7486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1aca9683149b08244bc1312964c83b55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 120a3166e121aea44a5e30de8e4cb13f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

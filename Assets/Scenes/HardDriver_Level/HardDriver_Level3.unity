@@ -3593,9 +3593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   l: {fileID: 127846503}
   status: 0
-  HardDriver: {fileID: 1848658820}
-  HardDriver_Transform: {fileID: 935718272}
-  Screw_Transform: {fileID: 935718271}
   MenuPanels:
   - {fileID: 97692689}
   - {fileID: 1773818574}
@@ -3610,6 +3607,9 @@ MonoBehaviour:
   - {fileID: 1646658946}
   pages:
   - {fileID: 1909704801}
+  HardDriver: {fileID: 1848658820}
+  HardDriver_Transform: {fileID: 935718272}
+  Screw_Transform: {fileID: 935718271}
 --- !u!1 &665393637
 GameObject:
   m_ObjectHideFlags: 0

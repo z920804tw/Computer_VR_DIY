@@ -22,6 +22,7 @@ public class TextUI : MonoBehaviour
 
     public GameObject[] UI_button;
 
+
     string words;       //存取電腦的純文字檔內容。
     int currentTextPos; //當前的文字位置，會在string.Substring這邊去使用
 

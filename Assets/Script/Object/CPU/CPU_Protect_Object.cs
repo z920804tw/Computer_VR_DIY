@@ -38,7 +38,8 @@ public class CPU_Protect_Object : MonoBehaviour
                 {
                     anim.SetBool("open", true);
                 }
-                Invoke("OpenShell", 1.3f);
+                isChange=true;
+                Invoke("ShellStatus", 1.3f);
             }
             GetComponent<Outline>().enabled = true;
         }
@@ -49,8 +50,9 @@ public class CPU_Protect_Object : MonoBehaviour
         GetComponent<Outline>().enabled = false;
     }
 
-    void OpenShell()
+    void ShellStatus()
     {
+        isChange=false;
         isOpen = !isOpen;
     }
 

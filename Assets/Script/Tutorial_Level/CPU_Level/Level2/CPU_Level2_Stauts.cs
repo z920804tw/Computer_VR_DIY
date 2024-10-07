@@ -8,21 +8,21 @@ public class CPU_Level2_Stauts : MonoBehaviour
 
     [SerializeField] int status;
     [SerializeField] Level_Select l;
-    [SerializeField] GameObject[] MenuPanels, Pictures;
+    [Header("UI設定")]
+    [SerializeField] GameObject[] MenuPanels;
+    [SerializeField] GameObject[] Pictures;
+    [SerializeField] GameObject[] pages;
 
-    [SerializeField] GameObject CPU_Thermal_GameObject, pickUI, _fan_Transform, _fan_Socket_Transform;
+    [Header("物件設定")]
+    [SerializeField] GameObject CPU_Thermal_GameObject;
+    [SerializeField] GameObject _fan_Transform;
+    [SerializeField] GameObject _fan_Socket_Transform;
 
 
     //AudioSource audioSource;
     void Start()
     {
-        /*audioSource = GameObject.Find("Camera Offset").GetComponent<AudioSource>();
 
-        if (audioSource != null)
-        {
-            audioSource.volume = SceneAudio.guideVolume;
-
-        }*/
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class CPU_Level2_Stauts : MonoBehaviour
                 break;
             case 2:
                 MenuPanels[2].SetActive(true);
-                if (pickUI.activeSelf == true)
+                if (pages[0].activeSelf == true)
                 {
                     Pictures[1].SetActive(true);
                     if (CPU_Thermal_GameObject.activeSelf == true)

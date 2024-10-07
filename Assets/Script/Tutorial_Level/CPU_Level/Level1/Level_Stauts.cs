@@ -8,10 +8,16 @@ public class Level_Stauts : MonoBehaviour
 
     public int status = 0;
     public Level_Select l;
+    [Header("UI設定")]
     [SerializeField] GameObject[] MenuPanels;
     [SerializeField] GameObject[] pictures;
-    [SerializeField] GameObject[] CPU_GameObject;      
-    [SerializeField] GameObject _cpuTransform, guideUI, pickUI;
+    [SerializeField] GameObject[] pages;
+    [Header("物件設定")]
+    [SerializeField] GameObject[] CPU_GameObject;
+
+    [SerializeField] GameObject _cpuTransform;
+
+    [SerializeField] CPU_Protect_Object _cpuProtect;
 
 
 
@@ -32,36 +38,53 @@ public class Level_Stauts : MonoBehaviour
                 break;
             case 1:
                 MenuPanels[1].SetActive(true);
-                pictures[0].SetActive(true);
+                l.closeAllPicture(pictures);
+                if (pages[0].activeSelf)
+                {
+                    pictures[0].SetActive(true);
+                }
+                else if (pages[1].activeSelf)
+                {
+                    pictures[1].SetActive(true);
+                }
+
                 break;
             case 2:
                 //CPU的安裝頁面，會去偵測CPU有沒有被玩家拿起，如果有就切換到下一個劇情。
                 MenuPanels[2].SetActive(true);
 
-                if (pickUI.activeSelf == true)
+                if (pages[2].activeSelf == true)
                 {
-                    pictures[1].SetActive(true);
-                    foreach (GameObject i in CPU_GameObject)
+                    pictures[2].SetActive(true);
+                    if (_cpuProtect.isOpen == true)
                     {
-                        if (i.GetComponent<CPU_Object>().isHolding == true)
+                        foreach (GameObject i in CPU_GameObject)
                         {
-                            NextStatus();
+                            if (i.GetComponent<CPU_Object>().isHolding == true)
+                            {
+                                NextStatus();
+                            }
                         }
                     }
                 }
-
                 break;
             case 3:
                 MenuPanels[3].SetActive(true);
-                pictures[2].SetActive(true);
+                pictures[3].SetActive(true);
                 if (_cpuTransform.GetComponent<Object_Transform>().hasPlace == true)
                 {
                     NextStatus();
                 }
                 break;
-
             case 4:
                 MenuPanels[4].SetActive(true);
+                if (_cpuProtect.isOpen == false)
+                {
+                    NextStatus();
+                }
+                break;
+            case 5:
+                MenuPanels[5].SetActive(true);
                 break;
             default:
                 break;
@@ -76,18 +99,12 @@ public class Level_Stauts : MonoBehaviour
         if (l != null)
         {
             l.closeAllUI(MenuPanels);
+            l.closeAllPicture(pictures);
             GameObject.Find("Camera Offset").GetComponent<AudioSource>().Stop();
         }
-        else
-        {
-            Debug.Log("123");
-        }
+        else { }
 
         status++;
-
-        foreach(GameObject i in pictures){
-            i.SetActive(false);
-        }
 
     }
 
